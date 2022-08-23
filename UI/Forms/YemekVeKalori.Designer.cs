@@ -320,6 +320,7 @@ namespace UI.Forms
             this.btnYemekVeKaloriGeriDon.TabIndex = 29;
             this.btnYemekVeKaloriGeriDon.Text = "GERİ DÖN";
             this.btnYemekVeKaloriGeriDon.UseVisualStyleBackColor = false;
+            this.btnYemekVeKaloriGeriDon.Click += new System.EventHandler(this.btnYemekVeKaloriGeriDon_Click);
             // 
             // YemekVeKalori
             // 
