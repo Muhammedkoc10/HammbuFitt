@@ -58,5 +58,7 @@ namespace UI
             Regex regex = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@._,!%*?+#&'()[=\"€])[A-Za-z\\d$@._,!%*?+#&'()[=\"€']{6,}");
             return regex.IsMatch(password);
         }
+
+
     }
 }

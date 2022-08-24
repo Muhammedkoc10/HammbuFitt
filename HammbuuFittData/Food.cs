@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HammbuuFittData
 {
@@ -14,7 +15,7 @@ namespace HammbuuFittData
         public string FoodName { get; set; }
         public int Calories { get; set; }
         public bool IsActive { get; set; }
-        public string Photo { get; set; }
+        public byte[] Photo { get; set; }
         public string PhotoPath { get; set; }
 
         // Navigation Property

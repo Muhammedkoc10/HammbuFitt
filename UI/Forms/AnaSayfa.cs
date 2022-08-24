@@ -57,5 +57,10 @@ namespace UI.Forms
             this.Hide();
             raporlar.Show();
         }
+
+        private void AnaSayfa_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

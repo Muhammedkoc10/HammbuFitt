@@ -30,14 +30,19 @@ namespace UI
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            if (db.Kullacınılar.FirstOrDefault(x => x.UserName == txtGirisKullaniciAdi.Text)!=null&& db.Kullacınılar.FirstOrDefault(x => x.Password == txtGirisSifre.Text)!=null)
+            if (txtGirisKullaniciAdi.Text.Trim()!="")
             {
-                AnaSayfa anaform = new AnaSayfa();
-                this.Hide();
-                anaform.Show();
+                if (db.Kullacınılar.FirstOrDefault(x => x.UserName == txtGirisKullaniciAdi.Text) != null && db.Kullacınılar.FirstOrDefault(x => x.Password == txtGirisSifre.Text) != null)
+                {
+                    AnaSayfa anaform = new AnaSayfa();
+                    this.Hide();
+                    anaform.Show();
+                }
+                else
+                    MessageBox.Show("Lütfen kullanıcı adı veya şifrenizi doğru giriniz!");
             }
             else
-                MessageBox.Show("Lütfen kullanıcı adı veya şifrenizi doğru giriniz!");
+                MessageBox.Show("Lütfen kullanıcı adı ve şifre bölümlerini boş bırakmayınız ");
             // temizle metodu
         }
 

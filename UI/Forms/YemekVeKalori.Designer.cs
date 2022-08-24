@@ -31,17 +31,16 @@ namespace UI.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YemekVeKalori));
             this.grbKaloriVeBesin = new System.Windows.Forms.GroupBox();
+            this.dgvYemekKalori = new System.Windows.Forms.DataGridView();
             this.btnKaloriVeBesinGoster = new System.Windows.Forms.Button();
             this.cmbKaloriVeBesinBesinSec = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbKaloriVeBesinKategoriSec = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvYemekVeKalori = new System.Windows.Forms.DataGridView();
             this.pbKaloriVeBesinResim = new System.Windows.Forms.PictureBox();
             this.grbKategoriEkle = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtResimYolu = new System.Windows.Forms.TextBox();
-            this.btnKategoriEkleResimSec = new System.Windows.Forms.Button();
             this.numKategoriEkleKalori = new System.Windows.Forms.NumericUpDown();
             this.txtKategoriEkleEklenecekBesin = new System.Windows.Forms.TextBox();
             this.btnKategoriEkleSil = new System.Windows.Forms.Button();
@@ -52,25 +51,25 @@ namespace UI.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.cmbKategoriEkleKategoriSec = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbOnizleme = new System.Windows.Forms.PictureBox();
             this.btnYemekVeKaloriGeriDon = new System.Windows.Forms.Button();
             this.grbKaloriVeBesin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvYemekVeKalori)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvYemekKalori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKaloriVeBesinResim)).BeginInit();
             this.grbKategoriEkle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numKategoriEkleKalori)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOnizleme)).BeginInit();
             this.SuspendLayout();
             // 
             // grbKaloriVeBesin
             // 
             this.grbKaloriVeBesin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grbKaloriVeBesin.Controls.Add(this.dgvYemekKalori);
             this.grbKaloriVeBesin.Controls.Add(this.btnKaloriVeBesinGoster);
             this.grbKaloriVeBesin.Controls.Add(this.cmbKaloriVeBesinBesinSec);
             this.grbKaloriVeBesin.Controls.Add(this.label2);
             this.grbKaloriVeBesin.Controls.Add(this.cmbKaloriVeBesinKategoriSec);
             this.grbKaloriVeBesin.Controls.Add(this.label1);
-            this.grbKaloriVeBesin.Controls.Add(this.dgvYemekVeKalori);
             this.grbKaloriVeBesin.Controls.Add(this.pbKaloriVeBesinResim);
             this.grbKaloriVeBesin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbKaloriVeBesin.Location = new System.Drawing.Point(3, 12);
@@ -79,6 +78,15 @@ namespace UI.Forms
             this.grbKaloriVeBesin.TabIndex = 0;
             this.grbKaloriVeBesin.TabStop = false;
             this.grbKaloriVeBesin.Text = "Kalori ve Besin";
+            // 
+            // dgvYemekKalori
+            // 
+            this.dgvYemekKalori.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvYemekKalori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvYemekKalori.Location = new System.Drawing.Point(12, 138);
+            this.dgvYemekKalori.Name = "dgvYemekKalori";
+            this.dgvYemekKalori.Size = new System.Drawing.Size(275, 107);
+            this.dgvYemekKalori.TabIndex = 7;
             // 
             // btnKaloriVeBesinGoster
             // 
@@ -91,9 +99,11 @@ namespace UI.Forms
             this.btnKaloriVeBesinGoster.TabIndex = 6;
             this.btnKaloriVeBesinGoster.Text = "GÖSTER";
             this.btnKaloriVeBesinGoster.UseVisualStyleBackColor = false;
+            this.btnKaloriVeBesinGoster.Click += new System.EventHandler(this.btnKaloriVeBesinGoster_Click);
             // 
             // cmbKaloriVeBesinBesinSec
             // 
+            this.cmbKaloriVeBesinBesinSec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKaloriVeBesinBesinSec.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbKaloriVeBesinBesinSec.FormattingEnabled = true;
             this.cmbKaloriVeBesinBesinSec.Location = new System.Drawing.Point(119, 295);
@@ -113,12 +123,14 @@ namespace UI.Forms
             // 
             // cmbKaloriVeBesinKategoriSec
             // 
+            this.cmbKaloriVeBesinKategoriSec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKaloriVeBesinKategoriSec.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbKaloriVeBesinKategoriSec.FormattingEnabled = true;
             this.cmbKaloriVeBesinKategoriSec.Location = new System.Drawing.Point(119, 251);
             this.cmbKaloriVeBesinKategoriSec.Name = "cmbKaloriVeBesinKategoriSec";
             this.cmbKaloriVeBesinKategoriSec.Size = new System.Drawing.Size(168, 25);
             this.cmbKaloriVeBesinKategoriSec.TabIndex = 3;
+            this.cmbKaloriVeBesinKategoriSec.SelectedIndexChanged += new System.EventHandler(this.cmbKaloriVeBesinKategoriSec_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -129,14 +141,6 @@ namespace UI.Forms
             this.label1.Size = new System.Drawing.Size(104, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Kategori Seç:";
-            // 
-            // dgvYemekVeKalori
-            // 
-            this.dgvYemekVeKalori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvYemekVeKalori.Location = new System.Drawing.Point(6, 129);
-            this.dgvYemekVeKalori.Name = "dgvYemekVeKalori";
-            this.dgvYemekVeKalori.Size = new System.Drawing.Size(281, 111);
-            this.dgvYemekVeKalori.TabIndex = 1;
             // 
             // pbKaloriVeBesinResim
             // 
@@ -152,7 +156,6 @@ namespace UI.Forms
             this.grbKategoriEkle.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.grbKategoriEkle.Controls.Add(this.label7);
             this.grbKategoriEkle.Controls.Add(this.txtResimYolu);
-            this.grbKategoriEkle.Controls.Add(this.btnKategoriEkleResimSec);
             this.grbKategoriEkle.Controls.Add(this.numKategoriEkleKalori);
             this.grbKategoriEkle.Controls.Add(this.txtKategoriEkleEklenecekBesin);
             this.grbKategoriEkle.Controls.Add(this.btnKategoriEkleSil);
@@ -163,7 +166,7 @@ namespace UI.Forms
             this.grbKategoriEkle.Controls.Add(this.label4);
             this.grbKategoriEkle.Controls.Add(this.cmbKategoriEkleKategoriSec);
             this.grbKategoriEkle.Controls.Add(this.label3);
-            this.grbKategoriEkle.Controls.Add(this.pictureBox2);
+            this.grbKategoriEkle.Controls.Add(this.pbOnizleme);
             this.grbKategoriEkle.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbKategoriEkle.Location = new System.Drawing.Point(310, 12);
             this.grbKategoriEkle.Name = "grbKategoriEkle";
@@ -190,18 +193,6 @@ namespace UI.Forms
             this.txtResimYolu.Name = "txtResimYolu";
             this.txtResimYolu.Size = new System.Drawing.Size(168, 25);
             this.txtResimYolu.TabIndex = 27;
-            // 
-            // btnKategoriEkleResimSec
-            // 
-            this.btnKategoriEkleResimSec.BackColor = System.Drawing.Color.Orange;
-            this.btnKategoriEkleResimSec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnKategoriEkleResimSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKategoriEkleResimSec.Location = new System.Drawing.Point(233, 277);
-            this.btnKategoriEkleResimSec.Name = "btnKategoriEkleResimSec";
-            this.btnKategoriEkleResimSec.Size = new System.Drawing.Size(86, 29);
-            this.btnKategoriEkleResimSec.TabIndex = 25;
-            this.btnKategoriEkleResimSec.Text = "Resim Seç";
-            this.btnKategoriEkleResimSec.UseVisualStyleBackColor = false;
             // 
             // numKategoriEkleKalori
             // 
@@ -251,6 +242,7 @@ namespace UI.Forms
             this.btnKategoriEkleEkle.TabIndex = 7;
             this.btnKategoriEkleEkle.Text = "EKLE";
             this.btnKategoriEkleEkle.UseVisualStyleBackColor = false;
+            this.btnKategoriEkleEkle.Click += new System.EventHandler(this.btnKategoriEkleEkle_Click);
             // 
             // label6
             // 
@@ -284,6 +276,7 @@ namespace UI.Forms
             // 
             // cmbKategoriEkleKategoriSec
             // 
+            this.cmbKategoriEkleKategoriSec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKategoriEkleKategoriSec.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbKategoriEkleKategoriSec.FormattingEnabled = true;
             this.cmbKategoriEkleKategoriSec.Location = new System.Drawing.Point(151, 138);
@@ -301,14 +294,14 @@ namespace UI.Forms
             this.label3.TabIndex = 7;
             this.label3.Text = "Kategori Seç:";
             // 
-            // pictureBox2
+            // pbOnizleme
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(313, 104);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pbOnizleme.Location = new System.Drawing.Point(6, 19);
+            this.pbOnizleme.Name = "pbOnizleme";
+            this.pbOnizleme.Size = new System.Drawing.Size(313, 104);
+            this.pbOnizleme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbOnizleme.TabIndex = 0;
+            this.pbOnizleme.TabStop = false;
             // 
             // btnYemekVeKaloriGeriDon
             // 
@@ -336,14 +329,15 @@ namespace UI.Forms
             this.Name = "YemekVeKalori";
             this.Text = "Yemek Ve Kalori";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.YemekVeKalori_FormClosed);
+            this.Load += new System.EventHandler(this.YemekVeKalori_Load);
             this.grbKaloriVeBesin.ResumeLayout(false);
             this.grbKaloriVeBesin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvYemekVeKalori)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvYemekKalori)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKaloriVeBesinResim)).EndInit();
             this.grbKategoriEkle.ResumeLayout(false);
             this.grbKategoriEkle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numKategoriEkleKalori)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOnizleme)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,10 +345,9 @@ namespace UI.Forms
         #endregion
 
         private System.Windows.Forms.GroupBox grbKaloriVeBesin;
-        private System.Windows.Forms.DataGridView dgvYemekVeKalori;
         private System.Windows.Forms.PictureBox pbKaloriVeBesinResim;
         private System.Windows.Forms.GroupBox grbKategoriEkle;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbOnizleme;
         private System.Windows.Forms.ComboBox cmbKaloriVeBesinBesinSec;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbKaloriVeBesinKategoriSec;
@@ -369,10 +362,10 @@ namespace UI.Forms
         private System.Windows.Forms.ComboBox cmbKategoriEkleKategoriSec;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtKategoriEkleEklenecekBesin;
-        private System.Windows.Forms.Button btnKategoriEkleResimSec;
         private System.Windows.Forms.NumericUpDown numKategoriEkleKalori;
         private System.Windows.Forms.Button btnYemekVeKaloriGeriDon;
         private System.Windows.Forms.TextBox txtResimYolu;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgvYemekKalori;
     }
 }
