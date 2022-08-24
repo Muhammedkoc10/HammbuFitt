@@ -14,5 +14,7 @@ namespace HammbuuFittData
 
         // Navigation Property
         public virtual List<Food> Foods { get; set; }
+
+        
     }
 }

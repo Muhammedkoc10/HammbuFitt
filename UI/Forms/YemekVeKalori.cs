@@ -37,16 +37,14 @@ namespace UI.Forms
         {
             db = new Context();
             List<Category> kategoriler = db.Kategoriler.ToList();
-            foreach (Category item in kategoriler)
-            {
-                cmbKaloriVeBesinKategoriSec.Items.Add(item.CategoryName);
-                cmbKategoriEkleKategoriSec.Items.Add(item.CategoryName);
-            }
+            cmbKaloriVeBesinKategoriSec.DataSource = kategoriler;
+            cmbKategoriEkleKategoriSec.DataSource = kategoriler;
+            cmbKaloriVeBesinKategoriSec.DisplayMember = "CategoryName";
+            cmbKaloriVeBesinKategoriSec.ValueMember = "CategoryID";
         }
 
         private void cmbKaloriVeBesinKategoriSec_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbKaloriVeBesinBesinSec.Items.Clear();
             cmbKaloriVeBesinBesinSec.Text = "";
             for (int i = 0; i < cmbKaloriVeBesinKategoriSec.Items.Count; i++)
             {
@@ -57,15 +55,20 @@ namespace UI.Forms
         void CmbFill(int x)
         {
             List<Food> foods = db.Yemekler.Where(w => w.CategoryID == x).ToList();
-            foreach (Food item in foods)
-            {
-                cmbKaloriVeBesinBesinSec.Items.Add(item.FoodName);
-            }
+            //foreach (Food item in foods)
+            //{
+            //    cmbKaloriVeBesinBesinSec.Items.Add(item.FoodName);
+            //}
+
+            cmbKaloriVeBesinBesinSec.DataSource = foods;
+            cmbKaloriVeBesinBesinSec.DisplayMember = "FoodName";
+            cmbKaloriVeBesinBesinSec.ValueMember = "FoodID";
         }
 
         private void btnKaloriVeBesinGoster_Click(object sender, EventArgs e)
         {
-            //pbKaloriVeBesinResim.Image = ByteArrayToImage(db.Yemekler.FirstOrDefault(x => x.FoodID == cmbKaloriVeBesinBesinSec.SelectedIndex).Photo);
+            //    Food secilenBesin = (Food)cmbKaloriVeBesinBesinSec.SelectedItem;
+            //    pbKaloriVeBesinResim.Image = ByteArrayToImage(db.Yemekler.FirstOrDefault(x => x.FoodID == secilenBesin.FoodID).Photo);
             var foodCalories = db.Yemekler.Where(w => w.FoodName == cmbKaloriVeBesinBesinSec.Text).Select(x => new { x.FoodName, x.Calories }).ToList();
             dgvYemekKalori.DataSource = foodCalories;
 
