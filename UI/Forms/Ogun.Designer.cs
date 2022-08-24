@@ -224,6 +224,7 @@ namespace UI.Forms
             this.btnOgunGeriDon.TabIndex = 29;
             this.btnOgunGeriDon.Text = "GERİ DÖN";
             this.btnOgunGeriDon.UseVisualStyleBackColor = false;
+            this.btnOgunGeriDon.Click += new System.EventHandler(this.btnOgunGeriDon_Click);
             // 
             // Ogun
             // 

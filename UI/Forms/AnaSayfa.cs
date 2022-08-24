@@ -29,5 +29,33 @@ namespace UI.Forms
         {
             Application.Exit();
         }
+
+        private void btnAnaSayfaDiyetListeleri_Click(object sender, EventArgs e)
+        {
+            DiyetOnerisi diyetOnerisi = new DiyetOnerisi();
+            this.Hide();
+            diyetOnerisi.Show();
+        }
+
+        private void btnAnaSayfaYemekKalori_Click(object sender, EventArgs e)
+        {
+            YemekVeKalori yemekVeKalori = new YemekVeKalori();
+            this.Hide();
+            yemekVeKalori.Show();
+        }
+
+        private void btnAnaSayfaOgunTakip_Click(object sender, EventArgs e)
+        {
+            Ogun ogun = new Ogun();
+            this.Hide();
+            ogun.Show();
+        }
+
+        private void btnAnaSayfaRaporlar_Click(object sender, EventArgs e)
+        {
+            Raporlar raporlar = new Raporlar();
+            this.Hide();
+            raporlar.Show();
+        }
     }
 }

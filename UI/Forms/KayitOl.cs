@@ -86,6 +86,9 @@ namespace UI.Forms
                                             };
                                             db.Kullacınılar.Add(kullanici);
                                             db.SaveChanges();
+                                            UygulamaTanitim uygulamaTanitim = new UygulamaTanitim();
+                                            this.Hide();
+                                            uygulamaTanitim.Show();
                                         }
                                         else
                                         {
@@ -105,6 +108,9 @@ namespace UI.Forms
                                             };
                                             db.Kullacınılar.Add(kullanici);
                                             db.SaveChanges();
+                                            UygulamaTanitim uygulamaTanitim = new UygulamaTanitim();
+                                            this.Hide();
+                                            uygulamaTanitim.Show();
                                         }
                                         MessageBox.Show("Kayıt Başarılı!");
                                     }
@@ -128,10 +134,7 @@ namespace UI.Forms
             }
             else
                 MessageBox.Show("Tüm alanlara bilgi girişi yapılması zorunludur!");
-            UygulamaTanitim uygulamaTanitim = new UygulamaTanitim();
             //temizle!
-            this.Hide();
-            uygulamaTanitim.Show();
         }
 
         private void chkSifreGoster_CheckedChanged(object sender, EventArgs e)

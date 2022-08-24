@@ -154,6 +154,7 @@ namespace UI.Forms
             this.btnRaporlarGeriDon.TabIndex = 29;
             this.btnRaporlarGeriDon.Text = "GERİ DÖN";
             this.btnRaporlarGeriDon.UseVisualStyleBackColor = false;
+            this.btnRaporlarGeriDon.Click += new System.EventHandler(this.btnRaporlarGeriDon_Click);
             // 
             // Raporlar
             // 

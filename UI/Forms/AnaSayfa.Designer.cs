@@ -35,7 +35,6 @@ namespace UI.Forms
             this.btnAnaSayfaRaporlar = new System.Windows.Forms.Button();
             this.btnAnaSayfaOgunTakip = new System.Windows.Forms.Button();
             this.btnAnaSayfaYemekKalori = new System.Windows.Forms.Button();
-            this.btnAnaSayfaKaloriTakip = new System.Windows.Forms.Button();
             this.grbAnaSayfa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +49,7 @@ namespace UI.Forms
             this.btnAnaSayfaDiyetListeleri.TabIndex = 7;
             this.btnAnaSayfaDiyetListeleri.Text = "DİYET LİSTELERİ";
             this.btnAnaSayfaDiyetListeleri.UseVisualStyleBackColor = false;
+            this.btnAnaSayfaDiyetListeleri.Click += new System.EventHandler(this.btnAnaSayfaDiyetListeleri_Click);
             // 
             // grbAnaSayfa
             // 
@@ -58,7 +58,6 @@ namespace UI.Forms
             this.grbAnaSayfa.Controls.Add(this.btnAnaSayfaRaporlar);
             this.grbAnaSayfa.Controls.Add(this.btnAnaSayfaOgunTakip);
             this.grbAnaSayfa.Controls.Add(this.btnAnaSayfaYemekKalori);
-            this.grbAnaSayfa.Controls.Add(this.btnAnaSayfaKaloriTakip);
             this.grbAnaSayfa.Controls.Add(this.btnAnaSayfaDiyetListeleri);
             this.grbAnaSayfa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAnaSayfa.Location = new System.Drawing.Point(8, 20);
@@ -85,48 +84,39 @@ namespace UI.Forms
             this.btnAnaSayfaRaporlar.BackColor = System.Drawing.Color.Magenta;
             this.btnAnaSayfaRaporlar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnaSayfaRaporlar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAnaSayfaRaporlar.Location = new System.Drawing.Point(42, 230);
+            this.btnAnaSayfaRaporlar.Location = new System.Drawing.Point(42, 221);
             this.btnAnaSayfaRaporlar.Name = "btnAnaSayfaRaporlar";
             this.btnAnaSayfaRaporlar.Size = new System.Drawing.Size(173, 42);
             this.btnAnaSayfaRaporlar.TabIndex = 11;
             this.btnAnaSayfaRaporlar.Text = "RAPORLAR";
             this.btnAnaSayfaRaporlar.UseVisualStyleBackColor = false;
+            this.btnAnaSayfaRaporlar.Click += new System.EventHandler(this.btnAnaSayfaRaporlar_Click);
             // 
             // btnAnaSayfaOgunTakip
             // 
             this.btnAnaSayfaOgunTakip.BackColor = System.Drawing.Color.Magenta;
             this.btnAnaSayfaOgunTakip.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnaSayfaOgunTakip.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAnaSayfaOgunTakip.Location = new System.Drawing.Point(42, 182);
+            this.btnAnaSayfaOgunTakip.Location = new System.Drawing.Point(42, 159);
             this.btnAnaSayfaOgunTakip.Name = "btnAnaSayfaOgunTakip";
             this.btnAnaSayfaOgunTakip.Size = new System.Drawing.Size(173, 42);
             this.btnAnaSayfaOgunTakip.TabIndex = 10;
             this.btnAnaSayfaOgunTakip.Text = "ÖĞÜN TAKİP";
             this.btnAnaSayfaOgunTakip.UseVisualStyleBackColor = false;
+            this.btnAnaSayfaOgunTakip.Click += new System.EventHandler(this.btnAnaSayfaOgunTakip_Click);
             // 
             // btnAnaSayfaYemekKalori
             // 
             this.btnAnaSayfaYemekKalori.BackColor = System.Drawing.Color.Magenta;
             this.btnAnaSayfaYemekKalori.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnaSayfaYemekKalori.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAnaSayfaYemekKalori.Location = new System.Drawing.Point(42, 126);
+            this.btnAnaSayfaYemekKalori.Location = new System.Drawing.Point(42, 86);
             this.btnAnaSayfaYemekKalori.Name = "btnAnaSayfaYemekKalori";
             this.btnAnaSayfaYemekKalori.Size = new System.Drawing.Size(173, 50);
             this.btnAnaSayfaYemekKalori.TabIndex = 9;
             this.btnAnaSayfaYemekKalori.Text = "YEMEK - KALORİ BÖLÜMÜ";
             this.btnAnaSayfaYemekKalori.UseVisualStyleBackColor = false;
-            // 
-            // btnAnaSayfaKaloriTakip
-            // 
-            this.btnAnaSayfaKaloriTakip.BackColor = System.Drawing.Color.Magenta;
-            this.btnAnaSayfaKaloriTakip.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnaSayfaKaloriTakip.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAnaSayfaKaloriTakip.Location = new System.Drawing.Point(42, 78);
-            this.btnAnaSayfaKaloriTakip.Name = "btnAnaSayfaKaloriTakip";
-            this.btnAnaSayfaKaloriTakip.Size = new System.Drawing.Size(173, 42);
-            this.btnAnaSayfaKaloriTakip.TabIndex = 8;
-            this.btnAnaSayfaKaloriTakip.Text = "KALORİ TAKİP";
-            this.btnAnaSayfaKaloriTakip.UseVisualStyleBackColor = false;
+            this.btnAnaSayfaYemekKalori.Click += new System.EventHandler(this.btnAnaSayfaYemekKalori_Click);
             // 
             // AnaSayfa
             // 
@@ -150,7 +140,6 @@ namespace UI.Forms
         private System.Windows.Forms.Button btnAnaSayfaRaporlar;
         private System.Windows.Forms.Button btnAnaSayfaOgunTakip;
         private System.Windows.Forms.Button btnAnaSayfaYemekKalori;
-        private System.Windows.Forms.Button btnAnaSayfaKaloriTakip;
         private System.Windows.Forms.Button btnAnaSayfaGirisEkraninaDon;
     }
 }

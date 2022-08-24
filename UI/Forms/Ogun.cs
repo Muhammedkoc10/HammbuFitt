@@ -21,5 +21,12 @@ namespace UI.Forms
         {
             Application.Exit();
         }
+
+        private void btnOgunGeriDon_Click(object sender, EventArgs e)
+        {
+            AnaSayfa anaSayfa = new AnaSayfa();
+            this.Hide();
+            anaSayfa.Show();
+        }
     }
 }

@@ -69,6 +69,7 @@ namespace UI.Forms
             this.btnDiyetOnerisiGeriDon.TabIndex = 29;
             this.btnDiyetOnerisiGeriDon.Text = "GERİ DÖN";
             this.btnDiyetOnerisiGeriDon.UseVisualStyleBackColor = false;
+            this.btnDiyetOnerisiGeriDon.Click += new System.EventHandler(this.btnDiyetOnerisiGeriDon_Click);
             // 
             // DiyetOnerisi
             // 
