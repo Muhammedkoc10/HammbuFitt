@@ -35,6 +35,7 @@ namespace UI.Forms
             this.btnAnaSayfaRaporlar = new System.Windows.Forms.Button();
             this.btnAnaSayfaOgunTakip = new System.Windows.Forms.Button();
             this.btnAnaSayfaYemekKalori = new System.Windows.Forms.Button();
+            this.lblHold2 = new System.Windows.Forms.Label();
             this.grbAnaSayfa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,12 +119,21 @@ namespace UI.Forms
             this.btnAnaSayfaYemekKalori.UseVisualStyleBackColor = false;
             this.btnAnaSayfaYemekKalori.Click += new System.EventHandler(this.btnAnaSayfaYemekKalori_Click);
             // 
+            // lblHold2
+            // 
+            this.lblHold2.AutoSize = true;
+            this.lblHold2.Location = new System.Drawing.Point(120, 353);
+            this.lblHold2.Name = "lblHold2";
+            this.lblHold2.Size = new System.Drawing.Size(0, 13);
+            this.lblHold2.TabIndex = 9;
+            // 
             // AnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(294, 350);
+            this.ClientSize = new System.Drawing.Size(286, 348);
+            this.Controls.Add(this.lblHold2);
             this.Controls.Add(this.grbAnaSayfa);
             this.Name = "AnaSayfa";
             this.Text = "AnaSyfa";
@@ -131,6 +141,7 @@ namespace UI.Forms
             this.Load += new System.EventHandler(this.AnaSayfa_Load);
             this.grbAnaSayfa.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -142,5 +153,6 @@ namespace UI.Forms
         private System.Windows.Forms.Button btnAnaSayfaOgunTakip;
         private System.Windows.Forms.Button btnAnaSayfaYemekKalori;
         private System.Windows.Forms.Button btnAnaSayfaGirisEkraninaDon;
+        private System.Windows.Forms.Label lblHold2;
     }
 }

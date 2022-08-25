@@ -30,11 +30,12 @@ namespace UI
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
+            ReturnUserId();
             if (txtGirisKullaniciAdi.Text.Trim()!="")
             {
                 if (db.Kullacınılar.FirstOrDefault(x => x.UserName == txtGirisKullaniciAdi.Text) != null && db.Kullacınılar.FirstOrDefault(x => x.Password == txtGirisSifre.Text) != null)
                 {
-                    AnaSayfa anaform = new AnaSayfa();
+                    AnaSayfa anaform = new AnaSayfa(txtGirisKullaniciAdi.Text);
                     this.Hide();
                     anaform.Show();
                 }
@@ -44,6 +45,7 @@ namespace UI
             else
                 MessageBox.Show("Lütfen kullanıcı adı ve şifre bölümlerini boş bırakmayınız ");
             // temizle metodu
+            
         }
 
         private void btnKayitOl_Click(object sender, EventArgs e)
@@ -71,6 +73,15 @@ namespace UI
                 txtGirisSifre.PasswordChar =  default;
             else
                 txtGirisSifre.PasswordChar = '*';
+        }
+        public int ReturnUserId()
+        {
+            return db.Kullacınılar.Where(x => x.UserName == txtGirisKullaniciAdi.Text).FirstOrDefault().UserID;
+        }
+
+        private void grbGiris_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

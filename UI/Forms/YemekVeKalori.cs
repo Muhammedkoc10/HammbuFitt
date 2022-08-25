@@ -21,6 +21,7 @@ namespace UI.Forms
             InitializeComponent();
         }
         Context db;
+        byte[] bytes = null;
         private void YemekVeKalori_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -31,28 +32,45 @@ namespace UI.Forms
             AnaSayfa anaSayfa = new AnaSayfa();
             this.Hide();
             anaSayfa.Show();
+            //cmbKaloriVeBesinBesinSec.Enabled = false;
         }
 
         private void YemekVeKalori_Load(object sender, EventArgs e)
         {
-            db = new Context();
-            List<Category> kategoriler = db.Kategoriler.ToList();
-            cmbKaloriVeBesinKategoriSec.DataSource = kategoriler;
-            cmbKategoriEkleKategoriSec.DataSource = kategoriler;
-            cmbKaloriVeBesinKategoriSec.DisplayMember = "CategoryName";
-            cmbKaloriVeBesinKategoriSec.ValueMember = "CategoryID";
+            FillKaloriBesin();
+            cmbKaloriVeBesinBesinSec.Enabled = false;
         }
 
-        private void cmbKaloriVeBesinKategoriSec_SelectedIndexChanged(object sender, EventArgs e)
+        private void FillKaloriBesin(int SelectedCategory = -1)
         {
-            cmbKaloriVeBesinBesinSec.Text = "";
+            db = new Context();
+            List<Category> kategoriler = db.Kategoriler.ToList();
+            List<Category> kategoriler2 = db.Kategoriler.ToList();
+            cmbKaloriVeBesinKategoriSec.DataSource = kategoriler;
+            cmbKategoriEkleKategoriSec.DataSource = kategoriler2;
+            cmbKaloriVeBesinKategoriSec.DisplayMember = "CategoryName";
+            cmbKategoriEkleKategoriSec.DisplayMember = "CategoryName";
+            cmbKaloriVeBesinKategoriSec.ValueMember = "CategoryID";
+            cmbKategoriEkleKategoriSec.ValueMember = "CategoryID";
+
+            //cmbKaloriVeBesinBesinSec.SelectedValue = SelectedCategory;
+            cmbKaloriVeBesinKategoriSec.SelectedValue = SelectedCategory;
+            cmbKategoriEkleKategoriSec.SelectedValue = SelectedCategory;
+        }
+
+        private void cmbKaloriVeBesinKategoriSec_SelectedValueChanged(object sender, EventArgs e)
+        {
             for (int i = 0; i < cmbKaloriVeBesinKategoriSec.Items.Count; i++)
             {
                 if (cmbKaloriVeBesinKategoriSec.SelectedIndex == i)
                     CmbFill(i + 1);
             }
+            if (cmbKaloriVeBesinKategoriSec.SelectedIndex>-1)
+            {
+                cmbKaloriVeBesinBesinSec.Enabled = true;
+            }
         }
-        void CmbFill(int x)
+        void CmbFill(int x,int FoodID=0)
         {
             List<Food> foods = db.Yemekler.Where(w => w.CategoryID == x).ToList();
             //foreach (Food item in foods)
@@ -63,40 +81,88 @@ namespace UI.Forms
             cmbKaloriVeBesinBesinSec.DataSource = foods;
             cmbKaloriVeBesinBesinSec.DisplayMember = "FoodName";
             cmbKaloriVeBesinBesinSec.ValueMember = "FoodID";
+            cmbKaloriVeBesinBesinSec.SelectedValue = FoodID;
         }
 
         private void btnKaloriVeBesinGoster_Click(object sender, EventArgs e)
         {
-            //    Food secilenBesin = (Food)cmbKaloriVeBesinBesinSec.SelectedItem;
-            //    pbKaloriVeBesinResim.Image = ByteArrayToImage(db.Yemekler.FirstOrDefault(x => x.FoodID == secilenBesin.FoodID).Photo);
-            var foodCalories = db.Yemekler.Where(w => w.FoodName == cmbKaloriVeBesinBesinSec.Text).Select(x => new { x.FoodName, x.Calories }).ToList();
-            dgvYemekKalori.DataSource = foodCalories;
+            if (cmbKaloriVeBesinBesinSec.SelectedIndex==-1)
+            {
+                MessageBox.Show("Lütfen Kategori ve yemek kısımlarını seçiniz");
+            }
+            else
+                Show();
+            //temizle
+        }
 
-            
+        private void Show(int CategoryId=0)
+        {
+            int secilenBesin = int.Parse(cmbKaloriVeBesinBesinSec.SelectedValue.ToString());
+            string Path = db.Yemekler.Where(x => x.FoodID == secilenBesin).FirstOrDefault().PhotoPath;
+            if (Path != string.Empty)
+            {
+                try
+                {
+                    pbKaloriVeBesinResim.Image = null;
+                    pbKaloriVeBesinResim.Image = Image.FromFile(Path);
+                }
+                catch
+                {
+
+                }
+                finally
+                {
+                    var foodCalories = db.Yemekler.Where(w => w.FoodName == cmbKaloriVeBesinBesinSec.Text).Select(x => new { x.FoodName, x.Calories }).ToList();
+                    dgvYemekKalori.DataSource = foodCalories;
+                }
+            }
+            else
+            {
+                var foodCalories = db.Yemekler.Where(w => w.FoodName == cmbKaloriVeBesinBesinSec.Text).Select(x => new { x.FoodName, x.Calories }).ToList();
+                dgvYemekKalori.DataSource = foodCalories;
+            }
         }
 
         private void btnKategoriEkleEkle_Click(object sender, EventArgs e)
         {
-            Food food = db.Yemekler.Where(x => x.FoodID == cmbKategoriEkleKategoriSec.SelectedIndex).FirstOrDefault();
-            food = new Food()
+            if (txtAddFood.Text.Trim()!=""&&cmbKategoriEkleKategoriSec.SelectedIndex!=-1)
             {
-                CategoryID = cmbKategoriEkleKategoriSec.SelectedIndex + 1,
-                FoodName = txtKategoriEkleEklenecekBesin.Text,
-                Calories = (int)numKategoriEkleKalori.Value,
-                PhotoPath = SaveImage(pbOnizleme, txtResimYolu.Text),
-                Photo = ImageToByteArray(pbOnizleme.Image),
-                IsActive = true
-            };
-            
-            db.Yemekler.Add(food);
-            db.SaveChanges();
+                int selectedCategory = int.Parse(cmbKategoriEkleKategoriSec.SelectedValue.ToString());
+                Food food = db.Yemekler.Where(x => x.FoodID == selectedCategory).FirstOrDefault();
+                food = new Food()
+                {
+                    CategoryID = cmbKategoriEkleKategoriSec.SelectedIndex + 1,
+                    FoodName = txtAddFood.Text,
+                    Calories = (int)numAddCalories.Value,
+                    PhotoPath = lbl1.Text,
+                    Photo = bytes,
+                    IsActive = true
+                };
 
+                db.Yemekler.Add(food);
+                db.SaveChanges();
+                int id = food.FoodID;
+                MessageBox.Show("Ekleme işlemi başarılı!");
+                pbOnizleme.Image = null;
+                int SelectedCategory = int.Parse(cmbKategoriEkleKategoriSec.SelectedValue.ToString());
+                FillKaloriBesin(SelectedCategory);
+                CmbFill(SelectedCategory,id);
+                Show(SelectedCategory);
+                //temizle
+            }
+            else
+                MessageBox.Show("Yemek adını boş geçmeyiniz!");
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lbl1.Text=SaveImage(pbOnizleme, txtResimYolu.Text);
+            bytes = ImageToByteArray(pbOnizleme.Image);
+        }
         public static string SaveImage(PictureBox pictureBox, string firstName)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(.jpg;.jpeg; .gif;.bmp; .png)|.jpg; .jpeg;.gif; .bmp;.png";
+            open.Filter = "Image Files(*.bmp; *.png; *.jpg)| *.bmp; *.png; *.jpg";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 if (!Directory.Exists(Application.StartupPath + "/images"))
@@ -130,19 +196,17 @@ namespace UI.Forms
                 return Image.FromStream(ms);
             }
         }
-        private void btnKategoriEkleResimSec_Click(object sender, EventArgs e)
+
+        private void btnKategoriEkleSil_Click(object sender, EventArgs e)
         {
-            //// open file dialog
-            //OpenFileDialog open = new OpenFileDialog();
-            //// image filters
-            //open.Filter = "Image Files(.jpg;.jpeg; .gif;.bmp)|.jpg;.jpeg; .gif;.bmp";
-            //if (open.ShowDialog() == DialogResult.OK)
-            //{
-            //    // display image in picture box
-            //    pbOnizleme.Image = new Bitmap(open.FileName);
-            //    // image file path
-            //    txtResimYolu.Text = open.FileName;
-            //}
+            //TEMİZLE
         }
+
+        private void grbKategoriEkle_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

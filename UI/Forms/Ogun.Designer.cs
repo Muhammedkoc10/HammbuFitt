@@ -32,12 +32,11 @@ namespace UI.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ogun));
             this.grbOgunEkle = new System.Windows.Forms.GroupBox();
             this.btnOgunEkle = new System.Windows.Forms.Button();
-            this.dgvKategorıYemekOgun = new System.Windows.Forms.DataGridView();
-            this.cmbOgunOgunSec = new System.Windows.Forms.ComboBox();
+            this.cmbMealSelect = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbOgunYemekSec = new System.Windows.Forms.ComboBox();
+            this.cmbMealFoodSelect = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbOgunKategoriSec = new System.Windows.Forms.ComboBox();
+            this.cmbMealCategorySelect = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grbOgunRapor = new System.Windows.Forms.GroupBox();
             this.btnAylikKaloriOrtalamasi = new System.Windows.Forms.Button();
@@ -46,8 +45,12 @@ namespace UI.Forms
             this.dgvGunlukOgunler = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.btnOgunGeriDon = new System.Windows.Forms.Button();
+            this.lblHold1 = new System.Windows.Forms.Label();
+            this.lstShowMeal = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.grbOgunEkle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKategorıYemekOgun)).BeginInit();
             this.grbOgunRapor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHaftalikVeAylikKalori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGunlukOgunler)).BeginInit();
@@ -56,13 +59,13 @@ namespace UI.Forms
             // grbOgunEkle
             // 
             this.grbOgunEkle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grbOgunEkle.Controls.Add(this.lstShowMeal);
             this.grbOgunEkle.Controls.Add(this.btnOgunEkle);
-            this.grbOgunEkle.Controls.Add(this.dgvKategorıYemekOgun);
-            this.grbOgunEkle.Controls.Add(this.cmbOgunOgunSec);
+            this.grbOgunEkle.Controls.Add(this.cmbMealSelect);
             this.grbOgunEkle.Controls.Add(this.label3);
-            this.grbOgunEkle.Controls.Add(this.cmbOgunYemekSec);
+            this.grbOgunEkle.Controls.Add(this.cmbMealFoodSelect);
             this.grbOgunEkle.Controls.Add(this.label2);
-            this.grbOgunEkle.Controls.Add(this.cmbOgunKategoriSec);
+            this.grbOgunEkle.Controls.Add(this.cmbMealCategorySelect);
             this.grbOgunEkle.Controls.Add(this.label1);
             this.grbOgunEkle.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbOgunEkle.Location = new System.Drawing.Point(12, 12);
@@ -82,23 +85,23 @@ namespace UI.Forms
             this.btnOgunEkle.TabIndex = 11;
             this.btnOgunEkle.Text = "ÖĞÜN EKLE";
             this.btnOgunEkle.UseVisualStyleBackColor = false;
+            this.btnOgunEkle.Click += new System.EventHandler(this.btnOgunEkle_Click);
             // 
-            // dgvKategorıYemekOgun
+            // cmbMealSelect
             // 
-            this.dgvKategorıYemekOgun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKategorıYemekOgun.Location = new System.Drawing.Point(6, 112);
-            this.dgvKategorıYemekOgun.Name = "dgvKategorıYemekOgun";
-            this.dgvKategorıYemekOgun.Size = new System.Drawing.Size(346, 164);
-            this.dgvKategorıYemekOgun.TabIndex = 10;
-            // 
-            // cmbOgunOgunSec
-            // 
-            this.cmbOgunOgunSec.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOgunOgunSec.FormattingEnabled = true;
-            this.cmbOgunOgunSec.Location = new System.Drawing.Point(139, 81);
-            this.cmbOgunOgunSec.Name = "cmbOgunOgunSec";
-            this.cmbOgunOgunSec.Size = new System.Drawing.Size(213, 25);
-            this.cmbOgunOgunSec.TabIndex = 9;
+            this.cmbMealSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMealSelect.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMealSelect.FormattingEnabled = true;
+            this.cmbMealSelect.Items.AddRange(new object[] {
+            "Sabah",
+            "Ara Öğün1",
+            "Öğle",
+            "Ara Öğün 2",
+            "Akşam"});
+            this.cmbMealSelect.Location = new System.Drawing.Point(139, 81);
+            this.cmbMealSelect.Name = "cmbMealSelect";
+            this.cmbMealSelect.Size = new System.Drawing.Size(213, 25);
+            this.cmbMealSelect.TabIndex = 9;
             // 
             // label3
             // 
@@ -110,14 +113,16 @@ namespace UI.Forms
             this.label3.TabIndex = 8;
             this.label3.Text = "Öğün Seç:";
             // 
-            // cmbOgunYemekSec
+            // cmbMealFoodSelect
             // 
-            this.cmbOgunYemekSec.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOgunYemekSec.FormattingEnabled = true;
-            this.cmbOgunYemekSec.Location = new System.Drawing.Point(139, 50);
-            this.cmbOgunYemekSec.Name = "cmbOgunYemekSec";
-            this.cmbOgunYemekSec.Size = new System.Drawing.Size(213, 25);
-            this.cmbOgunYemekSec.TabIndex = 7;
+            this.cmbMealFoodSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMealFoodSelect.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMealFoodSelect.FormattingEnabled = true;
+            this.cmbMealFoodSelect.Location = new System.Drawing.Point(139, 50);
+            this.cmbMealFoodSelect.Name = "cmbMealFoodSelect";
+            this.cmbMealFoodSelect.Size = new System.Drawing.Size(213, 25);
+            this.cmbMealFoodSelect.TabIndex = 7;
+            this.cmbMealFoodSelect.SelectedIndexChanged += new System.EventHandler(this.cmbMealFoodSelect_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -129,14 +134,16 @@ namespace UI.Forms
             this.label2.TabIndex = 6;
             this.label2.Text = "Yemek Seç:";
             // 
-            // cmbOgunKategoriSec
+            // cmbMealCategorySelect
             // 
-            this.cmbOgunKategoriSec.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOgunKategoriSec.FormattingEnabled = true;
-            this.cmbOgunKategoriSec.Location = new System.Drawing.Point(139, 19);
-            this.cmbOgunKategoriSec.Name = "cmbOgunKategoriSec";
-            this.cmbOgunKategoriSec.Size = new System.Drawing.Size(213, 25);
-            this.cmbOgunKategoriSec.TabIndex = 5;
+            this.cmbMealCategorySelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMealCategorySelect.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMealCategorySelect.FormattingEnabled = true;
+            this.cmbMealCategorySelect.Location = new System.Drawing.Point(139, 19);
+            this.cmbMealCategorySelect.Name = "cmbMealCategorySelect";
+            this.cmbMealCategorySelect.Size = new System.Drawing.Size(213, 25);
+            this.cmbMealCategorySelect.TabIndex = 5;
+            this.cmbMealCategorySelect.SelectedIndexChanged += new System.EventHandler(this.cmbMealCategorySelect_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -226,12 +233,51 @@ namespace UI.Forms
             this.btnOgunGeriDon.UseVisualStyleBackColor = false;
             this.btnOgunGeriDon.Click += new System.EventHandler(this.btnOgunGeriDon_Click);
             // 
+            // lblHold1
+            // 
+            this.lblHold1.AutoSize = true;
+            this.lblHold1.Location = new System.Drawing.Point(264, 382);
+            this.lblHold1.Name = "lblHold1";
+            this.lblHold1.Size = new System.Drawing.Size(0, 13);
+            this.lblHold1.TabIndex = 30;
+            this.lblHold1.Visible = false;
+            // 
+            // lstShowMeal
+            // 
+            this.lstShowMeal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lstShowMeal.HideSelection = false;
+            this.lstShowMeal.Location = new System.Drawing.Point(19, 131);
+            this.lstShowMeal.Name = "lstShowMeal";
+            this.lstShowMeal.Size = new System.Drawing.Size(317, 156);
+            this.lstShowMeal.TabIndex = 12;
+            this.lstShowMeal.UseCompatibleStateImageBehavior = false;
+            this.lstShowMeal.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Kategorisi:";
+            this.columnHeader1.Width = 124;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Yemeği:";
+            this.columnHeader2.Width = 121;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Öğünü:";
+            this.columnHeader3.Width = 68;
+            // 
             // Ogun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(942, 422);
+            this.ClientSize = new System.Drawing.Size(940, 412);
+            this.Controls.Add(this.lblHold1);
             this.Controls.Add(this.btnOgunGeriDon);
             this.Controls.Add(this.grbOgunRapor);
             this.Controls.Add(this.grbOgunEkle);
@@ -239,14 +285,15 @@ namespace UI.Forms
             this.Name = "Ogun";
             this.Text = "Ogun";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ogun_FormClosed);
+            this.Load += new System.EventHandler(this.Ogun_Load);
             this.grbOgunEkle.ResumeLayout(false);
             this.grbOgunEkle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKategorıYemekOgun)).EndInit();
             this.grbOgunRapor.ResumeLayout(false);
             this.grbOgunRapor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHaftalikVeAylikKalori)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGunlukOgunler)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -254,12 +301,11 @@ namespace UI.Forms
 
         private System.Windows.Forms.GroupBox grbOgunEkle;
         private System.Windows.Forms.GroupBox grbOgunRapor;
-        private System.Windows.Forms.DataGridView dgvKategorıYemekOgun;
-        private System.Windows.Forms.ComboBox cmbOgunOgunSec;
+        private System.Windows.Forms.ComboBox cmbMealSelect;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbOgunYemekSec;
+        private System.Windows.Forms.ComboBox cmbMealFoodSelect;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbOgunKategoriSec;
+        private System.Windows.Forms.ComboBox cmbMealCategorySelect;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOgunEkle;
         private System.Windows.Forms.Button btnAylikKaloriOrtalamasi;
@@ -268,5 +314,10 @@ namespace UI.Forms
         private System.Windows.Forms.DataGridView dgvGunlukOgunler;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnOgunGeriDon;
+        private System.Windows.Forms.Label lblHold1;
+        private System.Windows.Forms.ListView lstShowMeal;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

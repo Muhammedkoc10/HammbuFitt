@@ -25,13 +25,15 @@ namespace UI.Forms
 
         private void DiyetOnerisi_Load(object sender, EventArgs e)
         {
+            Giriş giris = new Giriş();
+            int userID = 1;
             db = new Context();
-            if (db.Kullacınılar.FirstOrDefault(x => x.IsSportsman == true).IsSportsman)
+            if (db.Kullacınılar.FirstOrDefault(x => x.UserID == userID).IsSportsman)
             {
                 grbProfesyonelKullanici.Visible = true;
                 grbGunlukKullanici.Visible = false;
             }
-            if (db.Kullacınılar.FirstOrDefault(x => x.IsSportsman == false).IsSportsman)
+            if (db.Kullacınılar.FirstOrDefault(x => x.UserID == userID).IsSportsman==false)
             {
                 grbProfesyonelKullanici.Visible = false;
                 grbGunlukKullanici.Visible = true;

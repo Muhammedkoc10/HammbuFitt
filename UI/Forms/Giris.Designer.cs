@@ -143,6 +143,7 @@ namespace UI
             this.grbGiris.TabIndex = 8;
             this.grbGiris.TabStop = false;
             this.grbGiris.Text = "Giriş";
+            this.grbGiris.Enter += new System.EventHandler(this.grbGiris_Enter);
             // 
             // chkSifreGoster
             // 
@@ -163,7 +164,7 @@ namespace UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(359, 510);
+            this.ClientSize = new System.Drawing.Size(353, 500);
             this.Controls.Add(this.grbGiris);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -181,7 +182,6 @@ namespace UI
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtGirisKullaniciAdi;
         private System.Windows.Forms.TextBox txtGirisSifre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -190,6 +190,7 @@ namespace UI
         private System.Windows.Forms.Label lblSifremiUnuttum;
         private System.Windows.Forms.GroupBox grbGiris;
         private System.Windows.Forms.CheckBox chkSifreGoster;
+        public System.Windows.Forms.TextBox txtGirisKullaniciAdi;
     }
 }
 
