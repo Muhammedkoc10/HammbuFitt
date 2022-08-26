@@ -31,15 +31,15 @@ namespace UI.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raporlar));
             this.grbHaftlikRapor = new System.Windows.Forms.GroupBox();
-            this.btnHaftalikRapor = new System.Windows.Forms.Button();
+            this.btnWeeklyReport = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grbAylikRapor = new System.Windows.Forms.GroupBox();
-            this.btnAylikRapor = new System.Windows.Forms.Button();
+            this.btnMonthlyReport = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.grbEncokTuketilen = new System.Windows.Forms.GroupBox();
-            this.btnTuketilenBesinler = new System.Windows.Forms.Button();
+            this.btnMostEatFoodsOnMeals = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.btnRaporlarGeriDon = new System.Windows.Forms.Button();
+            this.btnBackReportToMain = new System.Windows.Forms.Button();
             this.grbHaftlikRapor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grbAylikRapor.SuspendLayout();
@@ -51,7 +51,7 @@ namespace UI.Forms
             // grbHaftlikRapor
             // 
             this.grbHaftlikRapor.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grbHaftlikRapor.Controls.Add(this.btnHaftalikRapor);
+            this.grbHaftlikRapor.Controls.Add(this.btnWeeklyReport);
             this.grbHaftlikRapor.Controls.Add(this.dataGridView1);
             this.grbHaftlikRapor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbHaftlikRapor.Location = new System.Drawing.Point(12, 12);
@@ -61,16 +61,17 @@ namespace UI.Forms
             this.grbHaftlikRapor.TabStop = false;
             this.grbHaftlikRapor.Text = "Haftalık Rapor";
             // 
-            // btnHaftalikRapor
+            // btnWeeklyReport
             // 
-            this.btnHaftalikRapor.BackColor = System.Drawing.Color.Lavender;
-            this.btnHaftalikRapor.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHaftalikRapor.Location = new System.Drawing.Point(51, 216);
-            this.btnHaftalikRapor.Name = "btnHaftalikRapor";
-            this.btnHaftalikRapor.Size = new System.Drawing.Size(161, 42);
-            this.btnHaftalikRapor.TabIndex = 6;
-            this.btnHaftalikRapor.Text = "HAFTALIK RAPOR";
-            this.btnHaftalikRapor.UseVisualStyleBackColor = false;
+            this.btnWeeklyReport.BackColor = System.Drawing.Color.Lavender;
+            this.btnWeeklyReport.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWeeklyReport.Location = new System.Drawing.Point(51, 216);
+            this.btnWeeklyReport.Name = "btnWeeklyReport";
+            this.btnWeeklyReport.Size = new System.Drawing.Size(161, 42);
+            this.btnWeeklyReport.TabIndex = 6;
+            this.btnWeeklyReport.Text = "HAFTALIK RAPOR";
+            this.btnWeeklyReport.UseVisualStyleBackColor = false;
+            this.btnWeeklyReport.Click += new System.EventHandler(this.btnWeeklyReport_Click);
             // 
             // dataGridView1
             // 
@@ -83,7 +84,7 @@ namespace UI.Forms
             // grbAylikRapor
             // 
             this.grbAylikRapor.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grbAylikRapor.Controls.Add(this.btnAylikRapor);
+            this.grbAylikRapor.Controls.Add(this.btnMonthlyReport);
             this.grbAylikRapor.Controls.Add(this.dataGridView2);
             this.grbAylikRapor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAylikRapor.Location = new System.Drawing.Point(315, 12);
@@ -93,16 +94,17 @@ namespace UI.Forms
             this.grbAylikRapor.TabStop = false;
             this.grbAylikRapor.Text = "Aylık Rapor";
             // 
-            // btnAylikRapor
+            // btnMonthlyReport
             // 
-            this.btnAylikRapor.BackColor = System.Drawing.Color.Lavender;
-            this.btnAylikRapor.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAylikRapor.Location = new System.Drawing.Point(68, 216);
-            this.btnAylikRapor.Name = "btnAylikRapor";
-            this.btnAylikRapor.Size = new System.Drawing.Size(161, 42);
-            this.btnAylikRapor.TabIndex = 7;
-            this.btnAylikRapor.Text = "AYLIK RAPOR";
-            this.btnAylikRapor.UseVisualStyleBackColor = false;
+            this.btnMonthlyReport.BackColor = System.Drawing.Color.Lavender;
+            this.btnMonthlyReport.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMonthlyReport.Location = new System.Drawing.Point(68, 216);
+            this.btnMonthlyReport.Name = "btnMonthlyReport";
+            this.btnMonthlyReport.Size = new System.Drawing.Size(161, 42);
+            this.btnMonthlyReport.TabIndex = 7;
+            this.btnMonthlyReport.Text = "AYLIK RAPOR";
+            this.btnMonthlyReport.UseVisualStyleBackColor = false;
+            this.btnMonthlyReport.Click += new System.EventHandler(this.btnMonthlyReport_Click);
             // 
             // dataGridView2
             // 
@@ -115,7 +117,7 @@ namespace UI.Forms
             // grbEncokTuketilen
             // 
             this.grbEncokTuketilen.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grbEncokTuketilen.Controls.Add(this.btnTuketilenBesinler);
+            this.grbEncokTuketilen.Controls.Add(this.btnMostEatFoodsOnMeals);
             this.grbEncokTuketilen.Controls.Add(this.dataGridView3);
             this.grbEncokTuketilen.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbEncokTuketilen.Location = new System.Drawing.Point(618, 12);
@@ -125,16 +127,17 @@ namespace UI.Forms
             this.grbEncokTuketilen.TabStop = false;
             this.grbEncokTuketilen.Text = "Öğünere Göre En Çok Tükerilen Besinler";
             // 
-            // btnTuketilenBesinler
+            // btnMostEatFoodsOnMeals
             // 
-            this.btnTuketilenBesinler.BackColor = System.Drawing.Color.Lavender;
-            this.btnTuketilenBesinler.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTuketilenBesinler.Location = new System.Drawing.Point(6, 216);
-            this.btnTuketilenBesinler.Name = "btnTuketilenBesinler";
-            this.btnTuketilenBesinler.Size = new System.Drawing.Size(283, 42);
-            this.btnTuketilenBesinler.TabIndex = 8;
-            this.btnTuketilenBesinler.Text = "ÖĞÜNLERE GÖRE EN ÇOK TÜKETİLEN BESİNLER";
-            this.btnTuketilenBesinler.UseVisualStyleBackColor = false;
+            this.btnMostEatFoodsOnMeals.BackColor = System.Drawing.Color.Lavender;
+            this.btnMostEatFoodsOnMeals.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostEatFoodsOnMeals.Location = new System.Drawing.Point(6, 216);
+            this.btnMostEatFoodsOnMeals.Name = "btnMostEatFoodsOnMeals";
+            this.btnMostEatFoodsOnMeals.Size = new System.Drawing.Size(283, 42);
+            this.btnMostEatFoodsOnMeals.TabIndex = 8;
+            this.btnMostEatFoodsOnMeals.Text = "ÖĞÜNLERE GÖRE EN ÇOK TÜKETİLEN BESİNLER";
+            this.btnMostEatFoodsOnMeals.UseVisualStyleBackColor = false;
+            this.btnMostEatFoodsOnMeals.Click += new System.EventHandler(this.btnMostEatFoodsOnMeals_Click);
             // 
             // dataGridView3
             // 
@@ -144,17 +147,17 @@ namespace UI.Forms
             this.dataGridView3.Size = new System.Drawing.Size(285, 191);
             this.dataGridView3.TabIndex = 2;
             // 
-            // btnRaporlarGeriDon
+            // btnBackReportToMain
             // 
-            this.btnRaporlarGeriDon.BackColor = System.Drawing.Color.Pink;
-            this.btnRaporlarGeriDon.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRaporlarGeriDon.Location = new System.Drawing.Point(784, 299);
-            this.btnRaporlarGeriDon.Name = "btnRaporlarGeriDon";
-            this.btnRaporlarGeriDon.Size = new System.Drawing.Size(131, 42);
-            this.btnRaporlarGeriDon.TabIndex = 29;
-            this.btnRaporlarGeriDon.Text = "GERİ DÖN";
-            this.btnRaporlarGeriDon.UseVisualStyleBackColor = false;
-            this.btnRaporlarGeriDon.Click += new System.EventHandler(this.btnRaporlarGeriDon_Click);
+            this.btnBackReportToMain.BackColor = System.Drawing.Color.Pink;
+            this.btnBackReportToMain.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackReportToMain.Location = new System.Drawing.Point(784, 299);
+            this.btnBackReportToMain.Name = "btnBackReportToMain";
+            this.btnBackReportToMain.Size = new System.Drawing.Size(131, 42);
+            this.btnBackReportToMain.TabIndex = 29;
+            this.btnBackReportToMain.Text = "GERİ DÖN";
+            this.btnBackReportToMain.UseVisualStyleBackColor = false;
+            this.btnBackReportToMain.Click += new System.EventHandler(this.btnBackReportToMain_Click);
             // 
             // Raporlar
             // 
@@ -162,7 +165,7 @@ namespace UI.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(919, 350);
-            this.Controls.Add(this.btnRaporlarGeriDon);
+            this.Controls.Add(this.btnBackReportToMain);
             this.Controls.Add(this.grbEncokTuketilen);
             this.Controls.Add(this.grbAylikRapor);
             this.Controls.Add(this.grbHaftlikRapor);
@@ -188,9 +191,9 @@ namespace UI.Forms
         private System.Windows.Forms.GroupBox grbEncokTuketilen;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.Button btnHaftalikRapor;
-        private System.Windows.Forms.Button btnAylikRapor;
-        private System.Windows.Forms.Button btnTuketilenBesinler;
-        private System.Windows.Forms.Button btnRaporlarGeriDon;
+        private System.Windows.Forms.Button btnWeeklyReport;
+        private System.Windows.Forms.Button btnMonthlyReport;
+        private System.Windows.Forms.Button btnMostEatFoodsOnMeals;
+        private System.Windows.Forms.Button btnBackReportToMain;
     }
 }

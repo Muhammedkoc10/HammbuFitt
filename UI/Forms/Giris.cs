@@ -30,7 +30,7 @@ namespace UI
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            ReturnUserId();
+            //ReturnUserId();
             if (txtGirisKullaniciAdi.Text.Trim()!="")
             {
                 if (db.Kullacınılar.FirstOrDefault(x => x.UserName == txtGirisKullaniciAdi.Text) != null && db.Kullacınılar.FirstOrDefault(x => x.Password == txtGirisSifre.Text) != null)
@@ -74,10 +74,10 @@ namespace UI
             else
                 txtGirisSifre.PasswordChar = '*';
         }
-        public int ReturnUserId()
-        {
-            return db.Kullacınılar.Where(x => x.UserName == txtGirisKullaniciAdi.Text).FirstOrDefault().UserID;
-        }
+        //public int ReturnUserId()
+        //{
+        //    return db.Kullacınılar.Where(x => x.UserName == txtGirisKullaniciAdi.Text).FirstOrDefault().UserID;
+        //}
 
         private void grbGiris_Enter(object sender, EventArgs e)
         {

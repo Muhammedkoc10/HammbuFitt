@@ -22,11 +22,26 @@ namespace UI.Forms
             Application.Exit();
         }
 
-        private void btnRaporlarGeriDon_Click(object sender, EventArgs e)
+        private void btnBackReportToMain_Click(object sender, EventArgs e)
         {
             AnaSayfa anaSayfa = new AnaSayfa();
             this.Hide();
             anaSayfa.Show();
+        }
+
+        private void btnWeeklyReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMonthlyReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMostEatFoodsOnMeals_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

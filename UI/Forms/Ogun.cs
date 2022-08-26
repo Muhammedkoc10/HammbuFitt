@@ -30,58 +30,11 @@ namespace UI.Forms
             Application.Exit();
         }
 
-        private void btnOgunGeriDon_Click(object sender, EventArgs e)
+        private void btnMealBackToMain_Click(object sender, EventArgs e)
         {
             AnaSayfa anaSayfa = new AnaSayfa();
             this.Hide();
             anaSayfa.Show();
-        }
-
-        private void btnOgunEkle_Click(object sender, EventArgs e)
-        {
-            if (cmbMealCategorySelect.SelectedIndex < 0 || cmbMealFoodSelect.SelectedIndex < 0 || cmbMealSelect.SelectedIndex < 0)
-            {
-                MessageBox.Show("Hata! Lütfen tüm alanları doldurun..");
-            }
-            else
-            {
-                int userID = db.Kullacınılar.Where(x => x.UserName == lblHold1.Text).FirstOrDefault().UserID;
-                int mealID = db.Öğünler.OrderByDescending(x => x.AddedDate).Take(1).FirstOrDefault().MealID;
-                //db.Öğünler.Where(x=>x.AddedDate==)
-
-                Meal meal;
-                string selectedMeal = (cmbMealSelect.Text);
-                meal = new Meal()
-                {
-                    MealTime = selectedMeal,
-                    AddedDate = DateTime.Now
-                };
-                db.Öğünler.Add(meal);
-                int selectedFood = int.Parse(cmbMealFoodSelect.SelectedValue.ToString());
-                FoodMeal foodMeal;
-                foodMeal = new FoodMeal()
-                {
-                    FoodsMeal = db.Yemekler.Where(x => x.FoodID == (int)cmbMealFoodSelect.SelectedValue).FirstOrDefault(),
-                    MealsFood = db.Öğünler.Where(x => x.MealID == mealID + 1).FirstOrDefault()
-                };
-                db.ÖğünYemekleri.Add(foodMeal);
-
-                UserMeal userMeal;
-                userMeal = new UserMeal()
-                {
-                    UsersMeal = db.Kullacınılar.Where(x => x.UserID == userID).FirstOrDefault(),
-                    MealsUser = db.Öğünler.Where(x => x.MealID == mealID + 1).FirstOrDefault()
-                };
-                db.ÖğünKullanıcıları.Add(userMeal);
-                db.SaveChanges();
-                MessageBox.Show("Başarılı");
-                ListViewItem lvi = new ListViewItem();
-                lvi.Text = cmbMealCategorySelect.Text;
-                lvi.SubItems.Add(cmbMealFoodSelect.Text);
-                lvi.SubItems.Add(cmbMealSelect.Text);
-                lstShowMeal.Items.Add(lvi);
-                //temiizle
-            }
         }
 
         private void Ogun_Load(object sender, EventArgs e)
@@ -128,28 +81,71 @@ namespace UI.Forms
             }
         }
 
-        private void btnGunlukOgunlerBilgisi_Click(object sender, EventArgs e)
+        private void btnDailyMealInfo_Click(object sender, EventArgs e)
         {
-            //int userID = db.Kullacınılar.Where(x => x.UserName == lblHold1.Text).FirstOrDefault().UserID;
-
             DateTime end = DateTime.Now;
             DateTime start = DateTime.Now.Date;
-
-            var UserId = db.ÖğünKullanıcıları.Where(x => x.MealsUser.AddedDate >= start && x.MealsUser.AddedDate <= end).FirstOrDefault().UserID;
-            var mealId = db.ÖğünKullanıcıları.Where(x => x.MealsUser.AddedDate >= start && x.MealsUser.AddedDate <= end).Select(x=>new { x.MealID}).ToList();
-            var FoodId = db.ÖğünYemekleri.Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end).Select(x => new { x.FoodID }).ToList();
-
-
-            dgvMealDaily.ColumnCount = 3;
-            dgvMealDaily.Columns[0].Name = "Öğün";
-            dgvMealDaily.Columns[1].Name = "Yemek";
-            dgvMealDaily.Columns[2].Name = "Kalori";
-            foreach (var item in db.Öğünler.Where(x => x.AddedDate >= start && x.AddedDate <= end).Select(x => new { x.MealTime }))
+ 
+            var ogunler = db.ÖğünYemekleri.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start &&x.MealsFood.AddedDate <= end).ToList();
+            foreach (var item in ogunler)
             {
-                dgvMealDaily.Rows.Add(item);
+                dgvMealDaily.Rows.Add(item.MealsFood.MealTime, item.FoodsMeal.FoodName, item.FoodsMeal.Calories);
             }
-           
+        }
 
+        private void btnDailyCalories_Click(object sender, EventArgs e)
+        {
+            DateTime end = DateTime.Now;
+            DateTime start = DateTime.Now.Date;
+            double result = db.ÖğünYemekleri.Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end).Sum(x=>x.FoodsMeal.Calories);
+            MessageBox.Show(result.ToString());
+        }
+
+        private void btnAddMeal_Click(object sender, EventArgs e)
+        {
+            if (cmbMealCategorySelect.SelectedIndex < 0 || cmbMealFoodSelect.SelectedIndex < 0 || cmbMealSelect.SelectedIndex < 0)
+            {
+                MessageBox.Show("Hata! Lütfen tüm alanları doldurun..");
+            }
+            else
+            {
+                int userID = db.Kullacınılar.Where(x => x.UserName == lblHold1.Text).FirstOrDefault().UserID;
+                int mealID = db.Öğünler.OrderByDescending(x => x.AddedDate).Take(1).FirstOrDefault().MealID;
+                //db.Öğünler.Where(x=>x.AddedDate==)
+
+                Meal meal;
+                string selectedMeal = (cmbMealSelect.Text);
+                meal = new Meal()
+                {
+                    MealTime = selectedMeal,
+                    AddedDate = DateTime.Now
+                };
+                db.Öğünler.Add(meal);
+                int selectedFood = int.Parse(cmbMealFoodSelect.SelectedValue.ToString());
+                FoodMeal foodMeal;
+                foodMeal = new FoodMeal()
+                {
+                    FoodsMeal = db.Yemekler.Where(x => x.FoodID == (int)cmbMealFoodSelect.SelectedValue).FirstOrDefault(),
+                    MealsFood = db.Öğünler.Where(x => x.MealID == mealID + 1).FirstOrDefault()
+                };
+                db.ÖğünYemekleri.Add(foodMeal);
+
+                UserMeal userMeal;
+                userMeal = new UserMeal()
+                {
+                    UsersMeal = db.Kullacınılar.Where(x => x.UserID == userID).FirstOrDefault(),
+                    MealsUser = db.Öğünler.Where(x => x.MealID == mealID + 1).FirstOrDefault()
+                };
+                db.ÖğünKullanıcıları.Add(userMeal);
+                db.SaveChanges();
+                MessageBox.Show("Başarılı");
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = cmbMealCategorySelect.Text;
+                lvi.SubItems.Add(cmbMealFoodSelect.Text);
+                lvi.SubItems.Add(cmbMealSelect.Text);
+                lstShowMeal.Items.Add(lvi);
+                //temiizle
+            }
         }
     }
 }

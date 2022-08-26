@@ -35,32 +35,33 @@ namespace UI.Forms
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnOgunEkle = new System.Windows.Forms.Button();
+            this.btnAddMeal = new System.Windows.Forms.Button();
             this.cmbMealSelect = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbMealFoodSelect = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbMealCategorySelect = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.grbOgunRapor = new System.Windows.Forms.GroupBox();
-            this.btnAylikKaloriOrtalamasi = new System.Windows.Forms.Button();
-            this.btnGunlukOgunlerBilgisi = new System.Windows.Forms.Button();
-            this.dgvHaftalikVeAylikKalori = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnOgunGeriDon = new System.Windows.Forms.Button();
+            this.btnMealBackToMain = new System.Windows.Forms.Button();
             this.lblHold1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnDailyMealInfo = new System.Windows.Forms.Button();
+            this.btnDailyCalories = new System.Windows.Forms.Button();
             this.dgvMealDaily = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grbOgunRapor = new System.Windows.Forms.GroupBox();
             this.grbOgunEkle.SuspendLayout();
-            this.grbOgunRapor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHaftalikVeAylikKalori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMealDaily)).BeginInit();
+            this.grbOgunRapor.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbOgunEkle
             // 
             this.grbOgunEkle.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.grbOgunEkle.Controls.Add(this.lstShowMeal);
-            this.grbOgunEkle.Controls.Add(this.btnOgunEkle);
+            this.grbOgunEkle.Controls.Add(this.btnAddMeal);
             this.grbOgunEkle.Controls.Add(this.cmbMealSelect);
             this.grbOgunEkle.Controls.Add(this.label3);
             this.grbOgunEkle.Controls.Add(this.cmbMealFoodSelect);
@@ -104,17 +105,17 @@ namespace UI.Forms
             this.columnHeader3.Text = "Öğünü:";
             this.columnHeader3.Width = 68;
             // 
-            // btnOgunEkle
+            // btnAddMeal
             // 
-            this.btnOgunEkle.BackColor = System.Drawing.Color.Lime;
-            this.btnOgunEkle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOgunEkle.Location = new System.Drawing.Point(191, 293);
-            this.btnOgunEkle.Name = "btnOgunEkle";
-            this.btnOgunEkle.Size = new System.Drawing.Size(161, 42);
-            this.btnOgunEkle.TabIndex = 11;
-            this.btnOgunEkle.Text = "ÖĞÜN EKLE";
-            this.btnOgunEkle.UseVisualStyleBackColor = false;
-            this.btnOgunEkle.Click += new System.EventHandler(this.btnOgunEkle_Click);
+            this.btnAddMeal.BackColor = System.Drawing.Color.Lime;
+            this.btnAddMeal.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMeal.Location = new System.Drawing.Point(191, 293);
+            this.btnAddMeal.Name = "btnAddMeal";
+            this.btnAddMeal.Size = new System.Drawing.Size(161, 42);
+            this.btnAddMeal.TabIndex = 11;
+            this.btnAddMeal.Text = "ÖĞÜN EKLE";
+            this.btnAddMeal.UseVisualStyleBackColor = false;
+            this.btnAddMeal.Click += new System.EventHandler(this.btnAddMeal_Click);
             // 
             // cmbMealSelect
             // 
@@ -184,76 +185,17 @@ namespace UI.Forms
             this.label1.TabIndex = 4;
             this.label1.Text = "Kategori Seç:";
             // 
-            // grbOgunRapor
+            // btnMealBackToMain
             // 
-            this.grbOgunRapor.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grbOgunRapor.Controls.Add(this.dgvMealDaily);
-            this.grbOgunRapor.Controls.Add(this.btnAylikKaloriOrtalamasi);
-            this.grbOgunRapor.Controls.Add(this.btnGunlukOgunlerBilgisi);
-            this.grbOgunRapor.Controls.Add(this.dgvHaftalikVeAylikKalori);
-            this.grbOgunRapor.Controls.Add(this.label4);
-            this.grbOgunRapor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbOgunRapor.Location = new System.Drawing.Point(376, 12);
-            this.grbOgunRapor.Name = "grbOgunRapor";
-            this.grbOgunRapor.Size = new System.Drawing.Size(554, 350);
-            this.grbOgunRapor.TabIndex = 1;
-            this.grbOgunRapor.TabStop = false;
-            this.grbOgunRapor.Text = "Öğün Raporu";
-            // 
-            // btnAylikKaloriOrtalamasi
-            // 
-            this.btnAylikKaloriOrtalamasi.BackColor = System.Drawing.Color.DarkRed;
-            this.btnAylikKaloriOrtalamasi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAylikKaloriOrtalamasi.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAylikKaloriOrtalamasi.Location = new System.Drawing.Point(364, 280);
-            this.btnAylikKaloriOrtalamasi.Name = "btnAylikKaloriOrtalamasi";
-            this.btnAylikKaloriOrtalamasi.Size = new System.Drawing.Size(161, 55);
-            this.btnAylikKaloriOrtalamasi.TabIndex = 13;
-            this.btnAylikKaloriOrtalamasi.Text = "AYLIK KALORİ ORTALAMASI";
-            this.btnAylikKaloriOrtalamasi.UseVisualStyleBackColor = false;
-            // 
-            // btnGunlukOgunlerBilgisi
-            // 
-            this.btnGunlukOgunlerBilgisi.BackColor = System.Drawing.Color.DarkRed;
-            this.btnGunlukOgunlerBilgisi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGunlukOgunlerBilgisi.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnGunlukOgunlerBilgisi.Location = new System.Drawing.Point(67, 280);
-            this.btnGunlukOgunlerBilgisi.Name = "btnGunlukOgunlerBilgisi";
-            this.btnGunlukOgunlerBilgisi.Size = new System.Drawing.Size(161, 55);
-            this.btnGunlukOgunlerBilgisi.TabIndex = 12;
-            this.btnGunlukOgunlerBilgisi.Text = "GÜNLÜK ÖĞÜNLER BİLGİSİ";
-            this.btnGunlukOgunlerBilgisi.UseVisualStyleBackColor = false;
-            this.btnGunlukOgunlerBilgisi.Click += new System.EventHandler(this.btnGunlukOgunlerBilgisi_Click);
-            // 
-            // dgvHaftalikVeAylikKalori
-            // 
-            this.dgvHaftalikVeAylikKalori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHaftalikVeAylikKalori.Location = new System.Drawing.Point(319, 45);
-            this.dgvHaftalikVeAylikKalori.Name = "dgvHaftalikVeAylikKalori";
-            this.dgvHaftalikVeAylikKalori.Size = new System.Drawing.Size(229, 231);
-            this.dgvHaftalikVeAylikKalori.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(93, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Günlük Öğünler";
-            // 
-            // btnOgunGeriDon
-            // 
-            this.btnOgunGeriDon.BackColor = System.Drawing.Color.Pink;
-            this.btnOgunGeriDon.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOgunGeriDon.Location = new System.Drawing.Point(799, 368);
-            this.btnOgunGeriDon.Name = "btnOgunGeriDon";
-            this.btnOgunGeriDon.Size = new System.Drawing.Size(131, 42);
-            this.btnOgunGeriDon.TabIndex = 29;
-            this.btnOgunGeriDon.Text = "GERİ DÖN";
-            this.btnOgunGeriDon.UseVisualStyleBackColor = false;
-            this.btnOgunGeriDon.Click += new System.EventHandler(this.btnOgunGeriDon_Click);
+            this.btnMealBackToMain.BackColor = System.Drawing.Color.Pink;
+            this.btnMealBackToMain.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMealBackToMain.Location = new System.Drawing.Point(502, 368);
+            this.btnMealBackToMain.Name = "btnMealBackToMain";
+            this.btnMealBackToMain.Size = new System.Drawing.Size(131, 42);
+            this.btnMealBackToMain.TabIndex = 29;
+            this.btnMealBackToMain.Text = "GERİ DÖN";
+            this.btnMealBackToMain.UseVisualStyleBackColor = false;
+            this.btnMealBackToMain.Click += new System.EventHandler(this.btnMealBackToMain_Click);
             // 
             // lblHold1
             // 
@@ -264,22 +206,92 @@ namespace UI.Forms
             this.lblHold1.TabIndex = 30;
             this.lblHold1.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(129, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Günlük Öğünler";
+            // 
+            // btnDailyMealInfo
+            // 
+            this.btnDailyMealInfo.BackColor = System.Drawing.Color.DarkRed;
+            this.btnDailyMealInfo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDailyMealInfo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDailyMealInfo.Location = new System.Drawing.Point(16, 280);
+            this.btnDailyMealInfo.Name = "btnDailyMealInfo";
+            this.btnDailyMealInfo.Size = new System.Drawing.Size(161, 55);
+            this.btnDailyMealInfo.TabIndex = 12;
+            this.btnDailyMealInfo.Text = "GÜNLÜK ÖĞÜNLER BİLGİSİ";
+            this.btnDailyMealInfo.UseVisualStyleBackColor = false;
+            this.btnDailyMealInfo.Click += new System.EventHandler(this.btnDailyMealInfo_Click);
+            // 
+            // btnDailyCalories
+            // 
+            this.btnDailyCalories.BackColor = System.Drawing.Color.DarkRed;
+            this.btnDailyCalories.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDailyCalories.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDailyCalories.Location = new System.Drawing.Point(204, 280);
+            this.btnDailyCalories.Name = "btnDailyCalories";
+            this.btnDailyCalories.Size = new System.Drawing.Size(161, 55);
+            this.btnDailyCalories.TabIndex = 13;
+            this.btnDailyCalories.Text = "GÜNLÜK TOPLAM ALDIĞINIZ KALORİ";
+            this.btnDailyCalories.UseVisualStyleBackColor = false;
+            this.btnDailyCalories.Click += new System.EventHandler(this.btnDailyCalories_Click);
+            // 
             // dgvMealDaily
             // 
             this.dgvMealDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMealDaily.Location = new System.Drawing.Point(7, 45);
+            this.dgvMealDaily.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dgvMealDaily.Location = new System.Drawing.Point(16, 42);
             this.dgvMealDaily.Name = "dgvMealDaily";
-            this.dgvMealDaily.Size = new System.Drawing.Size(296, 229);
-            this.dgvMealDaily.TabIndex = 14;
+            this.dgvMealDaily.Size = new System.Drawing.Size(335, 220);
+            this.dgvMealDaily.TabIndex = 15;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Öğün";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Yemek";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Kalori";
+            this.Column3.Name = "Column3";
+            // 
+            // grbOgunRapor
+            // 
+            this.grbOgunRapor.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grbOgunRapor.Controls.Add(this.dgvMealDaily);
+            this.grbOgunRapor.Controls.Add(this.btnDailyCalories);
+            this.grbOgunRapor.Controls.Add(this.btnDailyMealInfo);
+            this.grbOgunRapor.Controls.Add(this.label4);
+            this.grbOgunRapor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbOgunRapor.Location = new System.Drawing.Point(376, 12);
+            this.grbOgunRapor.Name = "grbOgunRapor";
+            this.grbOgunRapor.Size = new System.Drawing.Size(377, 350);
+            this.grbOgunRapor.TabIndex = 1;
+            this.grbOgunRapor.TabStop = false;
+            this.grbOgunRapor.Text = "Öğün Raporu";
             // 
             // Ogun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(940, 412);
+            this.ClientSize = new System.Drawing.Size(753, 420);
             this.Controls.Add(this.lblHold1);
-            this.Controls.Add(this.btnOgunGeriDon);
+            this.Controls.Add(this.btnMealBackToMain);
             this.Controls.Add(this.grbOgunRapor);
             this.Controls.Add(this.grbOgunEkle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -289,10 +301,9 @@ namespace UI.Forms
             this.Load += new System.EventHandler(this.Ogun_Load);
             this.grbOgunEkle.ResumeLayout(false);
             this.grbOgunEkle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMealDaily)).EndInit();
             this.grbOgunRapor.ResumeLayout(false);
             this.grbOgunRapor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHaftalikVeAylikKalori)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMealDaily)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,24 +312,26 @@ namespace UI.Forms
         #endregion
 
         private System.Windows.Forms.GroupBox grbOgunEkle;
-        private System.Windows.Forms.GroupBox grbOgunRapor;
         private System.Windows.Forms.ComboBox cmbMealSelect;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbMealFoodSelect;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbMealCategorySelect;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnOgunEkle;
-        private System.Windows.Forms.Button btnAylikKaloriOrtalamasi;
-        private System.Windows.Forms.Button btnGunlukOgunlerBilgisi;
-        private System.Windows.Forms.DataGridView dgvHaftalikVeAylikKalori;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnOgunGeriDon;
+        private System.Windows.Forms.Button btnAddMeal;
+        private System.Windows.Forms.Button btnMealBackToMain;
         private System.Windows.Forms.Label lblHold1;
         private System.Windows.Forms.ListView lstShowMeal;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnDailyMealInfo;
+        private System.Windows.Forms.Button btnDailyCalories;
         private System.Windows.Forms.DataGridView dgvMealDaily;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.GroupBox grbOgunRapor;
     }
 }

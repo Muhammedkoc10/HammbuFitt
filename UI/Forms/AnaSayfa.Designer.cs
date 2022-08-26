@@ -126,13 +126,14 @@ namespace UI.Forms
             this.lblHold2.Name = "lblHold2";
             this.lblHold2.Size = new System.Drawing.Size(0, 13);
             this.lblHold2.TabIndex = 9;
+            this.lblHold2.Visible = false;
             // 
             // AnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(286, 348);
+            this.ClientSize = new System.Drawing.Size(286, 411);
             this.Controls.Add(this.lblHold2);
             this.Controls.Add(this.grbAnaSayfa);
             this.Name = "AnaSayfa";
