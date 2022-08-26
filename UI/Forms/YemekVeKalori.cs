@@ -184,8 +184,15 @@ namespace UI.Forms
         {
             using (var ms = new MemoryStream())
             {
-                imageIn.Save(ms, imageIn.RawFormat);
-                return ms.ToArray();
+                if (imageIn!=null)
+                {
+                    imageIn.Save(ms, imageIn.RawFormat);
+                    return ms.ToArray();
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 

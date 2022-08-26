@@ -16,10 +16,13 @@ namespace UI.Forms
     public partial class Ogun : Form
     {
         Context db;
+        
+       
         public Ogun(string datas)
         {
             InitializeComponent();
             lblHold1.Text = datas;
+
         }
 
         private void Ogun_FormClosed(object sender, FormClosedEventArgs e)
@@ -86,6 +89,7 @@ namespace UI.Forms
             FillCategory();
             cmbMealFoodSelect.Enabled = false;
             cmbMealSelect.Enabled = false;
+
         }
         private void FillCategory(int SelectedCategory = -1)
         {
@@ -131,13 +135,20 @@ namespace UI.Forms
             DateTime end = DateTime.Now;
             DateTime start = DateTime.Now.Date;
 
-           var result= db.ÖğünKullanıcıları.Where(x => x.MealsUser.AddedDate >= start && x.MealsUser.AddedDate <= end).Select(x=>new 
-           { 
-               x.UsersMeal.FirstName,
-               x.MealsUser.MealTime
-           }).ToList();
-            dgvMealDaily.DataSource = result;
+            var UserId = db.ÖğünKullanıcıları.Where(x => x.MealsUser.AddedDate >= start && x.MealsUser.AddedDate <= end).FirstOrDefault().UserID;
+            var mealId = db.ÖğünKullanıcıları.Where(x => x.MealsUser.AddedDate >= start && x.MealsUser.AddedDate <= end).Select(x=>new { x.MealID}).ToList();
+            var FoodId = db.ÖğünYemekleri.Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end).Select(x => new { x.FoodID }).ToList();
 
+
+            dgvMealDaily.ColumnCount = 3;
+            dgvMealDaily.Columns[0].Name = "Öğün";
+            dgvMealDaily.Columns[1].Name = "Yemek";
+            dgvMealDaily.Columns[2].Name = "Kalori";
+            foreach (var item in db.Öğünler.Where(x => x.AddedDate >= start && x.AddedDate <= end).Select(x => new { x.MealTime }))
+            {
+                dgvMealDaily.Rows.Add(item);
+            }
+           
 
         }
     }

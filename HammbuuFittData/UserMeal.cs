@@ -14,5 +14,6 @@ namespace HammbuuFittData
         // Navigation Properties
         public virtual Meal MealsUser { get; set; }
         public virtual User UsersMeal { get; set; }
+
     }
 }
