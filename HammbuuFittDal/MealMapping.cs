@@ -15,6 +15,7 @@ namespace HammbuuFittDal
             ToTable("Öğün")
                 .HasKey(x => x.MealID);
             Property(x => x.MealTime).HasMaxLength(30);
+            Property(x => x.AddedDate).HasColumnType("datetime2");
             HasMany<FoodMeal>(x => x.FoodMeals).WithRequired(x => x.MealsFood).HasForeignKey(x => x.MealID);
             HasMany<UserMeal>(x => x.UsersMeals).WithRequired(x => x.MealsUser).HasForeignKey(x => x.MealID);
         }
