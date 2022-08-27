@@ -18,10 +18,8 @@ namespace HammbuuFittData
         public byte[] Photo { get; set; }
         public string PhotoPath { get; set; }
 
-        // Navigation Property
+        // Navigation Properties
         public virtual Category Categories { get; set; }
         public virtual List<FoodMeal> FoodsMeals{ get; set; }
-
-       
     }
 }

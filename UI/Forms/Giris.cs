@@ -30,7 +30,6 @@ namespace UI
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            //ReturnUserId();
             if (txtGirisKullaniciAdi.Text.Trim()!="")
             {
                 if (db.Kullacınılar.FirstOrDefault(x => x.UserName == txtGirisKullaniciAdi.Text) != null && db.Kullacınılar.FirstOrDefault(x => x.Password == txtGirisSifre.Text) != null)

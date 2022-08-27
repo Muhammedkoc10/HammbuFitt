@@ -20,7 +20,7 @@ namespace HammbuuFittDal
         public DbSet<FoodMeal> ÖğünYemekleri { get; set; }
         public DbSet<Meal> Öğünler { get; set; }
         public DbSet<User> Kullacınılar { get; set; }
-        public DbSet<UserMeal> ÖğünKullanıcıları { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -28,7 +28,6 @@ namespace HammbuuFittDal
             modelBuilder.Configurations.Add(new FoodMapping());
             modelBuilder.Configurations.Add(new UserMapping());
             modelBuilder.Configurations.Add(new MealMapping());
-            modelBuilder.Configurations.Add(new UserMealMapping());
             modelBuilder.Configurations.Add(new FoodMealMapping());
 
             base.OnModelCreating(modelBuilder);

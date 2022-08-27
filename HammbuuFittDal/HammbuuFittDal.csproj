@@ -61,7 +61,6 @@
     <Compile Include="FoodMealMapping.cs" />
     <Compile Include="MealMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserMealMapping.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

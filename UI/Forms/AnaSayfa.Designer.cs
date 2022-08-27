@@ -36,6 +36,7 @@ namespace UI.Forms
             this.btnAnaSayfaOgunTakip = new System.Windows.Forms.Button();
             this.btnAnaSayfaYemekKalori = new System.Windows.Forms.Button();
             this.lblHold2 = new System.Windows.Forms.Label();
+            this.lblHold4 = new System.Windows.Forms.Label();
             this.grbAnaSayfa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,12 +129,22 @@ namespace UI.Forms
             this.lblHold2.TabIndex = 9;
             this.lblHold2.Visible = false;
             // 
+            // lblHold4
+            // 
+            this.lblHold4.AutoSize = true;
+            this.lblHold4.Location = new System.Drawing.Point(187, 371);
+            this.lblHold4.Name = "lblHold4";
+            this.lblHold4.Size = new System.Drawing.Size(0, 13);
+            this.lblHold4.TabIndex = 10;
+            this.lblHold4.Visible = false;
+            // 
             // AnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(286, 411);
+            this.ClientSize = new System.Drawing.Size(286, 351);
+            this.Controls.Add(this.lblHold4);
             this.Controls.Add(this.lblHold2);
             this.Controls.Add(this.grbAnaSayfa);
             this.Name = "AnaSayfa";
@@ -155,5 +166,6 @@ namespace UI.Forms
         private System.Windows.Forms.Button btnAnaSayfaYemekKalori;
         private System.Windows.Forms.Button btnAnaSayfaGirisEkraninaDon;
         private System.Windows.Forms.Label lblHold2;
+        private System.Windows.Forms.Label lblHold4;
     }
 }

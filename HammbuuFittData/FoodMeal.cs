@@ -10,9 +10,11 @@ namespace HammbuuFittData
     {
         public int MealID { get; set; }
         public int FoodID { get; set; }
+        public int UserID { get; set; }
 
         // Navigation Properties
         public virtual Meal MealsFood { get; set; }
         public virtual Food FoodsMeal { get; set; }
+        public virtual User UsersMeal { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace UI.Forms
 
         private void btnYemekVeKaloriGeriDon_Click(object sender, EventArgs e)
         {
-            AnaSayfa anaSayfa = new AnaSayfa();
+            AnaSayfa anaSayfa = new AnaSayfa("");
             this.Hide();
             anaSayfa.Show();
             //cmbKaloriVeBesinBesinSec.Enabled = false;

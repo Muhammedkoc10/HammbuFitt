@@ -13,12 +13,13 @@ namespace UI.Forms
 {
     public partial class AnaSayfa : Form
     {
-        public AnaSayfa(string data="")
+        public AnaSayfa(string data)
         {
             InitializeComponent();
             lblHold2.Text = data;
+            lblHold4.Text = data;
         }
-
+        
         private void btnAnaSayfaGirisEkraninaDon_Click(object sender, EventArgs e)
         {
             Giriş giris = new Giriş();
@@ -54,7 +55,7 @@ namespace UI.Forms
 
         private void btnAnaSayfaRaporlar_Click(object sender, EventArgs e)
         {
-            Raporlar raporlar = new Raporlar();
+            Raporlar raporlar = new Raporlar(lblHold4.Text);
             this.Hide();
             raporlar.Show();
         }

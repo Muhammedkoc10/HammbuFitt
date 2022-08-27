@@ -32,18 +32,23 @@ namespace UI.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raporlar));
             this.grbHaftlikRapor = new System.Windows.Forms.GroupBox();
             this.btnWeeklyReport = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvWeeklyReport = new System.Windows.Forms.DataGridView();
+            this.Günler = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KaloriOrtalamasi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbAylikRapor = new System.Windows.Forms.GroupBox();
             this.btnMonthlyReport = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvMonthlyReport = new System.Windows.Forms.DataGridView();
             this.grbEncokTuketilen = new System.Windows.Forms.GroupBox();
             this.btnMostEatFoodsOnMeals = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.btnBackReportToMain = new System.Windows.Forms.Button();
+            this.lblHold3 = new System.Windows.Forms.Label();
+            this.Haftalar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kalori = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbHaftlikRapor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeeklyReport)).BeginInit();
             this.grbAylikRapor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthlyReport)).BeginInit();
             this.grbEncokTuketilen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +57,7 @@ namespace UI.Forms
             // 
             this.grbHaftlikRapor.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.grbHaftlikRapor.Controls.Add(this.btnWeeklyReport);
-            this.grbHaftlikRapor.Controls.Add(this.dataGridView1);
+            this.grbHaftlikRapor.Controls.Add(this.dgvWeeklyReport);
             this.grbHaftlikRapor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbHaftlikRapor.Location = new System.Drawing.Point(12, 12);
             this.grbHaftlikRapor.Name = "grbHaftlikRapor";
@@ -73,19 +78,32 @@ namespace UI.Forms
             this.btnWeeklyReport.UseVisualStyleBackColor = false;
             this.btnWeeklyReport.Click += new System.EventHandler(this.btnWeeklyReport_Click);
             // 
-            // dataGridView1
+            // dgvWeeklyReport
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(285, 191);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvWeeklyReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWeeklyReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Günler,
+            this.KaloriOrtalamasi});
+            this.dgvWeeklyReport.Location = new System.Drawing.Point(6, 19);
+            this.dgvWeeklyReport.Name = "dgvWeeklyReport";
+            this.dgvWeeklyReport.Size = new System.Drawing.Size(247, 191);
+            this.dgvWeeklyReport.TabIndex = 0;
+            // 
+            // Günler
+            // 
+            this.Günler.HeaderText = "Günler";
+            this.Günler.Name = "Günler";
+            // 
+            // KaloriOrtalamasi
+            // 
+            this.KaloriOrtalamasi.HeaderText = "Kalori Ortalaması";
+            this.KaloriOrtalamasi.Name = "KaloriOrtalamasi";
             // 
             // grbAylikRapor
             // 
             this.grbAylikRapor.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.grbAylikRapor.Controls.Add(this.btnMonthlyReport);
-            this.grbAylikRapor.Controls.Add(this.dataGridView2);
+            this.grbAylikRapor.Controls.Add(this.dgvMonthlyReport);
             this.grbAylikRapor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAylikRapor.Location = new System.Drawing.Point(315, 12);
             this.grbAylikRapor.Name = "grbAylikRapor";
@@ -106,13 +124,16 @@ namespace UI.Forms
             this.btnMonthlyReport.UseVisualStyleBackColor = false;
             this.btnMonthlyReport.Click += new System.EventHandler(this.btnMonthlyReport_Click);
             // 
-            // dataGridView2
+            // dgvMonthlyReport
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(285, 191);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvMonthlyReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMonthlyReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Haftalar,
+            this.Kalori});
+            this.dgvMonthlyReport.Location = new System.Drawing.Point(6, 19);
+            this.dgvMonthlyReport.Name = "dgvMonthlyReport";
+            this.dgvMonthlyReport.Size = new System.Drawing.Size(285, 191);
+            this.dgvMonthlyReport.TabIndex = 1;
             // 
             // grbEncokTuketilen
             // 
@@ -159,12 +180,32 @@ namespace UI.Forms
             this.btnBackReportToMain.UseVisualStyleBackColor = false;
             this.btnBackReportToMain.Click += new System.EventHandler(this.btnBackReportToMain_Click);
             // 
+            // lblHold3
+            // 
+            this.lblHold3.AutoSize = true;
+            this.lblHold3.Location = new System.Drawing.Point(253, 325);
+            this.lblHold3.Name = "lblHold3";
+            this.lblHold3.Size = new System.Drawing.Size(0, 13);
+            this.lblHold3.TabIndex = 30;
+            this.lblHold3.Visible = false;
+            // 
+            // Haftalar
+            // 
+            this.Haftalar.HeaderText = "Haftalar";
+            this.Haftalar.Name = "Haftalar";
+            // 
+            // Kalori
+            // 
+            this.Kalori.HeaderText = "Kalori Ortalaması";
+            this.Kalori.Name = "Kalori";
+            // 
             // Raporlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(919, 350);
+            this.Controls.Add(this.lblHold3);
             this.Controls.Add(this.btnBackReportToMain);
             this.Controls.Add(this.grbEncokTuketilen);
             this.Controls.Add(this.grbAylikRapor);
@@ -173,27 +214,34 @@ namespace UI.Forms
             this.Name = "Raporlar";
             this.Text = "Raporlar";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Raporlar_FormClosed);
+            this.Load += new System.EventHandler(this.Raporlar_Load);
             this.grbHaftlikRapor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeeklyReport)).EndInit();
             this.grbAylikRapor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonthlyReport)).EndInit();
             this.grbEncokTuketilen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox grbHaftlikRapor;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvWeeklyReport;
         private System.Windows.Forms.GroupBox grbAylikRapor;
         private System.Windows.Forms.GroupBox grbEncokTuketilen;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvMonthlyReport;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button btnWeeklyReport;
         private System.Windows.Forms.Button btnMonthlyReport;
         private System.Windows.Forms.Button btnMostEatFoodsOnMeals;
         private System.Windows.Forms.Button btnBackReportToMain;
+        private System.Windows.Forms.Label lblHold3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Günler;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KaloriOrtalamasi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Haftalar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Kalori;
     }
 }
