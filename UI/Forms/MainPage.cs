@@ -47,9 +47,9 @@ namespace UI.Forms
 
         private void btnMealPage_Click(object sender, EventArgs e)
         {
-            MealPage ogun = new MealPage(lblHold2.Text);
+            MealPage meal = new MealPage(lblHold2.Text);
             this.Hide();
-            ogun.Show();
+            meal.Show();
         }
 
         private void btnReportsPage_Click(object sender, EventArgs e)

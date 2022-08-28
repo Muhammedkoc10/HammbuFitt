@@ -43,8 +43,8 @@ namespace UI.Forms
         private void FillCategory(int SelectedCategory = -1)
         {
             db = new Context();
-            List<Category> kategoriler = db.Categories.ToList();
-            cmbMealCategorySelect.DataSource = kategoriler;
+            List<Category> categories = db.Categories.ToList();
+            cmbMealCategorySelect.DataSource = categories;
             cmbMealCategorySelect.DisplayMember = "CategoryName";
             cmbMealCategorySelect.ValueMember = "CategoryID";
             cmbMealCategorySelect.SelectedValue = SelectedCategory;

@@ -47,9 +47,9 @@ namespace UI.Forms
         
         private void btnBackMainPage_Click(object sender, EventArgs e)
         {
-            MainPage anaSayfa = new MainPage(lblHold.Text);
+            MainPage mainPage = new MainPage(lblHold.Text);
             this.Hide();
-            anaSayfa.Show();
+            mainPage.Show();
         }
         private int UserIdFill()
         {

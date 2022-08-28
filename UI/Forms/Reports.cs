@@ -28,9 +28,9 @@ namespace UI.Forms
 
         private void btnBackReportToMain_Click(object sender, EventArgs e)
         {
-            MainPage anaSayfa = new MainPage(lblHold3.Text);
+            MainPage mainPage = new MainPage(lblHold3.Text);
             this.Hide();
-            anaSayfa.Show();
+            mainPage.Show();
         }
 
         private void btnWeeklyReport_Click(object sender, EventArgs e)
