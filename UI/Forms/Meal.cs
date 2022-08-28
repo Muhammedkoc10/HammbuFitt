@@ -12,29 +12,28 @@ using System.Windows.Forms;
 
 namespace UI.Forms
 {
-
-    public partial class Ogun : Form
+    public partial class MealPage : Form
     {
         Context db;
-        public Ogun(string dataas)
+        public MealPage(string datas)
         {
             InitializeComponent();
-            lblHold1.Text = dataas;
+            lblHold1.Text = datas;
         }
 
-        private void Ogun_FormClosed(object sender, FormClosedEventArgs e)
+        private void Meal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
         private void btnMealBackToMain_Click(object sender, EventArgs e)
         {
-            AnaSayfa anaSayfa = new AnaSayfa(lblHold1.Text);
+            MainPage mainPage = new MainPage(lblHold1.Text);
             this.Hide();
-            anaSayfa.Show();
+            mainPage.Show();
         }
 
-        private void Ogun_Load(object sender, EventArgs e)
+        private void Meal_Load(object sender, EventArgs e)
         {
             FillCategory();
             cmbMealFoodSelect.Enabled = false;
@@ -44,7 +43,7 @@ namespace UI.Forms
         private void FillCategory(int SelectedCategory = -1)
         {
             db = new Context();
-            List<Category> kategoriler = db.Kategoriler.ToList();
+            List<Category> kategoriler = db.Categories.ToList();
             cmbMealCategorySelect.DataSource = kategoriler;
             cmbMealCategorySelect.DisplayMember = "CategoryName";
             cmbMealCategorySelect.ValueMember = "CategoryID";
@@ -63,7 +62,7 @@ namespace UI.Forms
         }
         public void FoodFill(int x)
         {
-            List<Food> foods = db.Yemekler.Where(w => w.CategoryID == x).ToList();
+            List<Food> foods = db.Foods.Where(w => w.CategoryID == x).ToList();
             cmbMealFoodSelect.DataSource = foods;
             cmbMealFoodSelect.DisplayMember = "FoodName";
             cmbMealFoodSelect.ValueMember = "FoodID";
@@ -86,7 +85,7 @@ namespace UI.Forms
             DateTime start = DateTime.Now.Date;
             try
             {
-                var allMeals = db.ÖğünYemekleri.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).ToList();
+                var allMeals = db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).ToList();
                 if (allMeals.Count!=0)
                 {
                     foreach (var item in allMeals)
@@ -110,7 +109,7 @@ namespace UI.Forms
         {
             int userID = 0;
             if (lblHold1.Text.Trim() != "")
-                return userID = db.Kullacınılar.Where(x => x.UserName == lblHold1.Text).FirstOrDefault().UserID;
+                return userID = db.Users.Where(x => x.UserName == lblHold1.Text).FirstOrDefault().UserID;
             else
             {
                 MessageBox.Show("Hata oluştu lütfen tekrar deneyiniz.");
@@ -127,8 +126,8 @@ namespace UI.Forms
 
             try
             {
-                double result = db.ÖğünYemekleri.Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories);//düzelt
-                if (db.ÖğünYemekleri.Where(x => x.UsersMeal.UserID == userID).FirstOrDefault().UsersMeal.BasalMetabolismRate > (decimal)result)
+                double result = db.MealFoods.Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories);//düzelt
+                if (db.MealFoods.Where(x => x.UsersMeal.UserID == userID).FirstOrDefault().UsersMeal.BasalMetabolismRate > (decimal)result)
                     MessageBox.Show("Şu ana kadar günlük almanız gereken kalorinin altındasınız!");
                 else
                     MessageBox.Show("Şu ana kadar günlük almanız gereken kaloriyi geçtiniz!");
@@ -148,7 +147,7 @@ namespace UI.Forms
             }
             else
             {
-                int mealID = db.Öğünler.OrderByDescending(x => x.AddedDate).Take(1).FirstOrDefault().MealID;
+                int mealID = db.Meals.OrderByDescending(x => x.AddedDate).Take(1).FirstOrDefault().MealID;
                 int userID = UserIdFill();
                 Meal meal;
                 string selectedMeal = (cmbMealSelect.Text);
@@ -157,16 +156,16 @@ namespace UI.Forms
                     MealTime = selectedMeal,
                     AddedDate = DateTime.Now
                 };
-                db.Öğünler.Add(meal);
+                db.Meals.Add(meal);
                 int selectedFood = int.Parse(cmbMealFoodSelect.SelectedValue.ToString());
                 FoodMeal foodMeal;
                 foodMeal = new FoodMeal()
                 {
-                    FoodsMeal = db.Yemekler.Where(x => x.FoodID == (int)cmbMealFoodSelect.SelectedValue).FirstOrDefault(),
-                    MealsFood = db.Öğünler.Where(x => x.MealID == mealID + 1).FirstOrDefault(),
-                    UsersMeal= db.Kullacınılar.Where(x => x.UserID == userID).FirstOrDefault(),
+                    FoodsMeal = db.Foods.Where(x => x.FoodID == (int)cmbMealFoodSelect.SelectedValue).FirstOrDefault(),
+                    MealsFood = db.Meals.Where(x => x.MealID == mealID + 1).FirstOrDefault(),
+                    UsersMeal= db.Users.Where(x => x.UserID == userID).FirstOrDefault(),
                 };
-                db.ÖğünYemekleri.Add(foodMeal);
+                db.MealFoods.Add(foodMeal);
 
                 db.SaveChanges();
                 MessageBox.Show("Başarılı");
@@ -175,9 +174,8 @@ namespace UI.Forms
                 lvi.SubItems.Add(cmbMealFoodSelect.Text);
                 lvi.SubItems.Add(cmbMealSelect.Text);
                 lstShowMeal.Items.Add(lvi);
-                //temiizle
+                Methods.Clear(grpAddMeal);
             }
-           
         }
     }
 }

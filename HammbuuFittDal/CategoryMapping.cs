@@ -12,11 +12,10 @@ namespace HammbuuFittDal
     {
         public CategoryMapping()
         {
-            ToTable("Kategori")
+            ToTable("Categories")
                 .HasKey<int>(x => x.CategoryID);
             Property(x => x.CategoryName).HasMaxLength(50).IsRequired();
             HasMany<Food>(x => x.Foods).WithRequired(x => x.Categories).HasForeignKey(x => x.CategoryID);
         }
-            
     }
 }

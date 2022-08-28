@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace UI.Forms
 {
-    public partial class UygulamaTanitim : Form
+    public partial class AppPresentation : Form
     {
-        public UygulamaTanitim()
+        public AppPresentation()
         {
             InitializeComponent();
         }
 
-        private void UygulamaTanitim_FormClosed(object sender, FormClosedEventArgs e)
+        private void AppPresentation_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnTanitimGeriDon_Click(object sender, EventArgs e)
+        private void btnBackToMainPage_Click(object sender, EventArgs e)
         {
-            Login giris = new Login();
+            Login login = new Login();
             this.Hide();
-            giris.Show();
+            login.Show();
         }
     }
 }

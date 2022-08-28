@@ -123,7 +123,7 @@ namespace UI
             this.lblPasswordReminder.Size = new System.Drawing.Size(122, 18);
             this.lblPasswordReminder.TabIndex = 7;
             this.lblPasswordReminder.Text = "Şifremi Unuttum";
-            this.lblPasswordReminder.Click += new System.EventHandler(this.lblSifremiUnuttum_Click);
+            this.lblPasswordReminder.Click += new System.EventHandler(this.lblPasswordReminder_Click);
             // 
             // grpLogin
             // 
@@ -154,7 +154,7 @@ namespace UI
             this.chkShowPassword.TabIndex = 8;
             this.chkShowPassword.Text = "Şifremi Göster";
             this.chkShowPassword.UseVisualStyleBackColor = true;
-            this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkSifreGoster_CheckedChanged);
+            this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
             // 
             // Login
             // 
@@ -169,8 +169,8 @@ namespace UI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Giriş";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Giriş_FormClosed);
-            this.Load += new System.EventHandler(this.Giriş_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.grpLogin.ResumeLayout(false);
             this.grpLogin.PerformLayout();

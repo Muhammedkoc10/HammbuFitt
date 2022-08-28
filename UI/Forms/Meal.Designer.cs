@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Forms
 {
-    partial class Ogun
+    partial class MealPage
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@ namespace UI.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ogun));
-            this.grbOgunEkle = new System.Windows.Forms.GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MealPage));
+            this.grpAddMeal = new System.Windows.Forms.GroupBox();
             this.lstShowMeal = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,31 +51,31 @@ namespace UI.Forms
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grbOgunRapor = new System.Windows.Forms.GroupBox();
+            this.grpMealReport = new System.Windows.Forms.GroupBox();
             this.lblHold5 = new System.Windows.Forms.Label();
-            this.grbOgunEkle.SuspendLayout();
+            this.grpAddMeal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMealDaily)).BeginInit();
-            this.grbOgunRapor.SuspendLayout();
+            this.grpMealReport.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grbOgunEkle
+            // grpAddMeal
             // 
-            this.grbOgunEkle.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grbOgunEkle.Controls.Add(this.lstShowMeal);
-            this.grbOgunEkle.Controls.Add(this.btnAddMeal);
-            this.grbOgunEkle.Controls.Add(this.cmbMealSelect);
-            this.grbOgunEkle.Controls.Add(this.label3);
-            this.grbOgunEkle.Controls.Add(this.cmbMealFoodSelect);
-            this.grbOgunEkle.Controls.Add(this.label2);
-            this.grbOgunEkle.Controls.Add(this.cmbMealCategorySelect);
-            this.grbOgunEkle.Controls.Add(this.label1);
-            this.grbOgunEkle.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbOgunEkle.Location = new System.Drawing.Point(12, 12);
-            this.grbOgunEkle.Name = "grbOgunEkle";
-            this.grbOgunEkle.Size = new System.Drawing.Size(358, 350);
-            this.grbOgunEkle.TabIndex = 0;
-            this.grbOgunEkle.TabStop = false;
-            this.grbOgunEkle.Text = "Öğün Ekleme";
+            this.grpAddMeal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grpAddMeal.Controls.Add(this.lstShowMeal);
+            this.grpAddMeal.Controls.Add(this.btnAddMeal);
+            this.grpAddMeal.Controls.Add(this.cmbMealSelect);
+            this.grpAddMeal.Controls.Add(this.label3);
+            this.grpAddMeal.Controls.Add(this.cmbMealFoodSelect);
+            this.grpAddMeal.Controls.Add(this.label2);
+            this.grpAddMeal.Controls.Add(this.cmbMealCategorySelect);
+            this.grpAddMeal.Controls.Add(this.label1);
+            this.grpAddMeal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAddMeal.Location = new System.Drawing.Point(12, 12);
+            this.grpAddMeal.Name = "grpAddMeal";
+            this.grpAddMeal.Size = new System.Drawing.Size(358, 350);
+            this.grpAddMeal.TabIndex = 0;
+            this.grpAddMeal.TabStop = false;
+            this.grpAddMeal.Text = "Öğün Ekleme";
             // 
             // lstShowMeal
             // 
@@ -270,20 +270,20 @@ namespace UI.Forms
             this.Column3.HeaderText = "Kalori";
             this.Column3.Name = "Column3";
             // 
-            // grbOgunRapor
+            // grpMealReport
             // 
-            this.grbOgunRapor.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grbOgunRapor.Controls.Add(this.dgvMealDaily);
-            this.grbOgunRapor.Controls.Add(this.btnDailyCalories);
-            this.grbOgunRapor.Controls.Add(this.btnDailyMealInfo);
-            this.grbOgunRapor.Controls.Add(this.label4);
-            this.grbOgunRapor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbOgunRapor.Location = new System.Drawing.Point(376, 12);
-            this.grbOgunRapor.Name = "grbOgunRapor";
-            this.grbOgunRapor.Size = new System.Drawing.Size(377, 350);
-            this.grbOgunRapor.TabIndex = 1;
-            this.grbOgunRapor.TabStop = false;
-            this.grbOgunRapor.Text = "Öğün Raporu";
+            this.grpMealReport.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grpMealReport.Controls.Add(this.dgvMealDaily);
+            this.grpMealReport.Controls.Add(this.btnDailyCalories);
+            this.grpMealReport.Controls.Add(this.btnDailyMealInfo);
+            this.grpMealReport.Controls.Add(this.label4);
+            this.grpMealReport.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpMealReport.Location = new System.Drawing.Point(376, 12);
+            this.grpMealReport.Name = "grpMealReport";
+            this.grpMealReport.Size = new System.Drawing.Size(377, 350);
+            this.grpMealReport.TabIndex = 1;
+            this.grpMealReport.TabStop = false;
+            this.grpMealReport.Text = "Öğün Raporu";
             // 
             // lblHold5
             // 
@@ -294,7 +294,7 @@ namespace UI.Forms
             this.lblHold5.TabIndex = 31;
             this.lblHold5.Visible = false;
             // 
-            // Ogun
+            // MealPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -303,18 +303,18 @@ namespace UI.Forms
             this.Controls.Add(this.lblHold5);
             this.Controls.Add(this.lblHold1);
             this.Controls.Add(this.btnMealBackToMain);
-            this.Controls.Add(this.grbOgunRapor);
-            this.Controls.Add(this.grbOgunEkle);
+            this.Controls.Add(this.grpMealReport);
+            this.Controls.Add(this.grpAddMeal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Ogun";
+            this.Name = "MealPage";
             this.Text = "s";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ogun_FormClosed);
-            this.Load += new System.EventHandler(this.Ogun_Load);
-            this.grbOgunEkle.ResumeLayout(false);
-            this.grbOgunEkle.PerformLayout();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Meal_FormClosed);
+            this.Load += new System.EventHandler(this.Meal_Load);
+            this.grpAddMeal.ResumeLayout(false);
+            this.grpAddMeal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMealDaily)).EndInit();
-            this.grbOgunRapor.ResumeLayout(false);
-            this.grbOgunRapor.PerformLayout();
+            this.grpMealReport.ResumeLayout(false);
+            this.grpMealReport.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,7 +322,7 @@ namespace UI.Forms
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grbOgunEkle;
+        private System.Windows.Forms.GroupBox grpAddMeal;
         private System.Windows.Forms.ComboBox cmbMealSelect;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbMealFoodSelect;
@@ -343,7 +343,7 @@ namespace UI.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.GroupBox grbOgunRapor;
+        private System.Windows.Forms.GroupBox grpMealReport;
         private System.Windows.Forms.Label lblHold5;
     }
 }

@@ -14,7 +14,7 @@ namespace HammbuuFittDal
     {
         public FoodMapping()
         {
-            ToTable("Food")
+            ToTable("Foods")
                 .HasKey(x => x.FoodID);
             Property(x => x.FoodName).HasMaxLength(50).IsRequired();
             Property(x => x.Calories).IsRequired();

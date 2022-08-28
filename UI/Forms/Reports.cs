@@ -12,23 +12,23 @@ using System.Windows.Forms;
 
 namespace UI.Forms
 {
-    public partial class Raporlar : Form
+    public partial class ReportsPage : Form
     {
         Context db;
-        public Raporlar(string datas)
+        public ReportsPage(string datas)
         {
             InitializeComponent();
             lblHold3.Text = datas;
         }
 
-        private void Raporlar_FormClosed(object sender, FormClosedEventArgs e)
+        private void ReportsPage_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
         private void btnBackReportToMain_Click(object sender, EventArgs e)
         {
-            AnaSayfa anaSayfa = new AnaSayfa(lblHold3.Text);
+            MainPage anaSayfa = new MainPage(lblHold3.Text);
             this.Hide();
             anaSayfa.Show();
         }
@@ -44,9 +44,9 @@ namespace UI.Forms
                 DateTime start = DateTime.Now.Date.AddDays(-i);
                 try
                 {
-                    if (db.ÖğünYemekleri.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories) != 0)
+                    if (db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories) != 0)
                     {
-                        double avgCalories = db.ÖğünYemekleri.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories);
+                        double avgCalories = db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories);
                         dgvWeeklyReport.Rows.Add(8 - i + " .gün", avgCalories.ToString());
                     }
                 }
@@ -68,9 +68,9 @@ namespace UI.Forms
                 DateTime start = DateTime.Now.Date.AddDays(-i);
                 try
                 {
-                    if (db.ÖğünYemekleri.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories) != 0)
+                    if (db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories) != 0)
                     {
-                        double avgCalories = db.ÖğünYemekleri.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories);
+                        double avgCalories = db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories);
                         dgvMonthlyReport.Rows.Add(n + " .hafta", avgCalories.ToString());
                     }
                     n++;
@@ -105,16 +105,15 @@ namespace UI.Forms
 
         }
 
-        private void Raporlar_Load(object sender, EventArgs e)
+        private void ReportsPage_Load(object sender, EventArgs e)
         {
             db = new Context();
         }
         private int UserIdFill2()
         {
-
             int userID = 0;
             if (lblHold3.Text.Trim() != "")
-                return userID = db.Kullacınılar.Where(x => x.UserName == lblHold3.Text).FirstOrDefault().UserID;
+                return userID = db.Users.Where(x => x.UserName == lblHold3.Text).FirstOrDefault().UserID;
             else
             {
                 MessageBox.Show("Hata oluştu lütfen tekrar deneyiniz");
@@ -122,6 +121,5 @@ namespace UI.Forms
                 return 0;
             }
         }
-
     }
 }

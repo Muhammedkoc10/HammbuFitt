@@ -12,7 +12,7 @@ namespace HammbuuFittDal
     {
         public UserMapping()
         {
-            ToTable("Kullanicilar")
+            ToTable("Users")
                 .HasKey(x => x.UserID);
             Property(x => x.FirstName).HasMaxLength(50).IsRequired();
             Property(x => x.LastName).HasMaxLength(50).IsRequired();

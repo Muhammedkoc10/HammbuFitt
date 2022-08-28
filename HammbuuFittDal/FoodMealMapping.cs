@@ -12,7 +12,7 @@ namespace HammbuuFittDal
     {
         public FoodMealMapping()
         {
-            ToTable("Yemek Öğün")
+            ToTable("Foods Meals")
                 .HasKey(x => new { x.FoodID, x.MealID,x.UserID});
             HasRequired(y => y.FoodsMeal).WithMany(z => z.FoodsMeals);
             HasRequired(y => y.MealsFood).WithMany(z => z.FoodMeals);

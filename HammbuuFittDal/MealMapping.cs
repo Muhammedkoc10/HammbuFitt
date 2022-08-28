@@ -12,7 +12,7 @@ namespace HammbuuFittDal
     {
         public MealMapping()
         {
-            ToTable("Öğün")
+            ToTable("Meals")
                 .HasKey(x => x.MealID);
             Property(x => x.MealTime).HasMaxLength(30);
             Property(x => x.AddedDate).HasColumnType("datetime2");

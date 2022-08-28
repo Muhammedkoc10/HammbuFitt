@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Forms
 {
-    partial class UygulamaTanitim
+    partial class AppPresentation
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@ namespace UI.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UygulamaTanitim));
-            this.grbTanitim = new System.Windows.Forms.GroupBox();
-            this.btnTanitimGeriDon = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppPresentation));
+            this.grbAppPresentation = new System.Windows.Forms.GroupBox();
+            this.btnBackToMainPage = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,44 +40,44 @@ namespace UI.Forms
             this.pbKaloriVeYemekEkleme = new System.Windows.Forms.PictureBox();
             this.pbSaglikliYiyecekler = new System.Windows.Forms.PictureBox();
             this.pbYemekEkleme = new System.Windows.Forms.PictureBox();
-            this.grbTanitim.SuspendLayout();
+            this.grbAppPresentation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSporcuVeGunluk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKaloriVeYemekEkleme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSaglikliYiyecekler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbYemekEkleme)).BeginInit();
             this.SuspendLayout();
             // 
-            // grbTanitim
+            // grbAppPresentation
             // 
-            this.grbTanitim.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grbTanitim.Controls.Add(this.btnTanitimGeriDon);
-            this.grbTanitim.Controls.Add(this.label4);
-            this.grbTanitim.Controls.Add(this.label3);
-            this.grbTanitim.Controls.Add(this.label2);
-            this.grbTanitim.Controls.Add(this.label1);
-            this.grbTanitim.Controls.Add(this.pbSporcuVeGunluk);
-            this.grbTanitim.Controls.Add(this.pbKaloriVeYemekEkleme);
-            this.grbTanitim.Controls.Add(this.pbSaglikliYiyecekler);
-            this.grbTanitim.Controls.Add(this.pbYemekEkleme);
-            this.grbTanitim.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbTanitim.Location = new System.Drawing.Point(12, 12);
-            this.grbTanitim.Name = "grbTanitim";
-            this.grbTanitim.Size = new System.Drawing.Size(686, 450);
-            this.grbTanitim.TabIndex = 0;
-            this.grbTanitim.TabStop = false;
-            this.grbTanitim.Text = "Tanıtım";
+            this.grbAppPresentation.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grbAppPresentation.Controls.Add(this.btnBackToMainPage);
+            this.grbAppPresentation.Controls.Add(this.label4);
+            this.grbAppPresentation.Controls.Add(this.label3);
+            this.grbAppPresentation.Controls.Add(this.label2);
+            this.grbAppPresentation.Controls.Add(this.label1);
+            this.grbAppPresentation.Controls.Add(this.pbSporcuVeGunluk);
+            this.grbAppPresentation.Controls.Add(this.pbKaloriVeYemekEkleme);
+            this.grbAppPresentation.Controls.Add(this.pbSaglikliYiyecekler);
+            this.grbAppPresentation.Controls.Add(this.pbYemekEkleme);
+            this.grbAppPresentation.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbAppPresentation.Location = new System.Drawing.Point(12, 12);
+            this.grbAppPresentation.Name = "grbAppPresentation";
+            this.grbAppPresentation.Size = new System.Drawing.Size(686, 450);
+            this.grbAppPresentation.TabIndex = 0;
+            this.grbAppPresentation.TabStop = false;
+            this.grbAppPresentation.Text = "Tanıtım";
             // 
-            // btnTanitimGeriDon
+            // btnBackToMainPage
             // 
-            this.btnTanitimGeriDon.BackColor = System.Drawing.Color.Pink;
-            this.btnTanitimGeriDon.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTanitimGeriDon.Location = new System.Drawing.Point(549, 402);
-            this.btnTanitimGeriDon.Name = "btnTanitimGeriDon";
-            this.btnTanitimGeriDon.Size = new System.Drawing.Size(131, 42);
-            this.btnTanitimGeriDon.TabIndex = 27;
-            this.btnTanitimGeriDon.Text = "GERİ DÖN";
-            this.btnTanitimGeriDon.UseVisualStyleBackColor = false;
-            this.btnTanitimGeriDon.Click += new System.EventHandler(this.btnTanitimGeriDon_Click);
+            this.btnBackToMainPage.BackColor = System.Drawing.Color.Pink;
+            this.btnBackToMainPage.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToMainPage.Location = new System.Drawing.Point(549, 402);
+            this.btnBackToMainPage.Name = "btnBackToMainPage";
+            this.btnBackToMainPage.Size = new System.Drawing.Size(131, 42);
+            this.btnBackToMainPage.TabIndex = 27;
+            this.btnBackToMainPage.Text = "GERİ DÖN";
+            this.btnBackToMainPage.UseVisualStyleBackColor = false;
+            this.btnBackToMainPage.Click += new System.EventHandler(this.btnBackToMainPage_Click);
             // 
             // label4
             // 
@@ -128,7 +128,7 @@ namespace UI.Forms
             // pbSporcuVeGunluk
             // 
             this.pbSporcuVeGunluk.Image = ((System.Drawing.Image)(resources.GetObject("pbSporcuVeGunluk.Image")));
-            this.pbSporcuVeGunluk.Location = new System.Drawing.Point(6, 19);
+            this.pbSporcuVeGunluk.Location = new System.Drawing.Point(10, 21);
             this.pbSporcuVeGunluk.Name = "pbSporcuVeGunluk";
             this.pbSporcuVeGunluk.Size = new System.Drawing.Size(276, 144);
             this.pbSporcuVeGunluk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,18 +165,18 @@ namespace UI.Forms
             this.pbYemekEkleme.TabIndex = 1;
             this.pbYemekEkleme.TabStop = false;
             // 
-            // UygulamaTanitim
+            // AppPresentation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GreenYellow;
             this.ClientSize = new System.Drawing.Size(740, 500);
-            this.Controls.Add(this.grbTanitim);
+            this.Controls.Add(this.grbAppPresentation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "UygulamaTanitim";
+            this.Name = "AppPresentation";
             this.Text = "Uygulama Tanıtım";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UygulamaTanitim_FormClosed);
-            this.grbTanitim.ResumeLayout(false);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AppPresentation_FormClosed);
+            this.grbAppPresentation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbSporcuVeGunluk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKaloriVeYemekEkleme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSaglikliYiyecekler)).EndInit();
@@ -187,7 +187,7 @@ namespace UI.Forms
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grbTanitim;
+        private System.Windows.Forms.GroupBox grbAppPresentation;
         private System.Windows.Forms.PictureBox pbKaloriVeYemekEkleme;
         private System.Windows.Forms.PictureBox pbSaglikliYiyecekler;
         private System.Windows.Forms.PictureBox pbYemekEkleme;
@@ -196,6 +196,6 @@ namespace UI.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnTanitimGeriDon;
+        private System.Windows.Forms.Button btnBackToMainPage;
     }
 }

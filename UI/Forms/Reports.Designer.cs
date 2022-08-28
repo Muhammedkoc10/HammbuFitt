@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Forms
 {
-    partial class Raporlar
+    partial class ReportsPage
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace UI.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raporlar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsPage));
             this.grbHaftlikRapor = new System.Windows.Forms.GroupBox();
             this.btnWeeklyReport = new System.Windows.Forms.Button();
             this.dgvWeeklyReport = new System.Windows.Forms.DataGridView();
@@ -43,9 +43,9 @@ namespace UI.Forms
             this.grbEncokTuketilen = new System.Windows.Forms.GroupBox();
             this.btnMostEatFoodsOnMeals = new System.Windows.Forms.Button();
             this.dgvMostEatingFoodByMeal = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBackReportToMain = new System.Windows.Forms.Button();
             this.lblHold3 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbHaftlikRapor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWeeklyReport)).BeginInit();
             this.grbAylikRapor.SuspendLayout();
@@ -108,7 +108,7 @@ namespace UI.Forms
             this.grbAylikRapor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAylikRapor.Location = new System.Drawing.Point(315, 12);
             this.grbAylikRapor.Name = "grbAylikRapor";
-            this.grbAylikRapor.Size = new System.Drawing.Size(297, 281);
+            this.grbAylikRapor.Size = new System.Drawing.Size(265, 281);
             this.grbAylikRapor.TabIndex = 1;
             this.grbAylikRapor.TabStop = false;
             this.grbAylikRapor.Text = "Aylık Rapor";
@@ -133,7 +133,7 @@ namespace UI.Forms
             this.Kalori});
             this.dgvMonthlyReport.Location = new System.Drawing.Point(6, 19);
             this.dgvMonthlyReport.Name = "dgvMonthlyReport";
-            this.dgvMonthlyReport.Size = new System.Drawing.Size(285, 191);
+            this.dgvMonthlyReport.Size = new System.Drawing.Size(243, 191);
             this.dgvMonthlyReport.TabIndex = 1;
             // 
             // Haftalar
@@ -152,9 +152,9 @@ namespace UI.Forms
             this.grbEncokTuketilen.Controls.Add(this.btnMostEatFoodsOnMeals);
             this.grbEncokTuketilen.Controls.Add(this.dgvMostEatingFoodByMeal);
             this.grbEncokTuketilen.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbEncokTuketilen.Location = new System.Drawing.Point(618, 12);
+            this.grbEncokTuketilen.Location = new System.Drawing.Point(603, 12);
             this.grbEncokTuketilen.Name = "grbEncokTuketilen";
-            this.grbEncokTuketilen.Size = new System.Drawing.Size(297, 281);
+            this.grbEncokTuketilen.Size = new System.Drawing.Size(167, 281);
             this.grbEncokTuketilen.TabIndex = 2;
             this.grbEncokTuketilen.TabStop = false;
             this.grbEncokTuketilen.Text = "Öğünere Göre En Çok Tükerilen Besinler";
@@ -165,7 +165,7 @@ namespace UI.Forms
             this.btnMostEatFoodsOnMeals.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostEatFoodsOnMeals.Location = new System.Drawing.Point(6, 216);
             this.btnMostEatFoodsOnMeals.Name = "btnMostEatFoodsOnMeals";
-            this.btnMostEatFoodsOnMeals.Size = new System.Drawing.Size(283, 42);
+            this.btnMostEatFoodsOnMeals.Size = new System.Drawing.Size(155, 59);
             this.btnMostEatFoodsOnMeals.TabIndex = 8;
             this.btnMostEatFoodsOnMeals.Text = "ÖĞÜNLERE GÖRE EN ÇOK TÜKETİLEN BESİNLER";
             this.btnMostEatFoodsOnMeals.UseVisualStyleBackColor = false;
@@ -178,14 +178,19 @@ namespace UI.Forms
             this.Column1});
             this.dgvMostEatingFoodByMeal.Location = new System.Drawing.Point(6, 19);
             this.dgvMostEatingFoodByMeal.Name = "dgvMostEatingFoodByMeal";
-            this.dgvMostEatingFoodByMeal.Size = new System.Drawing.Size(285, 191);
+            this.dgvMostEatingFoodByMeal.Size = new System.Drawing.Size(145, 191);
             this.dgvMostEatingFoodByMeal.TabIndex = 2;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
             // 
             // btnBackReportToMain
             // 
             this.btnBackReportToMain.BackColor = System.Drawing.Color.Pink;
             this.btnBackReportToMain.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackReportToMain.Location = new System.Drawing.Point(784, 299);
+            this.btnBackReportToMain.Location = new System.Drawing.Point(348, 299);
             this.btnBackReportToMain.Name = "btnBackReportToMain";
             this.btnBackReportToMain.Size = new System.Drawing.Size(131, 42);
             this.btnBackReportToMain.TabIndex = 29;
@@ -202,27 +207,22 @@ namespace UI.Forms
             this.lblHold3.TabIndex = 30;
             this.lblHold3.Visible = false;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Raporlar
+            // ReportsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(919, 350);
+            this.ClientSize = new System.Drawing.Size(785, 350);
             this.Controls.Add(this.lblHold3);
             this.Controls.Add(this.btnBackReportToMain);
             this.Controls.Add(this.grbEncokTuketilen);
             this.Controls.Add(this.grbAylikRapor);
             this.Controls.Add(this.grbHaftlikRapor);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Raporlar";
+            this.Name = "ReportsPage";
             this.Text = "Raporlar";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Raporlar_FormClosed);
-            this.Load += new System.EventHandler(this.Raporlar_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReportsPage_FormClosed);
+            this.Load += new System.EventHandler(this.ReportsPage_Load);
             this.grbHaftlikRapor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWeeklyReport)).EndInit();
             this.grbAylikRapor.ResumeLayout(false);

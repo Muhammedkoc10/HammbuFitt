@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Forms
 {
-    partial class DiyetOnerisi
+    partial class DietSuggestionPage
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@ namespace UI.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiyetOnerisi));
-            this.btnDiyetOnerisiGeriDon = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DietSuggestionPage));
+            this.btnBackMainPage = new System.Windows.Forms.Button();
             this.lblHold = new System.Windows.Forms.Label();
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.pb2 = new System.Windows.Forms.PictureBox();
@@ -46,17 +46,17 @@ namespace UI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pb6)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnDiyetOnerisiGeriDon
+            // btnBackMainPage
             // 
-            this.btnDiyetOnerisiGeriDon.BackColor = System.Drawing.Color.Pink;
-            this.btnDiyetOnerisiGeriDon.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiyetOnerisiGeriDon.Location = new System.Drawing.Point(381, 332);
-            this.btnDiyetOnerisiGeriDon.Name = "btnDiyetOnerisiGeriDon";
-            this.btnDiyetOnerisiGeriDon.Size = new System.Drawing.Size(131, 42);
-            this.btnDiyetOnerisiGeriDon.TabIndex = 29;
-            this.btnDiyetOnerisiGeriDon.Text = "GERİ DÖN";
-            this.btnDiyetOnerisiGeriDon.UseVisualStyleBackColor = false;
-            this.btnDiyetOnerisiGeriDon.Click += new System.EventHandler(this.btnDiyetOnerisiGeriDon_Click);
+            this.btnBackMainPage.BackColor = System.Drawing.Color.Pink;
+            this.btnBackMainPage.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackMainPage.Location = new System.Drawing.Point(381, 332);
+            this.btnBackMainPage.Name = "btnBackMainPage";
+            this.btnBackMainPage.Size = new System.Drawing.Size(131, 42);
+            this.btnBackMainPage.TabIndex = 29;
+            this.btnBackMainPage.Text = "GERİ DÖN";
+            this.btnBackMainPage.UseVisualStyleBackColor = false;
+            this.btnBackMainPage.Click += new System.EventHandler(this.btnBackMainPage_Click);
             // 
             // lblHold
             // 
@@ -121,7 +121,7 @@ namespace UI.Forms
             this.pb6.TabStop = false;
             this.pb6.Visible = false;
             // 
-            // DiyetOnerisi
+            // DietSuggestionPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,12 +134,12 @@ namespace UI.Forms
             this.Controls.Add(this.pb2);
             this.Controls.Add(this.pb1);
             this.Controls.Add(this.lblHold);
-            this.Controls.Add(this.btnDiyetOnerisiGeriDon);
+            this.Controls.Add(this.btnBackMainPage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "DiyetOnerisi";
+            this.Name = "DietSuggestionPage";
             this.Text = "DiyetOnerisi";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DiyetOnerisi_FormClosed);
-            this.Load += new System.EventHandler(this.DiyetOnerisi_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DietSuggestionPage_FormClosed);
+            this.Load += new System.EventHandler(this.DietSuggestionPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
@@ -152,7 +152,7 @@ namespace UI.Forms
         }
 
         #endregion
-        private System.Windows.Forms.Button btnDiyetOnerisiGeriDon;
+        private System.Windows.Forms.Button btnBackMainPage;
         private System.Windows.Forms.Label lblHold;
         private System.Windows.Forms.PictureBox pb1;
         private System.Windows.Forms.PictureBox pb2;
