@@ -150,7 +150,6 @@ namespace UI.Forms
             this.Name = "AnaSayfa";
             this.Text = "AnaSyfa";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AnaSayfa_FormClosed);
-            this.Load += new System.EventHandler(this.AnaSayfa_Load);
             this.grbAnaSayfa.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -14,10 +14,9 @@ namespace UI.Forms
 {
     public partial class KayitOl : Form
     {
-        Giriş anaForm;
-        public KayitOl(Giriş ana)
+        
+        public KayitOl()
         {
-            anaForm = ana;
             InitializeComponent();
         }
         Context db;
@@ -32,7 +31,7 @@ namespace UI.Forms
 
         private void btnKayitOlAnaSayfayaDon_Click(object sender, EventArgs e)
         {
-            Giriş giris = new Giriş();
+            Login giris = new Login();
             this.Hide();
             giris.Show();
         }

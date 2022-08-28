@@ -170,7 +170,7 @@ namespace UI.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GreenYellow;
-            this.ClientSize = new System.Drawing.Size(757, 537);
+            this.ClientSize = new System.Drawing.Size(740, 500);
             this.Controls.Add(this.grbTanitim);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UygulamaTanitim";

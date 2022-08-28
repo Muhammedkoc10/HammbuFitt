@@ -29,7 +29,7 @@ namespace UI.Forms
 
         private void btnMealBackToMain_Click(object sender, EventArgs e)
         {
-            AnaSayfa anaSayfa = new AnaSayfa("");
+            AnaSayfa anaSayfa = new AnaSayfa(lblHold1.Text);
             this.Hide();
             anaSayfa.Show();
         }
@@ -84,13 +84,39 @@ namespace UI.Forms
             int userID = UserIdFill();
             DateTime end = DateTime.Now;
             DateTime start = DateTime.Now.Date;
-            var allMeals = db.ÖğünYemekleri.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end&&x.UserID==userID).ToList();
-            
-            foreach (var item in allMeals)
+            try
             {
-                dgvMealDaily.Rows.Add(item.MealsFood.MealTime, item.FoodsMeal.FoodName, item.FoodsMeal.Calories);
+                var allMeals = db.ÖğünYemekleri.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).ToList();
+                if (allMeals.Count!=0)
+                {
+                    foreach (var item in allMeals)
+                    {
+                        dgvMealDaily.Rows.Add(item.MealsFood.MealTime, item.FoodsMeal.FoodName, item.FoodsMeal.Calories);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Günlük öğün bilginiz bulunmamaktadır.");
+                }
+
             }
-            
+            catch (Exception)
+            {
+                MessageBox.Show("Günlük öğün bilginiz bulunmamaktadır.");
+            }
+        }
+
+        private int UserIdFill()
+        {
+            int userID = 0;
+            if (lblHold1.Text.Trim() != "")
+                return userID = db.Kullacınılar.Where(x => x.UserName == lblHold1.Text).FirstOrDefault().UserID;
+            else
+            {
+                MessageBox.Show("Hata oluştu lütfen tekrar deneyiniz.");
+                Application.Exit();
+                return 0;
+            }
         }
 
         private void btnDailyCalories_Click(object sender, EventArgs e)
@@ -98,12 +124,20 @@ namespace UI.Forms
             DateTime end = DateTime.Now;
             DateTime start = DateTime.Now.Date;
             int userID = UserIdFill();
-            double result = db.ÖğünYemekleri.Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end&&x.UserID==userID).Sum(x=>x.FoodsMeal.Calories);
-            if (db.ÖğünYemekleri.Where(x => x.UsersMeal.UserID == userID).FirstOrDefault().UsersMeal.BasalMetabolismRate>(decimal)result)
-                MessageBox.Show("Şu ana kadar günlük almanız gereken kalorinin altındasınız!");
-            else
-                MessageBox.Show("Şu ana kadar günlük almanız gereken kaloriyi geçtiniz!");
-            MessageBox.Show("Şu ana kadar aldığınız toplam kalori: "+result.ToString());
+
+            try
+            {
+                double result = db.ÖğünYemekleri.Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories);//düzelt
+                if (db.ÖğünYemekleri.Where(x => x.UsersMeal.UserID == userID).FirstOrDefault().UsersMeal.BasalMetabolismRate > (decimal)result)
+                    MessageBox.Show("Şu ana kadar günlük almanız gereken kalorinin altındasınız!");
+                else
+                    MessageBox.Show("Şu ana kadar günlük almanız gereken kaloriyi geçtiniz!");
+                MessageBox.Show("Şu ana kadar aldığınız toplam kalori: " + result.ToString());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hata! Günlük öğün bilginiz bulunamadı.");
+            }
         }
 
         private void btnAddMeal_Click(object sender, EventArgs e)
@@ -115,7 +149,7 @@ namespace UI.Forms
             else
             {
                 int mealID = db.Öğünler.OrderByDescending(x => x.AddedDate).Take(1).FirstOrDefault().MealID;
-                int userID =1;
+                int userID = UserIdFill();
                 Meal meal;
                 string selectedMeal = (cmbMealSelect.Text);
                 meal = new Meal()
@@ -143,19 +177,7 @@ namespace UI.Forms
                 lstShowMeal.Items.Add(lvi);
                 //temiizle
             }
-        }
-
-        private int UserIdFill()
-        {
-            int userID = 0;
-            if (lblHold1.Text.Trim()!="")
-                return userID = db.Kullacınılar.Where(x => x.UserName == lblHold1.Text).FirstOrDefault().UserID;
-            else
-            {
-                MessageBox.Show("Hata oluştu lütfen tekrar deneyiniz");
-                Application.Exit();
-                return 0;
-            }
+           
         }
     }
 }

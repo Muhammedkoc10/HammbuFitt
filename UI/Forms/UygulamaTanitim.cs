@@ -24,7 +24,7 @@ namespace UI.Forms
 
         private void btnTanitimGeriDon_Click(object sender, EventArgs e)
         {
-            Giriş giris = new Giriş();
+            Login giris = new Login();
             this.Hide();
             giris.Show();
         }

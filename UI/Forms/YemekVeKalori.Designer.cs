@@ -56,6 +56,7 @@ namespace UI.Forms
             this.pbTutulan = new System.Windows.Forms.PictureBox();
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
+            this.lblHold = new System.Windows.Forms.Label();
             this.grbKaloriVeBesin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvYemekKalori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKaloriVeBesinResim)).BeginInit();
@@ -356,6 +357,15 @@ namespace UI.Forms
             this.lbl2.Text = "label8";
             this.lbl2.Visible = false;
             // 
+            // lblHold
+            // 
+            this.lblHold.AutoSize = true;
+            this.lblHold.Location = new System.Drawing.Point(222, 427);
+            this.lblHold.Name = "lblHold";
+            this.lblHold.Size = new System.Drawing.Size(0, 13);
+            this.lblHold.TabIndex = 33;
+            this.lblHold.Visible = false;
+            // 
             // YemekVeKalori
             // 
             this.AcceptButton = this.btnKategoriEkleEkle;
@@ -363,6 +373,7 @@ namespace UI.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(649, 475);
+            this.Controls.Add(this.lblHold);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.pbTutulan);
@@ -416,5 +427,6 @@ namespace UI.Forms
         public System.Windows.Forms.Button btnKaloriVeBesinGoster;
         public System.Windows.Forms.ComboBox cmbKategoriEkleKategoriSec;
         internal System.Windows.Forms.ComboBox cmbKaloriVeBesinKategoriSec;
+        private System.Windows.Forms.Label lblHold;
     }
 }

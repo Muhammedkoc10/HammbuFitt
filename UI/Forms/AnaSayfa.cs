@@ -17,14 +17,13 @@ namespace UI.Forms
         {
             InitializeComponent();
             lblHold2.Text = data;
-            lblHold4.Text = data;
         }
         
         private void btnAnaSayfaGirisEkraninaDon_Click(object sender, EventArgs e)
         {
-            Giriş giris = new Giriş();
+            Login login = new Login();
             this.Hide();
-            giris.Show();
+            login.Show();
         }
 
         private void AnaSayfa_FormClosed(object sender, FormClosedEventArgs e)
@@ -34,14 +33,14 @@ namespace UI.Forms
 
         private void btnAnaSayfaDiyetListeleri_Click(object sender, EventArgs e)
         {
-            DiyetOnerisi diyetOnerisi = new DiyetOnerisi();
+            DiyetOnerisi diyetOnerisi = new DiyetOnerisi(lblHold2.Text);
             this.Hide();
             diyetOnerisi.Show();
         }
 
         private void btnAnaSayfaYemekKalori_Click(object sender, EventArgs e)
         {
-            YemekVeKalori yemekVeKalori = new YemekVeKalori();
+            YemekVeKalori yemekVeKalori = new YemekVeKalori(lblHold2.Text);
             this.Hide();
             yemekVeKalori.Show();
         }
@@ -55,14 +54,9 @@ namespace UI.Forms
 
         private void btnAnaSayfaRaporlar_Click(object sender, EventArgs e)
         {
-            Raporlar raporlar = new Raporlar(lblHold4.Text);
+            Raporlar raporlar = new Raporlar(lblHold2.Text);
             this.Hide();
             raporlar.Show();
-        }
-
-        private void AnaSayfa_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

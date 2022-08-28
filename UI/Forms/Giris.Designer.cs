@@ -1,7 +1,7 @@
 ﻿
 namespace UI
 {
-    partial class Giriş
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,19 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Giriş));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
-            this.txtGirisKullaniciAdi = new System.Windows.Forms.TextBox();
-            this.txtGirisSifre = new System.Windows.Forms.TextBox();
+            this.txtLoginUserName = new System.Windows.Forms.TextBox();
+            this.txtLoginPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnGirisYap = new System.Windows.Forms.Button();
-            this.btnKayitOl = new System.Windows.Forms.Button();
-            this.lblSifremiUnuttum = new System.Windows.Forms.Label();
-            this.grbGiris = new System.Windows.Forms.GroupBox();
-            this.chkSifreGoster = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.grbGiris.SuspendLayout();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnSignIn = new System.Windows.Forms.Button();
+            this.btnSignUp = new System.Windows.Forms.Button();
+            this.lblPasswordReminder = new System.Windows.Forms.Label();
+            this.grpLogin = new System.Windows.Forms.GroupBox();
+            this.chkShowPassword = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.grpLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -54,21 +54,21 @@ namespace UI
             this.label1.TabIndex = 0;
             this.label1.Text = "Kullanıcı Adı:";
             // 
-            // txtGirisKullaniciAdi
+            // txtLoginUserName
             // 
-            this.txtGirisKullaniciAdi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGirisKullaniciAdi.Location = new System.Drawing.Point(30, 64);
-            this.txtGirisKullaniciAdi.Name = "txtGirisKullaniciAdi";
-            this.txtGirisKullaniciAdi.Size = new System.Drawing.Size(287, 25);
-            this.txtGirisKullaniciAdi.TabIndex = 1;
+            this.txtLoginUserName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoginUserName.Location = new System.Drawing.Point(30, 64);
+            this.txtLoginUserName.Name = "txtLoginUserName";
+            this.txtLoginUserName.Size = new System.Drawing.Size(287, 25);
+            this.txtLoginUserName.TabIndex = 1;
             // 
-            // txtGirisSifre
+            // txtLoginPassword
             // 
-            this.txtGirisSifre.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGirisSifre.Location = new System.Drawing.Point(30, 132);
-            this.txtGirisSifre.Name = "txtGirisSifre";
-            this.txtGirisSifre.Size = new System.Drawing.Size(287, 25);
-            this.txtGirisSifre.TabIndex = 3;
+            this.txtLoginPassword.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoginPassword.Location = new System.Drawing.Point(30, 132);
+            this.txtLoginPassword.Name = "txtLoginPassword";
+            this.txtLoginPassword.Size = new System.Drawing.Size(287, 25);
+            this.txtLoginPassword.TabIndex = 3;
             // 
             // label2
             // 
@@ -80,101 +80,100 @@ namespace UI
             this.label2.TabIndex = 2;
             this.label2.Text = "Şifre: ";
             // 
-            // pictureBox1
+            // pbLogo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(335, 147);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
+            this.pbLogo.Location = new System.Drawing.Point(12, 12);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(335, 147);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 4;
+            this.pbLogo.TabStop = false;
             // 
-            // btnGirisYap
+            // btnSignIn
             // 
-            this.btnGirisYap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnGirisYap.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGirisYap.Location = new System.Drawing.Point(198, 213);
-            this.btnGirisYap.Name = "btnGirisYap";
-            this.btnGirisYap.Size = new System.Drawing.Size(116, 42);
-            this.btnGirisYap.TabIndex = 5;
-            this.btnGirisYap.Text = "GİRİŞ YAP";
-            this.btnGirisYap.UseVisualStyleBackColor = false;
-            this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
+            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSignIn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignIn.Location = new System.Drawing.Point(198, 213);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(116, 42);
+            this.btnSignIn.TabIndex = 5;
+            this.btnSignIn.Text = "GİRİŞ YAP";
+            this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
-            // btnKayitOl
+            // btnSignUp
             // 
-            this.btnKayitOl.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnKayitOl.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKayitOl.Location = new System.Drawing.Point(30, 213);
-            this.btnKayitOl.Name = "btnKayitOl";
-            this.btnKayitOl.Size = new System.Drawing.Size(116, 42);
-            this.btnKayitOl.TabIndex = 6;
-            this.btnKayitOl.Text = "KAYIT OL";
-            this.btnKayitOl.UseVisualStyleBackColor = false;
-            this.btnKayitOl.Click += new System.EventHandler(this.btnKayitOl_Click);
+            this.btnSignUp.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSignUp.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.Location = new System.Drawing.Point(30, 213);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(116, 42);
+            this.btnSignUp.TabIndex = 6;
+            this.btnSignUp.Text = "KAYIT OL";
+            this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
-            // lblSifremiUnuttum
+            // lblPasswordReminder
             // 
-            this.lblSifremiUnuttum.AutoSize = true;
-            this.lblSifremiUnuttum.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSifremiUnuttum.Location = new System.Drawing.Point(195, 291);
-            this.lblSifremiUnuttum.Name = "lblSifremiUnuttum";
-            this.lblSifremiUnuttum.Size = new System.Drawing.Size(122, 18);
-            this.lblSifremiUnuttum.TabIndex = 7;
-            this.lblSifremiUnuttum.Text = "Şifremi Unuttum";
-            this.lblSifremiUnuttum.Click += new System.EventHandler(this.lblSifremiUnuttum_Click);
+            this.lblPasswordReminder.AutoSize = true;
+            this.lblPasswordReminder.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordReminder.Location = new System.Drawing.Point(195, 291);
+            this.lblPasswordReminder.Name = "lblPasswordReminder";
+            this.lblPasswordReminder.Size = new System.Drawing.Size(122, 18);
+            this.lblPasswordReminder.TabIndex = 7;
+            this.lblPasswordReminder.Text = "Şifremi Unuttum";
+            this.lblPasswordReminder.Click += new System.EventHandler(this.lblSifremiUnuttum_Click);
             // 
-            // grbGiris
+            // grpLogin
             // 
-            this.grbGiris.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grbGiris.Controls.Add(this.chkSifreGoster);
-            this.grbGiris.Controls.Add(this.label1);
-            this.grbGiris.Controls.Add(this.lblSifremiUnuttum);
-            this.grbGiris.Controls.Add(this.txtGirisKullaniciAdi);
-            this.grbGiris.Controls.Add(this.btnKayitOl);
-            this.grbGiris.Controls.Add(this.label2);
-            this.grbGiris.Controls.Add(this.btnGirisYap);
-            this.grbGiris.Controls.Add(this.txtGirisSifre);
-            this.grbGiris.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbGiris.Location = new System.Drawing.Point(12, 165);
-            this.grbGiris.Name = "grbGiris";
-            this.grbGiris.Size = new System.Drawing.Size(335, 333);
-            this.grbGiris.TabIndex = 8;
-            this.grbGiris.TabStop = false;
-            this.grbGiris.Text = "Giriş";
-            this.grbGiris.Enter += new System.EventHandler(this.grbGiris_Enter);
+            this.grpLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grpLogin.Controls.Add(this.chkShowPassword);
+            this.grpLogin.Controls.Add(this.label1);
+            this.grpLogin.Controls.Add(this.lblPasswordReminder);
+            this.grpLogin.Controls.Add(this.txtLoginUserName);
+            this.grpLogin.Controls.Add(this.btnSignUp);
+            this.grpLogin.Controls.Add(this.label2);
+            this.grpLogin.Controls.Add(this.btnSignIn);
+            this.grpLogin.Controls.Add(this.txtLoginPassword);
+            this.grpLogin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpLogin.Location = new System.Drawing.Point(12, 165);
+            this.grpLogin.Name = "grpLogin";
+            this.grpLogin.Size = new System.Drawing.Size(335, 333);
+            this.grpLogin.TabIndex = 8;
+            this.grpLogin.TabStop = false;
+            this.grpLogin.Text = "Giriş";
             // 
-            // chkSifreGoster
+            // chkShowPassword
             // 
-            this.chkSifreGoster.AutoSize = true;
-            this.chkSifreGoster.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSifreGoster.Location = new System.Drawing.Point(198, 174);
-            this.chkSifreGoster.Name = "chkSifreGoster";
-            this.chkSifreGoster.Size = new System.Drawing.Size(121, 21);
-            this.chkSifreGoster.TabIndex = 8;
-            this.chkSifreGoster.Text = "Şifremi Göster";
-            this.chkSifreGoster.UseVisualStyleBackColor = true;
-            this.chkSifreGoster.CheckedChanged += new System.EventHandler(this.chkSifreGoster_CheckedChanged);
+            this.chkShowPassword.AutoSize = true;
+            this.chkShowPassword.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShowPassword.Location = new System.Drawing.Point(198, 174);
+            this.chkShowPassword.Name = "chkShowPassword";
+            this.chkShowPassword.Size = new System.Drawing.Size(121, 21);
+            this.chkShowPassword.TabIndex = 8;
+            this.chkShowPassword.Text = "Şifremi Göster";
+            this.chkShowPassword.UseVisualStyleBackColor = true;
+            this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkSifreGoster_CheckedChanged);
             // 
-            // Giriş
+            // Login
             // 
-            this.AcceptButton = this.btnGirisYap;
+            this.AcceptButton = this.btnSignIn;
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(353, 500);
-            this.Controls.Add(this.grbGiris);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.grpLogin);
+            this.Controls.Add(this.pbLogo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Giriş";
+            this.Name = "Login";
             this.Text = "Giriş";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Giriş_FormClosed);
             this.Load += new System.EventHandler(this.Giriş_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.grbGiris.ResumeLayout(false);
-            this.grbGiris.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.grpLogin.ResumeLayout(false);
+            this.grpLogin.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -182,15 +181,15 @@ namespace UI
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtGirisSifre;
+        private System.Windows.Forms.TextBox txtLoginPassword;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnGirisYap;
-        private System.Windows.Forms.Button btnKayitOl;
-        private System.Windows.Forms.Label lblSifremiUnuttum;
-        private System.Windows.Forms.GroupBox grbGiris;
-        private System.Windows.Forms.CheckBox chkSifreGoster;
-        public System.Windows.Forms.TextBox txtGirisKullaniciAdi;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Button btnSignIn;
+        private System.Windows.Forms.Button btnSignUp;
+        private System.Windows.Forms.Label lblPasswordReminder;
+        private System.Windows.Forms.GroupBox grpLogin;
+        private System.Windows.Forms.CheckBox chkShowPassword;
+        public System.Windows.Forms.TextBox txtLoginUserName;
     }
 }
 

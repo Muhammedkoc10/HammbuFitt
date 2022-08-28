@@ -14,10 +14,8 @@ namespace UI
 {
     public partial class SifremiUnuttum : Form
     {
-        Giriş anaForm;
-        public SifremiUnuttum(Giriş ana)
+        public SifremiUnuttum()
         {
-            anaForm = ana;
             InitializeComponent();
         }
         Context db;
@@ -28,7 +26,7 @@ namespace UI
 
         private void btnSifremiUnuttumGeriDon_Click(object sender, EventArgs e)
         {
-            Giriş giris = new Giriş();
+            Login giris = new Login();
             this.Hide();
             giris.Show();
         }
@@ -57,10 +55,6 @@ namespace UI
             {
                 MessageBox.Show("Kullanıcı adınız yanlış!");
             }
-                
-
         }
-
-       
     }
 }

@@ -52,6 +52,7 @@ namespace UI.Forms
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbOgunRapor = new System.Windows.Forms.GroupBox();
+            this.lblHold5 = new System.Windows.Forms.Label();
             this.grbOgunEkle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMealDaily)).BeginInit();
             this.grbOgunRapor.SuspendLayout();
@@ -284,19 +285,29 @@ namespace UI.Forms
             this.grbOgunRapor.TabStop = false;
             this.grbOgunRapor.Text = "Öğün Raporu";
             // 
+            // lblHold5
+            // 
+            this.lblHold5.AutoSize = true;
+            this.lblHold5.Location = new System.Drawing.Point(75, 382);
+            this.lblHold5.Name = "lblHold5";
+            this.lblHold5.Size = new System.Drawing.Size(0, 13);
+            this.lblHold5.TabIndex = 31;
+            this.lblHold5.Visible = false;
+            // 
             // Ogun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(753, 420);
+            this.Controls.Add(this.lblHold5);
             this.Controls.Add(this.lblHold1);
             this.Controls.Add(this.btnMealBackToMain);
             this.Controls.Add(this.grbOgunRapor);
             this.Controls.Add(this.grbOgunEkle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ogun";
-            this.Text = "Ogun";
+            this.Text = "s";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ogun_FormClosed);
             this.Load += new System.EventHandler(this.Ogun_Load);
             this.grbOgunEkle.ResumeLayout(false);
@@ -333,5 +344,6 @@ namespace UI.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.GroupBox grbOgunRapor;
+        private System.Windows.Forms.Label lblHold5;
     }
 }

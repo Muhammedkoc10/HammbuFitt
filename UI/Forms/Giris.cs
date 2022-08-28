@@ -12,10 +12,10 @@ using UI.Forms;
 
 namespace UI
 {
-    public partial class Giriş : Form
+    public partial class Login : Form
     {
         
-        public Giriş()
+        public Login()
         {
             InitializeComponent();
         }
@@ -25,16 +25,16 @@ namespace UI
         private void Giriş_Load(object sender, EventArgs e)
         {
             db = new Context();
-            txtGirisSifre.PasswordChar = '*';
+            txtLoginPassword.PasswordChar = '*';
         }
 
-        private void btnGirisYap_Click(object sender, EventArgs e)
+        private void btnSignIn_Click(object sender, EventArgs e)
         {
-            if (txtGirisKullaniciAdi.Text.Trim()!="")
+            if (txtLoginUserName.Text.Trim()!="")
             {
-                if (db.Kullacınılar.FirstOrDefault(x => x.UserName == txtGirisKullaniciAdi.Text) != null && db.Kullacınılar.FirstOrDefault(x => x.Password == txtGirisSifre.Text) != null)
+                if (db.Kullacınılar.FirstOrDefault(x => x.UserName == txtLoginUserName.Text) != null && db.Kullacınılar.FirstOrDefault(x => x.Password == txtLoginPassword.Text) != null)
                 {
-                    AnaSayfa anaform = new AnaSayfa(txtGirisKullaniciAdi.Text);
+                    AnaSayfa anaform = new AnaSayfa(txtLoginUserName.Text);
                     this.Hide();
                     anaform.Show();
                 }
@@ -47,16 +47,16 @@ namespace UI
             
         }
 
-        private void btnKayitOl_Click(object sender, EventArgs e)
+        private void btnSignUp_Click(object sender, EventArgs e)
         {
-            KayitOl kayit = new KayitOl(this);
+            KayitOl kayit = new KayitOl();
             this.Hide();
             kayit.Show();
         }
 
         private void lblSifremiUnuttum_Click(object sender, EventArgs e)
         {
-            SifremiUnuttum sifremiUnuttum = new SifremiUnuttum(this);
+            SifremiUnuttum sifremiUnuttum = new SifremiUnuttum();
             this.Hide();
             sifremiUnuttum.Show();
         }
@@ -68,19 +68,10 @@ namespace UI
 
         private void chkSifreGoster_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkSifreGoster.Checked)
-                txtGirisSifre.PasswordChar =  default;
+            if (chkShowPassword.Checked)
+                txtLoginPassword.PasswordChar =  default;
             else
-                txtGirisSifre.PasswordChar = '*';
-        }
-        //public int ReturnUserId()
-        //{
-        //    return db.Kullacınılar.Where(x => x.UserName == txtGirisKullaniciAdi.Text).FirstOrDefault().UserID;
-        //}
-
-        private void grbGiris_Enter(object sender, EventArgs e)
-        {
-
+                txtLoginPassword.PasswordChar = '*';
         }
     }
 }

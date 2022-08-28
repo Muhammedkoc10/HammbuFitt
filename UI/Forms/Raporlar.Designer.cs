@@ -38,19 +38,20 @@ namespace UI.Forms
             this.grbAylikRapor = new System.Windows.Forms.GroupBox();
             this.btnMonthlyReport = new System.Windows.Forms.Button();
             this.dgvMonthlyReport = new System.Windows.Forms.DataGridView();
-            this.grbEncokTuketilen = new System.Windows.Forms.GroupBox();
-            this.btnMostEatFoodsOnMeals = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.btnBackReportToMain = new System.Windows.Forms.Button();
-            this.lblHold3 = new System.Windows.Forms.Label();
             this.Haftalar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kalori = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grbEncokTuketilen = new System.Windows.Forms.GroupBox();
+            this.btnMostEatFoodsOnMeals = new System.Windows.Forms.Button();
+            this.dgvMostEatingFoodByMeal = new System.Windows.Forms.DataGridView();
+            this.btnBackReportToMain = new System.Windows.Forms.Button();
+            this.lblHold3 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbHaftlikRapor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWeeklyReport)).BeginInit();
             this.grbAylikRapor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthlyReport)).BeginInit();
             this.grbEncokTuketilen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMostEatingFoodByMeal)).BeginInit();
             this.SuspendLayout();
             // 
             // grbHaftlikRapor
@@ -135,11 +136,21 @@ namespace UI.Forms
             this.dgvMonthlyReport.Size = new System.Drawing.Size(285, 191);
             this.dgvMonthlyReport.TabIndex = 1;
             // 
+            // Haftalar
+            // 
+            this.Haftalar.HeaderText = "Haftalar";
+            this.Haftalar.Name = "Haftalar";
+            // 
+            // Kalori
+            // 
+            this.Kalori.HeaderText = "Kalori Ortalaması";
+            this.Kalori.Name = "Kalori";
+            // 
             // grbEncokTuketilen
             // 
             this.grbEncokTuketilen.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.grbEncokTuketilen.Controls.Add(this.btnMostEatFoodsOnMeals);
-            this.grbEncokTuketilen.Controls.Add(this.dataGridView3);
+            this.grbEncokTuketilen.Controls.Add(this.dgvMostEatingFoodByMeal);
             this.grbEncokTuketilen.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbEncokTuketilen.Location = new System.Drawing.Point(618, 12);
             this.grbEncokTuketilen.Name = "grbEncokTuketilen";
@@ -160,13 +171,15 @@ namespace UI.Forms
             this.btnMostEatFoodsOnMeals.UseVisualStyleBackColor = false;
             this.btnMostEatFoodsOnMeals.Click += new System.EventHandler(this.btnMostEatFoodsOnMeals_Click);
             // 
-            // dataGridView3
+            // dgvMostEatingFoodByMeal
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(285, 191);
-            this.dataGridView3.TabIndex = 2;
+            this.dgvMostEatingFoodByMeal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMostEatingFoodByMeal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.dgvMostEatingFoodByMeal.Location = new System.Drawing.Point(6, 19);
+            this.dgvMostEatingFoodByMeal.Name = "dgvMostEatingFoodByMeal";
+            this.dgvMostEatingFoodByMeal.Size = new System.Drawing.Size(285, 191);
+            this.dgvMostEatingFoodByMeal.TabIndex = 2;
             // 
             // btnBackReportToMain
             // 
@@ -189,15 +202,10 @@ namespace UI.Forms
             this.lblHold3.TabIndex = 30;
             this.lblHold3.Visible = false;
             // 
-            // Haftalar
+            // Column1
             // 
-            this.Haftalar.HeaderText = "Haftalar";
-            this.Haftalar.Name = "Haftalar";
-            // 
-            // Kalori
-            // 
-            this.Kalori.HeaderText = "Kalori Ortalaması";
-            this.Kalori.Name = "Kalori";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
             // 
             // Raporlar
             // 
@@ -220,7 +228,7 @@ namespace UI.Forms
             this.grbAylikRapor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthlyReport)).EndInit();
             this.grbEncokTuketilen.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMostEatingFoodByMeal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +241,7 @@ namespace UI.Forms
         private System.Windows.Forms.GroupBox grbAylikRapor;
         private System.Windows.Forms.GroupBox grbEncokTuketilen;
         private System.Windows.Forms.DataGridView dgvMonthlyReport;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dgvMostEatingFoodByMeal;
         private System.Windows.Forms.Button btnWeeklyReport;
         private System.Windows.Forms.Button btnMonthlyReport;
         private System.Windows.Forms.Button btnMostEatFoodsOnMeals;
@@ -243,5 +251,6 @@ namespace UI.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn KaloriOrtalamasi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Haftalar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kalori;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
