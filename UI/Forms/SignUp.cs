@@ -48,6 +48,7 @@ namespace UI.Forms
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
+            dtBirthDate.MaxDate = DateTime.Now;
             int age = (DateTime.Now.Year - dtBirthDate.Value.Year);
             if (txtFirstName.Text.Trim() != "" && txtLastName.Text.Trim() != "" && txtUserName.Text.Trim() != "" && txtMail.Text.Trim() != "" && txtPassword.Text.Trim() != "" && txtPasswordAgain.Text.Trim() != "")
             {

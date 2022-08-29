@@ -50,7 +50,7 @@ namespace UI.Forms
             // 
             this.btnBackMainPage.BackColor = System.Drawing.Color.Pink;
             this.btnBackMainPage.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackMainPage.Location = new System.Drawing.Point(381, 332);
+            this.btnBackMainPage.Location = new System.Drawing.Point(258, 492);
             this.btnBackMainPage.Name = "btnBackMainPage";
             this.btnBackMainPage.Size = new System.Drawing.Size(131, 42);
             this.btnBackMainPage.TabIndex = 29;
@@ -69,54 +69,66 @@ namespace UI.Forms
             // 
             // pb1
             // 
-            this.pb1.Location = new System.Drawing.Point(92, 56);
+            this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
+            this.pb1.Location = new System.Drawing.Point(12, 12);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(304, 211);
+            this.pb1.Size = new System.Drawing.Size(624, 474);
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1.TabIndex = 31;
             this.pb1.TabStop = false;
             this.pb1.Visible = false;
             // 
             // pb2
             // 
-            this.pb2.Location = new System.Drawing.Point(232, 115);
+            this.pb2.Image = ((System.Drawing.Image)(resources.GetObject("pb2.Image")));
+            this.pb2.Location = new System.Drawing.Point(12, 12);
             this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(304, 211);
+            this.pb2.Size = new System.Drawing.Size(624, 474);
+            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb2.TabIndex = 32;
             this.pb2.TabStop = false;
             this.pb2.Visible = false;
             // 
             // pb3
             // 
-            this.pb3.Location = new System.Drawing.Point(208, 96);
+            this.pb3.Image = ((System.Drawing.Image)(resources.GetObject("pb3.Image")));
+            this.pb3.Location = new System.Drawing.Point(12, 12);
             this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(304, 211);
+            this.pb3.Size = new System.Drawing.Size(624, 474);
+            this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb3.TabIndex = 32;
             this.pb3.TabStop = false;
             this.pb3.Visible = false;
             // 
             // pb4
             // 
-            this.pb4.Location = new System.Drawing.Point(168, 37);
+            this.pb4.Image = ((System.Drawing.Image)(resources.GetObject("pb4.Image")));
+            this.pb4.Location = new System.Drawing.Point(12, 12);
             this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(304, 211);
+            this.pb4.Size = new System.Drawing.Size(624, 474);
+            this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb4.TabIndex = 32;
             this.pb4.TabStop = false;
             this.pb4.Visible = false;
             // 
             // pb5
             // 
-            this.pb5.Location = new System.Drawing.Point(198, 115);
+            this.pb5.Image = ((System.Drawing.Image)(resources.GetObject("pb5.Image")));
+            this.pb5.Location = new System.Drawing.Point(12, 12);
             this.pb5.Name = "pb5";
-            this.pb5.Size = new System.Drawing.Size(304, 211);
+            this.pb5.Size = new System.Drawing.Size(624, 474);
+            this.pb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb5.TabIndex = 32;
             this.pb5.TabStop = false;
             this.pb5.Visible = false;
             // 
             // pb6
             // 
-            this.pb6.Location = new System.Drawing.Point(12, 115);
+            this.pb6.Image = ((System.Drawing.Image)(resources.GetObject("pb6.Image")));
+            this.pb6.Location = new System.Drawing.Point(12, 12);
             this.pb6.Name = "pb6";
-            this.pb6.Size = new System.Drawing.Size(304, 211);
+            this.pb6.Size = new System.Drawing.Size(624, 474);
+            this.pb6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb6.TabIndex = 32;
             this.pb6.TabStop = false;
             this.pb6.Visible = false;
@@ -126,7 +138,7 @@ namespace UI.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(514, 381);
+            this.ClientSize = new System.Drawing.Size(645, 538);
             this.Controls.Add(this.pb6);
             this.Controls.Add(this.pb5);
             this.Controls.Add(this.pb4);
@@ -137,7 +149,7 @@ namespace UI.Forms
             this.Controls.Add(this.btnBackMainPage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DietSuggestionPage";
-            this.Text = "DiyetOnerisi";
+            this.Text = "s";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DietSuggestionPage_FormClosed);
             this.Load += new System.EventHandler(this.DietSuggestionPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();

@@ -107,7 +107,7 @@ namespace UI.Forms
                 }
                 finally
                 {
-                    var foodCalories = db.Foods.Where(w => w.FoodName == cmbFoodSelect.Text).Select(x => new { x.FoodName, x.Calories }).ToList();
+                    var foodCalories = db.Foods.Where(w => w.FoodName == cmbFoodSelect.Text).Select(x => new { x.FoodName, x.Calories}).ToList();
                     dgvFoodCalories.DataSource = foodCalories;
                 }
             }
@@ -201,7 +201,7 @@ namespace UI.Forms
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            Methods.Clear(grpFoodCaloriesSelect);
+            Methods.Clear(grpAddFoods);
         }
     }
 }

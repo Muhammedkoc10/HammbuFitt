@@ -26,23 +26,22 @@ namespace UI.Forms
 
         private void DietSuggestionPage_Load(object sender, EventArgs e)
         {
-
             db = new Context();
             int userId = UserIdFill();
-            if (db.Users.Where(x => x.UserID == userId && x.IsSportsman == true && x.BasalMetabolismRate < 25) != null)
-            {
+            bool usersSportman = db.Users.Where(x => x.UserID == userId).FirstOrDefault().IsSportsman;
+            decimal usersBodyMassIndex = db.Users.Where(x => x.UserID == userId).FirstOrDefault().BodyMassIndex;
+            if (usersSportman == true && usersBodyMassIndex <= 18)
                 pb1.Show();
-                MessageBox.Show("ye");
-            }
-                
-            else if (db.Users.Where(x => x.UserID == userId && x.IsSportsman == true && x.BasalMetabolismRate < 25) != null)
+            else if (usersSportman == false && usersBodyMassIndex <= 18)
                 pb2.Show();
-            else if (db.Users.Where(x => x.UserID == userId && x.IsSportsman == true && x.BasalMetabolismRate < 25) != null)
-                pb2.Show();
-            else if (db.Users.Where(x => x.UserID == userId && x.IsSportsman == true && x.BasalMetabolismRate < 25) != null)
-                pb2.Show();
-            else if (db.Users.Where(x => x.UserID == userId && x.IsSportsman == true && x.BasalMetabolismRate < 25) != null)
-                pb2.Show();
+            else if (usersSportman == true && usersBodyMassIndex > 18 && usersBodyMassIndex <= 23)
+                pb3.Show();
+            else if (usersSportman == false && usersBodyMassIndex > 18 && usersBodyMassIndex <= 23)
+                pb4.Show();
+            else if (usersSportman == true && usersBodyMassIndex >23)
+                pb5.Show();
+            else if (usersSportman == false && usersBodyMassIndex > 23)
+                pb6.Show();
         }
         
         private void btnBackMainPage_Click(object sender, EventArgs e)

@@ -23,14 +23,6 @@ namespace UI
         {
             db = new Context();
         }
-
-        private void btnBackToMainPage_Click(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            this.Hide();
-            login.Show();
-        }
-
         private void PasswordReminder_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -38,19 +30,31 @@ namespace UI
 
         private void btnPasswordReminder_Click(object sender, EventArgs e)
         {
-            if(db.Users.Where(x => x.UserID == db.Users.FirstOrDefault(y => y.UserName == txtUserNameReminder.Text).UserID).FirstOrDefault() != null)
+            if (txtEmailReminder.Text.Trim()!=""&&txtUserNameReminder.Text.Trim() != "")
             {
-                if (db.Users.Where(x=>x.MailAddress==txtEmailReminder.Text).FirstOrDefault()!=null)
+                if (db.Users.Where(x => x.UserID == db.Users.FirstOrDefault(y => y.UserName == txtUserNameReminder.Text).UserID).FirstOrDefault() != null)
                 {
-                    string password =db.Users.Where(x => x.UserID == db.Users.FirstOrDefault(z => z.UserName == txtUserNameReminder.Text).UserID).FirstOrDefault().Password.ToString();
-                    MessageBox.Show("Şifreniz : "+ password);
-                    Methods.Clear(grpPasswordReminder);
+                    if (db.Users.Where(x => x.MailAddress == txtEmailReminder.Text).FirstOrDefault() != null)
+                    {
+                        string password = db.Users.Where(x => x.UserID == db.Users.FirstOrDefault(z => z.UserName == txtUserNameReminder.Text).UserID).FirstOrDefault().Password.ToString();
+                        MessageBox.Show("Şifreniz : " + password);
+                        Methods.Clear(grpPasswordReminder);
+                    }
+                    else
+                        MessageBox.Show("Bu kullanıcı adının mail adresi doğru değil!");
                 }
                 else
-                    MessageBox.Show("Bu kullanıcı adının mail adresi doğru değil!");
+                    MessageBox.Show("Kullanıcı adınız yanlış!");
             }
             else
-                MessageBox.Show("Kullanıcı adınız yanlış!");
+                MessageBox.Show("Lütfen boş alan bırakmayınız!");
+        }
+
+        private void btnBackToLoginPage_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.Show();
         }
     }
 }

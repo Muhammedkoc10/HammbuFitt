@@ -31,7 +31,7 @@ namespace UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordReminder));
             this.grpPasswordReminder = new System.Windows.Forms.GroupBox();
-            this.btnBackToMainPage = new System.Windows.Forms.Button();
+            this.btnBackToLoginPage = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUserNameReminder = new System.Windows.Forms.TextBox();
@@ -43,7 +43,7 @@ namespace UI
             // grpPasswordReminder
             // 
             this.grpPasswordReminder.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grpPasswordReminder.Controls.Add(this.btnBackToMainPage);
+            this.grpPasswordReminder.Controls.Add(this.btnBackToLoginPage);
             this.grpPasswordReminder.Controls.Add(this.label2);
             this.grpPasswordReminder.Controls.Add(this.label1);
             this.grpPasswordReminder.Controls.Add(this.txtUserNameReminder);
@@ -57,17 +57,17 @@ namespace UI
             this.grpPasswordReminder.TabStop = false;
             this.grpPasswordReminder.Text = "Şifremi Unuttum";
             // 
-            // btnBackToMainPage
+            // btnBackToLoginPage
             // 
-            this.btnBackToMainPage.BackColor = System.Drawing.Color.Pink;
-            this.btnBackToMainPage.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToMainPage.Location = new System.Drawing.Point(173, 225);
-            this.btnBackToMainPage.Name = "btnBackToMainPage";
-            this.btnBackToMainPage.Size = new System.Drawing.Size(131, 42);
-            this.btnBackToMainPage.TabIndex = 28;
-            this.btnBackToMainPage.Text = "GERİ DÖN";
-            this.btnBackToMainPage.UseVisualStyleBackColor = false;
-            this.btnBackToMainPage.Click += new System.EventHandler(this.btnPasswordReminder_Click);
+            this.btnBackToLoginPage.BackColor = System.Drawing.Color.Pink;
+            this.btnBackToLoginPage.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToLoginPage.Location = new System.Drawing.Point(173, 225);
+            this.btnBackToLoginPage.Name = "btnBackToLoginPage";
+            this.btnBackToLoginPage.Size = new System.Drawing.Size(131, 42);
+            this.btnBackToLoginPage.TabIndex = 28;
+            this.btnBackToLoginPage.Text = "GERİ DÖN";
+            this.btnBackToLoginPage.UseVisualStyleBackColor = false;
+            this.btnBackToLoginPage.Click += new System.EventHandler(this.btnBackToLoginPage_Click);
             // 
             // label2
             // 
@@ -144,6 +144,6 @@ namespace UI
         private System.Windows.Forms.TextBox txtUserNameReminder;
         private System.Windows.Forms.Button btnPasswordReminder;
         private System.Windows.Forms.TextBox txtEmailReminder;
-        private System.Windows.Forms.Button btnBackToMainPage;
+        private System.Windows.Forms.Button btnBackToLoginPage;
     }
 }

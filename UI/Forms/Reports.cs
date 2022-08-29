@@ -35,34 +35,36 @@ namespace UI.Forms
 
         private void btnWeeklyReport_Click(object sender, EventArgs e)
         {
-
             dgvWeeklyReport.Rows.Clear();
+            int b = 7;
             int userID = UserIdFill2();
             for (int i = 7; i > 0; i--)
             {
-                DateTime end = DateTime.Now.Date.AddDays(-i + 1);
-                DateTime start = DateTime.Now.Date.AddDays(-i);
+                DateTime end = DateTime.Now.AddDays(i - 7);
+                DateTime start = DateTime.Now.Date.AddDays(i - 7);
                 try
                 {
                     if (db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories) != 0)
                     {
                         double avgCalories = db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories);
-                        dgvWeeklyReport.Rows.Add(8 - i + " .gün", avgCalories.ToString());
+                        dgvWeeklyReport.Rows.Add((i) + " .gün", avgCalories.ToString());
                     }
                 }
                 catch (Exception)
                 {
-                    i--;
+                    MessageBox.Show(b + ".günde haftalık öğün bilginiz bulunmamaktadır!");
+                    b--;
+                    continue;
                 }
-
             }
         }
         private void btnMonthlyReport_Click(object sender, EventArgs e)
         {
             int n = 1;
+            int b = 1;
             dgvMonthlyReport.Rows.Clear();
             int userID = UserIdFill2();
-            for (int i = 28; i >= 0; i -= +7)
+            for (int i = 28; i > 0; i -= +7)
             {
                 DateTime end = DateTime.Now.Date.AddDays(-i + 7);
                 DateTime start = DateTime.Now.Date.AddDays(-i);
@@ -77,6 +79,8 @@ namespace UI.Forms
                 }
                 catch (Exception)
                 {
+                    MessageBox.Show(b + ".Haftada aylık öğün bilginiz bulunmamaktadır!");
+                    b++;
                     continue;
                 }
             }
@@ -84,25 +88,48 @@ namespace UI.Forms
 
         private void btnMostEatFoodsOnMeals_Click(object sender, EventArgs e)
         {
-            ////var ss = db.ÖğünYemekleri.GroupBy(x => x.MealsFood.MealTime).Select(x => x.Key);
-            ////MessageBox.Show(ss.ToString());
-            ////var allMeals = new List<int>();
-            //var meal1 = new List<string>();
-            //var meal = db.ÖğünYemekleri.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.MealTime == "Öğle" && x.MealsFood.AddedDate < DateTime.Now).Select(x => x.MealID).ToList();
-            //foreach (var item in meal)
-            //{
-            //   var q= db.ÖğünYemekleri.Include("MealsFood").Include("FoodsMeal").Where(x=>x.MealID== item).GroupBy(x=>x.FoodID).Take(1).Select(x => x.Key.Count());
-               
-            //        //dgvMostEatingFoodByMeal.Rows.Add(meal12);
-            //}
-            
-            ////MessageBox.Show(meal.ToString());
-            ////var xxx= db.ÖğünYemekleri.Where(x => x.MealsFood.MealTime == "Sabah").Select(x => x.FoodID).Count();
-            ////foreach (var item in meal)
-            ////{
-            ////    dgvMostEatingFoodByMeal.Rows.Add(item);
-            ////}
+            string morning = FindFoodName("Sabah");
+            string snack1 = FindFoodName("Ara Öğün1");
+            string lunch = FindFoodName("Öğle");
+            string snack2 = FindFoodName("Ara Öğün2");
+            string dinner = FindFoodName("Akşam");
+            lstBreakfast.Items.Add(morning);
+            lstSnack1.Items.Add(snack1);
+            lstLunch.Items.Add(lunch);
+            lstSnack2.Items.Add(snack2);
+            lstDinner.Items.Add(dinner);
+        }
 
+        private string FindFoodName(string mealTime)
+        {
+            int userID = UserIdFill2();
+            int mealCount = db.Meals.Where(x => x.MealID.ToString() != null).Count();
+            string food = string.Empty;
+            try
+            {
+                for (int i = 0; i < mealCount; i++)
+                {
+                    if (db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate != null && x.UserID == userID && x.MealsFood.MealTime == mealTime) != null)
+                    {
+                        int result = db.MealFoods.Where(x => x.MealsFood.MealTime == mealTime)
+                   .GroupBy(f => f.FoodID)
+                   .Select(g => new { foodID = g.Key, count = g.Count() })
+                   .OrderByDescending(x => x.count).Take(1).First().foodID;
+                        food = db.Foods.Where(x => x.FoodID == result).FirstOrDefault().FoodName;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Henüz " + mealTime + " öğün girişi yapılmaldı!");
+                        return string.Empty;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Henüz " + mealTime + " öğün girişi yapılmaldı!");
+            }
+            
+            return food;
         }
 
         private void ReportsPage_Load(object sender, EventArgs e)

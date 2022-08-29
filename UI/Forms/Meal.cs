@@ -147,7 +147,16 @@ namespace UI.Forms
             }
             else
             {
-                int mealID = db.Meals.OrderByDescending(x => x.AddedDate).Take(1).FirstOrDefault().MealID;
+                int mealID;
+                if (db.Meals.OrderByDescending(x => x.AddedDate).Take(1).FirstOrDefault() == null)
+                {
+                    mealID = 0;
+                }
+                else
+                {
+                    mealID = db.Meals.OrderByDescending(x => x.AddedDate).Take(1).FirstOrDefault().MealID;
+                }
+
                 int userID = UserIdFill();
                 Meal meal;
                 string selectedMeal = (cmbMealSelect.Text);
@@ -163,12 +172,12 @@ namespace UI.Forms
                 {
                     FoodsMeal = db.Foods.Where(x => x.FoodID == (int)cmbMealFoodSelect.SelectedValue).FirstOrDefault(),
                     MealsFood = db.Meals.Where(x => x.MealID == mealID + 1).FirstOrDefault(),
-                    UsersMeal= db.Users.Where(x => x.UserID == userID).FirstOrDefault(),
+                    UsersMeal = db.Users.Where(x => x.UserID == userID).FirstOrDefault(),
                 };
                 db.MealFoods.Add(foodMeal);
 
                 db.SaveChanges();
-                MessageBox.Show("Başarılı");
+                MessageBox.Show("Öğün ekleme işlemi başarılı");
                 ListViewItem lvi = new ListViewItem();
                 lvi.Text = cmbMealCategorySelect.Text;
                 lvi.SubItems.Add(cmbMealFoodSelect.Text);

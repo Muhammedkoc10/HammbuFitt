@@ -16,10 +16,9 @@ namespace HammbuuFittDal
         {
             ToTable("Foods")
                 .HasKey(x => x.FoodID);
-            Property(x => x.FoodName).HasMaxLength(50).IsRequired();
+            Property(x => x.FoodName).HasMaxLength(150).IsRequired();
             Property(x => x.Calories).IsRequired();
             Property(x => x.Photo).HasColumnType("image");
-            Property(x => x.PhotoPath).IsRequired();
         }
     }
 }

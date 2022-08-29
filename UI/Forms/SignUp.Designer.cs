@@ -152,9 +152,9 @@ namespace UI.Forms
             this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(369, 227);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 18);
+            this.label7.Size = new System.Drawing.Size(69, 18);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Boy:";
+            this.label7.Text = "Boy(cm):";
             // 
             // label8
             // 
@@ -162,9 +162,9 @@ namespace UI.Forms
             this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(490, 227);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 18);
+            this.label8.Size = new System.Drawing.Size(67, 18);
             this.label8.TabIndex = 18;
-            this.label8.Text = "Kilo: ";
+            this.label8.Text = "Kilo(kg):";
             // 
             // rbMan
             // 
@@ -388,7 +388,7 @@ namespace UI.Forms
             this.AcceptButton = this.btnSignUp;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Green;
+            this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(711, 493);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnBackToMainPage);
