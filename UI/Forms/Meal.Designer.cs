@@ -29,6 +29,7 @@ namespace UI.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MealPage));
             this.grpAddMeal = new System.Windows.Forms.GroupBox();
             this.lstShowMeal = new System.Windows.Forms.ListView();
@@ -36,6 +37,7 @@ namespace UI.Forms
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddMeal = new System.Windows.Forms.Button();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.cmbMealSelect = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbMealFoodSelect = new System.Windows.Forms.ComboBox();
@@ -53,6 +55,7 @@ namespace UI.Forms
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpMealReport = new System.Windows.Forms.GroupBox();
             this.lblHold5 = new System.Windows.Forms.Label();
+            this.btnCloseApp = new System.Windows.Forms.Button();
             this.grpAddMeal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMealDaily)).BeginInit();
             this.grpMealReport.SuspendLayout();
@@ -60,7 +63,7 @@ namespace UI.Forms
             // 
             // grpAddMeal
             // 
-            this.grpAddMeal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grpAddMeal.BackColor = System.Drawing.Color.Transparent;
             this.grpAddMeal.Controls.Add(this.lstShowMeal);
             this.grpAddMeal.Controls.Add(this.btnAddMeal);
             this.grpAddMeal.Controls.Add(this.cmbMealSelect);
@@ -69,8 +72,8 @@ namespace UI.Forms
             this.grpAddMeal.Controls.Add(this.label2);
             this.grpAddMeal.Controls.Add(this.cmbMealCategorySelect);
             this.grpAddMeal.Controls.Add(this.label1);
-            this.grpAddMeal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpAddMeal.Location = new System.Drawing.Point(12, 12);
+            this.grpAddMeal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAddMeal.Location = new System.Drawing.Point(45, 56);
             this.grpAddMeal.Name = "grpAddMeal";
             this.grpAddMeal.Size = new System.Drawing.Size(358, 350);
             this.grpAddMeal.TabIndex = 0;
@@ -83,6 +86,7 @@ namespace UI.Forms
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.lstShowMeal.GridLines = true;
             this.lstShowMeal.HideSelection = false;
             this.lstShowMeal.Location = new System.Drawing.Point(19, 131);
             this.lstShowMeal.Name = "lstShowMeal";
@@ -108,20 +112,32 @@ namespace UI.Forms
             // 
             // btnAddMeal
             // 
-            this.btnAddMeal.BackColor = System.Drawing.Color.Lime;
-            this.btnAddMeal.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMeal.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAddMeal.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMeal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddMeal.ImageIndex = 2;
+            this.btnAddMeal.ImageList = this.ımageList1;
             this.btnAddMeal.Location = new System.Drawing.Point(191, 293);
             this.btnAddMeal.Name = "btnAddMeal";
-            this.btnAddMeal.Size = new System.Drawing.Size(161, 42);
+            this.btnAddMeal.Size = new System.Drawing.Size(145, 42);
             this.btnAddMeal.TabIndex = 11;
             this.btnAddMeal.Text = "ÖĞÜN EKLE";
+            this.btnAddMeal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddMeal.UseVisualStyleBackColor = false;
             this.btnAddMeal.Click += new System.EventHandler(this.btnAddMeal_Click);
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "cross.png");
+            this.ımageList1.Images.SetKeyName(1, "60577.png");
+            this.ımageList1.Images.SetKeyName(2, "icon-add-0.jpg");
             // 
             // cmbMealSelect
             // 
             this.cmbMealSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMealSelect.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMealSelect.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMealSelect.FormattingEnabled = true;
             this.cmbMealSelect.Items.AddRange(new object[] {
             "Sabah",
@@ -147,7 +163,7 @@ namespace UI.Forms
             // cmbMealFoodSelect
             // 
             this.cmbMealFoodSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMealFoodSelect.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMealFoodSelect.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMealFoodSelect.FormattingEnabled = true;
             this.cmbMealFoodSelect.Location = new System.Drawing.Point(139, 50);
             this.cmbMealFoodSelect.Name = "cmbMealFoodSelect";
@@ -168,7 +184,7 @@ namespace UI.Forms
             // cmbMealCategorySelect
             // 
             this.cmbMealCategorySelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMealCategorySelect.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMealCategorySelect.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMealCategorySelect.FormattingEnabled = true;
             this.cmbMealCategorySelect.Location = new System.Drawing.Point(139, 19);
             this.cmbMealCategorySelect.Name = "cmbMealCategorySelect";
@@ -188,20 +204,24 @@ namespace UI.Forms
             // 
             // btnMealBackToMain
             // 
-            this.btnMealBackToMain.BackColor = System.Drawing.Color.Pink;
-            this.btnMealBackToMain.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMealBackToMain.Location = new System.Drawing.Point(502, 368);
+            this.btnMealBackToMain.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnMealBackToMain.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMealBackToMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMealBackToMain.ImageIndex = 1;
+            this.btnMealBackToMain.ImageList = this.ımageList1;
+            this.btnMealBackToMain.Location = new System.Drawing.Point(347, 412);
             this.btnMealBackToMain.Name = "btnMealBackToMain";
             this.btnMealBackToMain.Size = new System.Drawing.Size(131, 42);
             this.btnMealBackToMain.TabIndex = 29;
             this.btnMealBackToMain.Text = "GERİ DÖN";
+            this.btnMealBackToMain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMealBackToMain.UseVisualStyleBackColor = false;
             this.btnMealBackToMain.Click += new System.EventHandler(this.btnMealBackToMain_Click);
             // 
             // lblHold1
             // 
             this.lblHold1.AutoSize = true;
-            this.lblHold1.Location = new System.Drawing.Point(264, 382);
+            this.lblHold1.Location = new System.Drawing.Point(297, 426);
             this.lblHold1.Name = "lblHold1";
             this.lblHold1.Size = new System.Drawing.Size(0, 13);
             this.lblHold1.TabIndex = 30;
@@ -210,18 +230,18 @@ namespace UI.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(129, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 17);
+            this.label4.Size = new System.Drawing.Size(111, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "Günlük Öğünler";
             // 
             // btnDailyMealInfo
             // 
-            this.btnDailyMealInfo.BackColor = System.Drawing.Color.DarkRed;
-            this.btnDailyMealInfo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDailyMealInfo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDailyMealInfo.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnDailyMealInfo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDailyMealInfo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnDailyMealInfo.Location = new System.Drawing.Point(16, 280);
             this.btnDailyMealInfo.Name = "btnDailyMealInfo";
             this.btnDailyMealInfo.Size = new System.Drawing.Size(161, 55);
@@ -232,9 +252,9 @@ namespace UI.Forms
             // 
             // btnDailyCalories
             // 
-            this.btnDailyCalories.BackColor = System.Drawing.Color.DarkRed;
-            this.btnDailyCalories.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDailyCalories.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDailyCalories.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnDailyCalories.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDailyCalories.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnDailyCalories.Location = new System.Drawing.Point(204, 280);
             this.btnDailyCalories.Name = "btnDailyCalories";
             this.btnDailyCalories.Size = new System.Drawing.Size(161, 55);
@@ -245,6 +265,7 @@ namespace UI.Forms
             // 
             // dgvMealDaily
             // 
+            this.dgvMealDaily.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvMealDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMealDaily.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -252,6 +273,7 @@ namespace UI.Forms
             this.Column3});
             this.dgvMealDaily.Location = new System.Drawing.Point(16, 42);
             this.dgvMealDaily.Name = "dgvMealDaily";
+            this.dgvMealDaily.ReadOnly = true;
             this.dgvMealDaily.Size = new System.Drawing.Size(335, 220);
             this.dgvMealDaily.TabIndex = 15;
             // 
@@ -259,26 +281,29 @@ namespace UI.Forms
             // 
             this.Column1.HeaderText = "Öğün";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Yemek";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Kalori";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // grpMealReport
             // 
-            this.grpMealReport.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grpMealReport.BackColor = System.Drawing.Color.Transparent;
             this.grpMealReport.Controls.Add(this.dgvMealDaily);
             this.grpMealReport.Controls.Add(this.btnDailyCalories);
             this.grpMealReport.Controls.Add(this.btnDailyMealInfo);
             this.grpMealReport.Controls.Add(this.label4);
-            this.grpMealReport.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpMealReport.Location = new System.Drawing.Point(376, 12);
+            this.grpMealReport.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpMealReport.Location = new System.Drawing.Point(409, 56);
             this.grpMealReport.Name = "grpMealReport";
             this.grpMealReport.Size = new System.Drawing.Size(377, 350);
             this.grpMealReport.TabIndex = 1;
@@ -294,19 +319,37 @@ namespace UI.Forms
             this.lblHold5.TabIndex = 31;
             this.lblHold5.Visible = false;
             // 
+            // btnCloseApp
+            // 
+            this.btnCloseApp.BackColor = System.Drawing.Color.Transparent;
+            this.btnCloseApp.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCloseApp.ImageIndex = 0;
+            this.btnCloseApp.ImageList = this.ımageList1;
+            this.btnCloseApp.Location = new System.Drawing.Point(804, -1);
+            this.btnCloseApp.Name = "btnCloseApp";
+            this.btnCloseApp.Size = new System.Drawing.Size(36, 36);
+            this.btnCloseApp.TabIndex = 36;
+            this.btnCloseApp.UseVisualStyleBackColor = false;
+            this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
+            // 
             // MealPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(753, 420);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(839, 466);
+            this.Controls.Add(this.btnCloseApp);
             this.Controls.Add(this.lblHold5);
             this.Controls.Add(this.lblHold1);
             this.Controls.Add(this.btnMealBackToMain);
             this.Controls.Add(this.grpMealReport);
             this.Controls.Add(this.grpAddMeal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MealPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "s";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Meal_FormClosed);
             this.Load += new System.EventHandler(this.Meal_Load);
@@ -345,5 +388,7 @@ namespace UI.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.GroupBox grpMealReport;
         private System.Windows.Forms.Label lblHold5;
+        private System.Windows.Forms.ImageList ımageList1;
+        private System.Windows.Forms.Button btnCloseApp;
     }
 }

@@ -36,7 +36,7 @@ namespace UI.Forms
         private void btnWeeklyReport_Click(object sender, EventArgs e)
         {
             dgvWeeklyReport.Rows.Clear();
-            int b = 7;
+            int b = 1;
             int userID = UserIdFill2();
             for (int i = 7; i > 0; i--)
             {
@@ -53,7 +53,7 @@ namespace UI.Forms
                 catch (Exception)
                 {
                     MessageBox.Show(b + ".günde haftalık öğün bilginiz bulunmamaktadır!");
-                    b--;
+                    b++;
                     continue;
                 }
             }
@@ -111,7 +111,7 @@ namespace UI.Forms
                 {
                     if (db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate != null && x.UserID == userID && x.MealsFood.MealTime == mealTime) != null)
                     {
-                        int result = db.MealFoods.Where(x => x.MealsFood.MealTime == mealTime)
+                        int result = db.MealFoods.Where(x => x.MealsFood.MealTime == mealTime&& x.UserID == userID)
                    .GroupBy(f => f.FoodID)
                    .Select(g => new { foodID = g.Key, count = g.Count() })
                    .OrderByDescending(x => x.count).Take(1).First().foodID;
@@ -147,6 +147,11 @@ namespace UI.Forms
                 Application.Exit();
                 return 0;
             }
+        }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -144,6 +144,7 @@ namespace UI.Forms
                 CmbFill(SelectedCategory,id);
                 Show(SelectedCategory);
                 Methods.Clear(grpAddFoods);
+                MessageBox.Show("Yanlış kalori bilgisi ve uygunsuz foto girişi yapıldıysa yemek-kalori bilginiz kaldırılabilir!");
             }
             else
                 MessageBox.Show("Yemek adını boş geçmeyiniz!");
@@ -202,6 +203,11 @@ namespace UI.Forms
         private void btnClear_Click(object sender, EventArgs e)
         {
             Methods.Clear(grpAddFoods);
+        }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

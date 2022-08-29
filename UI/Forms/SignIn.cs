@@ -71,5 +71,10 @@ namespace UI
             else
                 txtLoginPassword.PasswordChar = '*';
         }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

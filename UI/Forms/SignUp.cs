@@ -143,5 +143,10 @@ namespace UI.Forms
             else
                 txtPassword.PasswordChar = txtPasswordAgain.PasswordChar = '*';
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -25,6 +25,8 @@ namespace UI
                     ((NumericUpDown)item).Value = 1;
                 if (item is CheckBox)
                     ((CheckBox)item).Checked = false;
+                if (item is ComboBox)
+                    ((ComboBox)item).SelectedValue = -1;
             }
         }
     }

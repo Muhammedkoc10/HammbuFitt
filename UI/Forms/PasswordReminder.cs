@@ -56,5 +56,10 @@ namespace UI
             this.Hide();
             login.Show();
         }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
