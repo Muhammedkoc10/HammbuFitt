@@ -141,7 +141,7 @@ namespace UI.Forms
             this.cmbMealSelect.FormattingEnabled = true;
             this.cmbMealSelect.Items.AddRange(new object[] {
             "Sabah",
-            "Ara Öğün1",
+            "Ara Öğün 1",
             "Öğle",
             "Ara Öğün 2",
             "Akşam"});

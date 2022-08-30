@@ -45,12 +45,10 @@ namespace UI.Forms
             this.btnAddFood = new System.Windows.Forms.Button();
             this.btnSelectPhoto = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtPhotoPath = new System.Windows.Forms.TextBox();
             this.numAddCalories = new System.Windows.Forms.NumericUpDown();
             this.txtAddFood = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.cmbCategoryAdd = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,6 +59,8 @@ namespace UI.Forms
             this.lbl2 = new System.Windows.Forms.Label();
             this.lblHold = new System.Windows.Forms.Label();
             this.btnCloseApp = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPhotoPath = new System.Windows.Forms.TextBox();
             this.grpFoodCaloriesSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoodCalories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodsCalories)).BeginInit();
@@ -83,7 +83,7 @@ namespace UI.Forms
             this.grpFoodCaloriesSelect.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpFoodCaloriesSelect.Location = new System.Drawing.Point(35, 43);
             this.grpFoodCaloriesSelect.Name = "grpFoodCaloriesSelect";
-            this.grpFoodCaloriesSelect.Size = new System.Drawing.Size(301, 353);
+            this.grpFoodCaloriesSelect.Size = new System.Drawing.Size(301, 367);
             this.grpFoodCaloriesSelect.TabIndex = 0;
             this.grpFoodCaloriesSelect.TabStop = false;
             this.grpFoodCaloriesSelect.Text = "Kalori ve Besin";
@@ -108,7 +108,7 @@ namespace UI.Forms
             this.btnShowFoodsAndCalories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShowFoodsAndCalories.ImageKey = "indir.png";
             this.btnShowFoodsAndCalories.ImageList = this.ımageList1;
-            this.btnShowFoodsAndCalories.Location = new System.Drawing.Point(84, 297);
+            this.btnShowFoodsAndCalories.Location = new System.Drawing.Point(84, 307);
             this.btnShowFoodsAndCalories.Name = "btnShowFoodsAndCalories";
             this.btnShowFoodsAndCalories.Size = new System.Drawing.Size(131, 42);
             this.btnShowFoodsAndCalories.TabIndex = 6;
@@ -187,7 +187,7 @@ namespace UI.Forms
             this.btnBackToMainPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBackToMainPage.ImageIndex = 1;
             this.btnBackToMainPage.ImageList = this.ımageList1;
-            this.btnBackToMainPage.Location = new System.Drawing.Point(119, 411);
+            this.btnBackToMainPage.Location = new System.Drawing.Point(119, 429);
             this.btnBackToMainPage.Name = "btnBackToMainPage";
             this.btnBackToMainPage.Size = new System.Drawing.Size(131, 42);
             this.btnBackToMainPage.TabIndex = 29;
@@ -199,15 +199,15 @@ namespace UI.Forms
             // grpAddFoods
             // 
             this.grpAddFoods.BackColor = System.Drawing.Color.Transparent;
+            this.grpAddFoods.Controls.Add(this.txtPhotoPath);
             this.grpAddFoods.Controls.Add(this.btnAddFood);
             this.grpAddFoods.Controls.Add(this.btnSelectPhoto);
             this.grpAddFoods.Controls.Add(this.label7);
-            this.grpAddFoods.Controls.Add(this.txtPhotoPath);
             this.grpAddFoods.Controls.Add(this.numAddCalories);
             this.grpAddFoods.Controls.Add(this.txtAddFood);
             this.grpAddFoods.Controls.Add(this.btnClear);
-            this.grpAddFoods.Controls.Add(this.label5);
             this.grpAddFoods.Controls.Add(this.label6);
+            this.grpAddFoods.Controls.Add(this.label5);
             this.grpAddFoods.Controls.Add(this.cmbCategoryAdd);
             this.grpAddFoods.Controls.Add(this.label4);
             this.grpAddFoods.Controls.Add(this.label3);
@@ -215,7 +215,7 @@ namespace UI.Forms
             this.grpAddFoods.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAddFoods.Location = new System.Drawing.Point(355, 43);
             this.grpAddFoods.Name = "grpAddFoods";
-            this.grpAddFoods.Size = new System.Drawing.Size(325, 412);
+            this.grpAddFoods.Size = new System.Drawing.Size(325, 428);
             this.grpAddFoods.TabIndex = 2;
             this.grpAddFoods.TabStop = false;
             this.grpAddFoods.Text = "Kategoriye Ekleme";
@@ -226,7 +226,7 @@ namespace UI.Forms
             this.btnAddFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddFood.ImageKey = "icon-add-0.jpg";
             this.btnAddFood.ImageList = this.ımageList1;
-            this.btnAddFood.Location = new System.Drawing.Point(218, 364);
+            this.btnAddFood.Location = new System.Drawing.Point(218, 368);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(101, 42);
             this.btnAddFood.TabIndex = 30;
@@ -241,7 +241,7 @@ namespace UI.Forms
             this.btnSelectPhoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSelectPhoto.ImageIndex = 3;
             this.btnSelectPhoto.ImageList = this.ımageList1;
-            this.btnSelectPhoto.Location = new System.Drawing.Point(218, 315);
+            this.btnSelectPhoto.Location = new System.Drawing.Point(218, 312);
             this.btnSelectPhoto.Name = "btnSelectPhoto";
             this.btnSelectPhoto.Size = new System.Drawing.Size(101, 37);
             this.btnSelectPhoto.TabIndex = 29;
@@ -260,14 +260,6 @@ namespace UI.Forms
             this.label7.Size = new System.Drawing.Size(104, 16);
             this.label7.TabIndex = 28;
             this.label7.Text = "Resim Önizleme";
-            // 
-            // txtPhotoPath
-            // 
-            this.txtPhotoPath.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhotoPath.Location = new System.Drawing.Point(151, 284);
-            this.txtPhotoPath.Name = "txtPhotoPath";
-            this.txtPhotoPath.Size = new System.Drawing.Size(168, 25);
-            this.txtPhotoPath.TabIndex = 27;
             // 
             // numAddCalories
             // 
@@ -297,7 +289,7 @@ namespace UI.Forms
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClear.ImageKey = "310679.png";
             this.btnClear.ImageList = this.ımageList1;
-            this.btnClear.Location = new System.Drawing.Point(33, 339);
+            this.btnClear.Location = new System.Drawing.Point(33, 368);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(116, 42);
             this.btnClear.TabIndex = 13;
@@ -310,21 +302,11 @@ namespace UI.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 235);
+            this.label5.Location = new System.Drawing.Point(3, 237);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 18);
             this.label5.TabIndex = 10;
             this.label5.Text = "Kalori / 100 Gram:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(30, 287);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 18);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Besin Resmi:";
             // 
             // cmbCategoryAdd
             // 
@@ -425,6 +407,24 @@ namespace UI.Forms
             this.btnCloseApp.UseVisualStyleBackColor = false;
             this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(43, 282);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 18);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Resim Yolu:";
+            // 
+            // txtPhotoPath
+            // 
+            this.txtPhotoPath.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhotoPath.Location = new System.Drawing.Point(151, 280);
+            this.txtPhotoPath.Name = "txtPhotoPath";
+            this.txtPhotoPath.Size = new System.Drawing.Size(168, 25);
+            this.txtPhotoPath.TabIndex = 31;
+            // 
             // FoodsAndCalories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,7 +432,7 @@ namespace UI.Forms
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(724, 467);
+            this.ClientSize = new System.Drawing.Size(725, 494);
             this.Controls.Add(this.btnCloseApp);
             this.Controls.Add(this.lblHold);
             this.Controls.Add(this.label8);
@@ -472,14 +472,12 @@ namespace UI.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAddFood;
         private System.Windows.Forms.NumericUpDown numAddCalories;
         private System.Windows.Forms.Button btnBackToMainPage;
-        private System.Windows.Forms.TextBox txtPhotoPath;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvFoodCalories;
         private System.Windows.Forms.PictureBox pbTutulan;
@@ -495,5 +493,7 @@ namespace UI.Forms
         private System.Windows.Forms.ImageList ımageList1;
         private System.Windows.Forms.Button btnAddFood;
         private System.Windows.Forms.Button btnCloseApp;
+        private System.Windows.Forms.TextBox txtPhotoPath;
+        private System.Windows.Forms.Label label6;
     }
 }

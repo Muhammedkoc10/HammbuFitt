@@ -184,7 +184,10 @@ namespace UI.Forms
                 lvi.SubItems.Add(cmbMealSelect.Text);
                 lstShowMeal.Items.Add(lvi);
                 Methods.Clear(grpAddMeal);
-            }
+                cmbMealFoodSelect.Enabled = false;
+                cmbMealSelect.Enabled = false;
+                cmbMealSelect.Text = "";
+;            }
         }
 
         private void btnCloseApp_Click(object sender, EventArgs e)

@@ -64,12 +64,12 @@ namespace UI.Forms
                 if (cmbSelectCategory.SelectedIndex == i)
                     CmbFill(i + 1);
             }
-            if (cmbSelectCategory.SelectedIndex>-1)
+            if (cmbSelectCategory.SelectedIndex > -1)
             {
                 cmbFoodSelect.Enabled = true;
             }
         }
-        void CmbFill(int x,int FoodID=0)
+        void CmbFill(int x, int FoodID = 0)
         {
             List<Food> foods = db.Foods.Where(w => w.CategoryID == x).ToList();
             cmbFoodSelect.DataSource = foods;
@@ -80,17 +80,17 @@ namespace UI.Forms
 
         private void btnShowFoodsAndCalories_Click(object sender, EventArgs e)
         {
-            if (cmbFoodSelect.SelectedIndex==-1)
+            if (cmbFoodSelect.SelectedIndex == -1)
             {
                 MessageBox.Show("Lütfen Kategori ve yemek kısımlarını seçiniz");
             }
             else
-            Show();
+                Show();
             cmbSelectCategory.SelectedValue = -1;
             cmbFoodSelect.SelectedValue = -1;
         }
 
-        private void Show(int CategoryId=0)
+        private void Show(int CategoryId = 0)
         {
             int selectedFood = int.Parse(cmbFoodSelect.SelectedValue.ToString());
             string Path = db.Foods.Where(x => x.FoodID == selectedFood).FirstOrDefault().PhotoPath;
@@ -107,7 +107,7 @@ namespace UI.Forms
                 }
                 finally
                 {
-                    var foodCalories = db.Foods.Where(w => w.FoodName == cmbFoodSelect.Text).Select(x => new { x.FoodName, x.Calories}).ToList();
+                    var foodCalories = db.Foods.Where(w => w.FoodName == cmbFoodSelect.Text).Select(x => new { x.FoodName, x.Calories }).ToList();
                     dgvFoodCalories.DataSource = foodCalories;
                 }
             }
@@ -120,7 +120,7 @@ namespace UI.Forms
 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
-            if (txtAddFood.Text.Trim()!=""&&cmbCategoryAdd.SelectedIndex!=-1)
+            if (txtAddFood.Text.Trim() != "" && cmbCategoryAdd.SelectedIndex != -1)
             {
                 int selectedCategory = int.Parse(cmbCategoryAdd.SelectedValue.ToString());
                 Food food = db.Foods.Where(x => x.FoodID == selectedCategory).FirstOrDefault();
@@ -136,12 +136,15 @@ namespace UI.Forms
 
                 db.Foods.Add(food);
                 db.SaveChanges();
+                if (food.PhotoPath == null)
+                    pbFoodsCalories.Image = null;
+
                 int id = food.FoodID;
                 MessageBox.Show("Ekleme işlemi başarılı!");
                 pbPreview.Image = null;
                 int SelectedCategory = int.Parse(cmbCategoryAdd.SelectedValue.ToString());
                 FillFoodsCalories(SelectedCategory);
-                CmbFill(SelectedCategory,id);
+                CmbFill(SelectedCategory, id);
                 Show(SelectedCategory);
                 Methods.Clear(grpAddFoods);
                 MessageBox.Show("Yanlış kalori bilgisi ve uygunsuz foto girişi yapıldıysa yemek-kalori bilginiz kaldırılabilir!");
@@ -152,7 +155,7 @@ namespace UI.Forms
 
         private void btnSelectPhoto_Click(object sender, EventArgs e)
         {
-            lbl1.Text=SaveImage(pbPreview, txtPhotoPath.Text);
+            lbl1.Text = SaveImage(pbPreview, txtPhotoPath.Text);
             bytes = ImageToByteArray(pbPreview.Image);
         }
         public static string SaveImage(PictureBox pictureBox, string firstName)
@@ -180,7 +183,7 @@ namespace UI.Forms
         {
             using (var ms = new MemoryStream())
             {
-                if (imageIn!=null)
+                if (imageIn != null)
                 {
                     imageIn.Save(ms, imageIn.RawFormat);
                     return ms.ToArray();

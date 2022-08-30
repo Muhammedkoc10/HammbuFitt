@@ -40,19 +40,20 @@ namespace UI.Forms
             int userID = UserIdFill2();
             for (int i = 7; i > 0; i--)
             {
-                DateTime end = DateTime.Now.AddDays(i - 7);
+                DateTime end = DateTime.Now.Date.AddDays(i - 6);
                 DateTime start = DateTime.Now.Date.AddDays(i - 7);
                 try
                 {
                     if (db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories) != 0)
                     {
                         double avgCalories = db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories);
-                        dgvWeeklyReport.Rows.Add((i) + " .gün", avgCalories.ToString());
+                        dgvWeeklyReport.Rows.Add((8-b) + " .gün", avgCalories.ToString());
+                        b++;
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show(b + ".günde haftalık öğün bilginiz bulunmamaktadır!");
+                    MessageBox.Show(8-b + ".günde haftalık öğün bilginiz bulunmamaktadır!");
                     b++;
                     continue;
                 }
@@ -60,7 +61,7 @@ namespace UI.Forms
         }
         private void btnMonthlyReport_Click(object sender, EventArgs e)
         {
-            int n = 1;
+            int n = 4;
             int b = 1;
             dgvMonthlyReport.Rows.Clear();
             int userID = UserIdFill2();
@@ -75,7 +76,7 @@ namespace UI.Forms
                         double avgCalories = db.MealFoods.Include("MealsFood").Include("FoodsMeal").Where(x => x.MealsFood.AddedDate >= start && x.MealsFood.AddedDate <= end && x.UserID == userID).Sum(x => x.FoodsMeal.Calories);
                         dgvMonthlyReport.Rows.Add(n + " .hafta", avgCalories.ToString());
                     }
-                    n++;
+                    n--;
                 }
                 catch (Exception)
                 {
@@ -89,9 +90,9 @@ namespace UI.Forms
         private void btnMostEatFoodsOnMeals_Click(object sender, EventArgs e)
         {
             string morning = FindFoodName("Sabah");
-            string snack1 = FindFoodName("Ara Öğün1");
+            string snack1 = FindFoodName("Ara Öğün 1");
             string lunch = FindFoodName("Öğle");
-            string snack2 = FindFoodName("Ara Öğün2");
+            string snack2 = FindFoodName("Ara Öğün 2");
             string dinner = FindFoodName("Akşam");
             lstBreakfast.Items.Add(morning);
             lstSnack1.Items.Add(snack1);

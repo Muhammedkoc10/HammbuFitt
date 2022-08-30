@@ -121,7 +121,7 @@ namespace UI.Forms
                                     MessageBox.Show("Şifreler birbirine uymuyor!");
                             }
                             else
-                                MessageBox.Show("Girilen şifre en az 6 karakter uzunluğunda bir büyük,bir küçük harf, bir sayı ve özel karakter($@._,!%*?+#&'()[=\"€) içermek zorundadır!");
+                                MessageBox.Show("Girilen şifre en az 6 karakter uzunluğunda bir büyük,bir küçük harf, bir sayı,özel karakter($@._,!%*?+#&'()[=\"€) içermeli, Türkçe karakter içermemelidir! ");
                         }
                         else
                             MessageBox.Show("Kullanıcı 18 yaşından küçük olamaz!");
