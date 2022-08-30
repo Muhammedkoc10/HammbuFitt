@@ -84,7 +84,7 @@ namespace UI.Forms
             this.btnWeeklyReport.Location = new System.Drawing.Point(54, 233);
             this.btnWeeklyReport.Name = "btnWeeklyReport";
             this.btnWeeklyReport.Size = new System.Drawing.Size(161, 42);
-            this.btnWeeklyReport.TabIndex = 6;
+            this.btnWeeklyReport.TabIndex = 1;
             this.btnWeeklyReport.Text = "HAFTALIK RAPOR";
             this.btnWeeklyReport.UseVisualStyleBackColor = false;
             this.btnWeeklyReport.Click += new System.EventHandler(this.btnWeeklyReport_Click);
@@ -134,7 +134,7 @@ namespace UI.Forms
             this.btnMonthlyReport.Location = new System.Drawing.Point(57, 233);
             this.btnMonthlyReport.Name = "btnMonthlyReport";
             this.btnMonthlyReport.Size = new System.Drawing.Size(161, 42);
-            this.btnMonthlyReport.TabIndex = 7;
+            this.btnMonthlyReport.TabIndex = 2;
             this.btnMonthlyReport.Text = "AYLIK RAPOR";
             this.btnMonthlyReport.UseVisualStyleBackColor = false;
             this.btnMonthlyReport.Click += new System.EventHandler(this.btnMonthlyReport_Click);
@@ -156,11 +156,13 @@ namespace UI.Forms
             // 
             this.Haftalar.HeaderText = "Haftalar";
             this.Haftalar.Name = "Haftalar";
+            this.Haftalar.ReadOnly = true;
             // 
             // Kalori
             // 
             this.Kalori.HeaderText = "Kalori Ortalaması";
             this.Kalori.Name = "Kalori";
+            this.Kalori.ReadOnly = true;
             // 
             // grbEncokTuketilen
             // 
@@ -284,7 +286,7 @@ namespace UI.Forms
             this.btnMostEatFoodsOnMeals.Location = new System.Drawing.Point(136, 232);
             this.btnMostEatFoodsOnMeals.Name = "btnMostEatFoodsOnMeals";
             this.btnMostEatFoodsOnMeals.Size = new System.Drawing.Size(113, 42);
-            this.btnMostEatFoodsOnMeals.TabIndex = 8;
+            this.btnMostEatFoodsOnMeals.TabIndex = 3;
             this.btnMostEatFoodsOnMeals.Text = "GÖSTER";
             this.btnMostEatFoodsOnMeals.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMostEatFoodsOnMeals.UseVisualStyleBackColor = false;
@@ -308,7 +310,7 @@ namespace UI.Forms
             this.btnBackReportToMain.Location = new System.Drawing.Point(399, 346);
             this.btnBackReportToMain.Name = "btnBackReportToMain";
             this.btnBackReportToMain.Size = new System.Drawing.Size(131, 42);
-            this.btnBackReportToMain.TabIndex = 29;
+            this.btnBackReportToMain.TabIndex = 4;
             this.btnBackReportToMain.Text = "GERİ DÖN";
             this.btnBackReportToMain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBackReportToMain.UseVisualStyleBackColor = false;

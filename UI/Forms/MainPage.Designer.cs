@@ -50,7 +50,7 @@ namespace UI.Forms
             this.btnDietList.Location = new System.Drawing.Point(28, 49);
             this.btnDietList.Name = "btnDietList";
             this.btnDietList.Size = new System.Drawing.Size(173, 46);
-            this.btnDietList.TabIndex = 7;
+            this.btnDietList.TabIndex = 1;
             this.btnDietList.Text = "DİYET LİSTELERİ";
             this.btnDietList.UseVisualStyleBackColor = false;
             this.btnDietList.Click += new System.EventHandler(this.btnDietList_Click);
@@ -65,7 +65,7 @@ namespace UI.Forms
             this.btnBackLoginPage.Location = new System.Drawing.Point(107, 184);
             this.btnBackLoginPage.Name = "btnBackLoginPage";
             this.btnBackLoginPage.Size = new System.Drawing.Size(218, 42);
-            this.btnBackLoginPage.TabIndex = 27;
+            this.btnBackLoginPage.TabIndex = 5;
             this.btnBackLoginPage.Text = "GİRİŞ SAYFAYA DÖN";
             this.btnBackLoginPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBackLoginPage.UseVisualStyleBackColor = false;
@@ -86,7 +86,7 @@ namespace UI.Forms
             this.btnReportsPage.Location = new System.Drawing.Point(28, 124);
             this.btnReportsPage.Name = "btnReportsPage";
             this.btnReportsPage.Size = new System.Drawing.Size(173, 42);
-            this.btnReportsPage.TabIndex = 11;
+            this.btnReportsPage.TabIndex = 3;
             this.btnReportsPage.Text = "RAPORLAR";
             this.btnReportsPage.UseVisualStyleBackColor = false;
             this.btnReportsPage.Click += new System.EventHandler(this.btnReportsPage_Click);
@@ -99,7 +99,7 @@ namespace UI.Forms
             this.btnMealPage.Location = new System.Drawing.Point(228, 124);
             this.btnMealPage.Name = "btnMealPage";
             this.btnMealPage.Size = new System.Drawing.Size(173, 42);
-            this.btnMealPage.TabIndex = 10;
+            this.btnMealPage.TabIndex = 4;
             this.btnMealPage.Text = "ÖĞÜN TAKİP";
             this.btnMealPage.UseVisualStyleBackColor = false;
             this.btnMealPage.Click += new System.EventHandler(this.btnMealPage_Click);
@@ -112,7 +112,7 @@ namespace UI.Forms
             this.btnFoodCalorisPage.Location = new System.Drawing.Point(228, 49);
             this.btnFoodCalorisPage.Name = "btnFoodCalorisPage";
             this.btnFoodCalorisPage.Size = new System.Drawing.Size(173, 46);
-            this.btnFoodCalorisPage.TabIndex = 9;
+            this.btnFoodCalorisPage.TabIndex = 2;
             this.btnFoodCalorisPage.Text = "YEMEK - KALORİ BÖLÜMÜ";
             this.btnFoodCalorisPage.UseVisualStyleBackColor = false;
             this.btnFoodCalorisPage.Click += new System.EventHandler(this.btnFoodCalorisPage_Click);

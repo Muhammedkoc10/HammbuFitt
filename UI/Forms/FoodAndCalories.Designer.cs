@@ -42,12 +42,14 @@ namespace UI.Forms
             this.pbFoodsCalories = new System.Windows.Forms.PictureBox();
             this.btnBackToMainPage = new System.Windows.Forms.Button();
             this.grpAddFoods = new System.Windows.Forms.GroupBox();
+            this.txtPhotoPath = new System.Windows.Forms.TextBox();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.btnSelectPhoto = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.numAddCalories = new System.Windows.Forms.NumericUpDown();
             this.txtAddFood = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbCategoryAdd = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,8 +61,6 @@ namespace UI.Forms
             this.lbl2 = new System.Windows.Forms.Label();
             this.lblHold = new System.Windows.Forms.Label();
             this.btnCloseApp = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPhotoPath = new System.Windows.Forms.TextBox();
             this.grpFoodCaloriesSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoodCalories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoodsCalories)).BeginInit();
@@ -111,7 +111,7 @@ namespace UI.Forms
             this.btnShowFoodsAndCalories.Location = new System.Drawing.Point(84, 307);
             this.btnShowFoodsAndCalories.Name = "btnShowFoodsAndCalories";
             this.btnShowFoodsAndCalories.Size = new System.Drawing.Size(131, 42);
-            this.btnShowFoodsAndCalories.TabIndex = 6;
+            this.btnShowFoodsAndCalories.TabIndex = 3;
             this.btnShowFoodsAndCalories.Text = "GÖSTER";
             this.btnShowFoodsAndCalories.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnShowFoodsAndCalories.UseVisualStyleBackColor = false;
@@ -138,7 +138,7 @@ namespace UI.Forms
             this.cmbFoodSelect.Location = new System.Drawing.Point(113, 249);
             this.cmbFoodSelect.Name = "cmbFoodSelect";
             this.cmbFoodSelect.Size = new System.Drawing.Size(168, 25);
-            this.cmbFoodSelect.TabIndex = 5;
+            this.cmbFoodSelect.TabIndex = 2;
             // 
             // label2
             // 
@@ -158,7 +158,7 @@ namespace UI.Forms
             this.cmbSelectCategory.Location = new System.Drawing.Point(113, 205);
             this.cmbSelectCategory.Name = "cmbSelectCategory";
             this.cmbSelectCategory.Size = new System.Drawing.Size(168, 25);
-            this.cmbSelectCategory.TabIndex = 3;
+            this.cmbSelectCategory.TabIndex = 1;
             this.cmbSelectCategory.SelectedValueChanged += new System.EventHandler(this.cmbSelectCategory_SelectedValueChanged);
             // 
             // label1
@@ -190,7 +190,7 @@ namespace UI.Forms
             this.btnBackToMainPage.Location = new System.Drawing.Point(119, 429);
             this.btnBackToMainPage.Name = "btnBackToMainPage";
             this.btnBackToMainPage.Size = new System.Drawing.Size(131, 42);
-            this.btnBackToMainPage.TabIndex = 29;
+            this.btnBackToMainPage.TabIndex = 11;
             this.btnBackToMainPage.Text = "GERİ DÖN";
             this.btnBackToMainPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBackToMainPage.UseVisualStyleBackColor = false;
@@ -220,6 +220,14 @@ namespace UI.Forms
             this.grpAddFoods.TabStop = false;
             this.grpAddFoods.Text = "Kategoriye Ekleme";
             // 
+            // txtPhotoPath
+            // 
+            this.txtPhotoPath.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhotoPath.Location = new System.Drawing.Point(151, 280);
+            this.txtPhotoPath.Name = "txtPhotoPath";
+            this.txtPhotoPath.Size = new System.Drawing.Size(168, 25);
+            this.txtPhotoPath.TabIndex = 7;
+            // 
             // btnAddFood
             // 
             this.btnAddFood.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -229,7 +237,7 @@ namespace UI.Forms
             this.btnAddFood.Location = new System.Drawing.Point(218, 368);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(101, 42);
-            this.btnAddFood.TabIndex = 30;
+            this.btnAddFood.TabIndex = 9;
             this.btnAddFood.Text = "EKLE";
             this.btnAddFood.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddFood.UseVisualStyleBackColor = true;
@@ -244,7 +252,7 @@ namespace UI.Forms
             this.btnSelectPhoto.Location = new System.Drawing.Point(218, 312);
             this.btnSelectPhoto.Name = "btnSelectPhoto";
             this.btnSelectPhoto.Size = new System.Drawing.Size(101, 37);
-            this.btnSelectPhoto.TabIndex = 29;
+            this.btnSelectPhoto.TabIndex = 8;
             this.btnSelectPhoto.Text = "RESİM SEÇ";
             this.btnSelectPhoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelectPhoto.UseVisualStyleBackColor = true;
@@ -272,7 +280,7 @@ namespace UI.Forms
             0});
             this.numAddCalories.Name = "numAddCalories";
             this.numAddCalories.Size = new System.Drawing.Size(168, 25);
-            this.numAddCalories.TabIndex = 24;
+            this.numAddCalories.TabIndex = 6;
             // 
             // txtAddFood
             // 
@@ -280,7 +288,7 @@ namespace UI.Forms
             this.txtAddFood.Location = new System.Drawing.Point(151, 187);
             this.txtAddFood.Name = "txtAddFood";
             this.txtAddFood.Size = new System.Drawing.Size(168, 25);
-            this.txtAddFood.TabIndex = 14;
+            this.txtAddFood.TabIndex = 5;
             // 
             // btnClear
             // 
@@ -292,11 +300,21 @@ namespace UI.Forms
             this.btnClear.Location = new System.Drawing.Point(33, 368);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(116, 42);
-            this.btnClear.TabIndex = 13;
+            this.btnClear.TabIndex = 10;
             this.btnClear.Text = "TEMİZLE";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(43, 282);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 18);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Resim Yolu:";
             // 
             // label5
             // 
@@ -316,7 +334,7 @@ namespace UI.Forms
             this.cmbCategoryAdd.Location = new System.Drawing.Point(151, 138);
             this.cmbCategoryAdd.Name = "cmbCategoryAdd";
             this.cmbCategoryAdd.Size = new System.Drawing.Size(168, 25);
-            this.cmbCategoryAdd.TabIndex = 8;
+            this.cmbCategoryAdd.TabIndex = 4;
             // 
             // label4
             // 
@@ -406,24 +424,6 @@ namespace UI.Forms
             this.btnCloseApp.TabIndex = 34;
             this.btnCloseApp.UseVisualStyleBackColor = false;
             this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(43, 282);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 18);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Resim Yolu:";
-            // 
-            // txtPhotoPath
-            // 
-            this.txtPhotoPath.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhotoPath.Location = new System.Drawing.Point(151, 280);
-            this.txtPhotoPath.Name = "txtPhotoPath";
-            this.txtPhotoPath.Size = new System.Drawing.Size(168, 25);
-            this.txtPhotoPath.TabIndex = 31;
             // 
             // FoodsAndCalories
             // 

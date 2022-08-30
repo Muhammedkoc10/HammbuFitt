@@ -85,7 +85,7 @@ namespace UI
             this.txtUserNameReminder.Location = new System.Drawing.Point(20, 50);
             this.txtUserNameReminder.Name = "txtUserNameReminder";
             this.txtUserNameReminder.Size = new System.Drawing.Size(287, 25);
-            this.txtUserNameReminder.TabIndex = 8;
+            this.txtUserNameReminder.TabIndex = 1;
             this.txtUserNameReminder.Tag = "";
             // 
             // btnPasswordReminder
@@ -98,7 +98,7 @@ namespace UI
             this.btnPasswordReminder.Location = new System.Drawing.Point(61, 164);
             this.btnPasswordReminder.Name = "btnPasswordReminder";
             this.btnPasswordReminder.Size = new System.Drawing.Size(205, 42);
-            this.btnPasswordReminder.TabIndex = 11;
+            this.btnPasswordReminder.TabIndex = 3;
             this.btnPasswordReminder.Text = "ŞİFREMİ HATIRLAT";
             this.btnPasswordReminder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPasswordReminder.UseVisualStyleBackColor = false;
@@ -118,7 +118,7 @@ namespace UI
             this.txtEmailReminder.Location = new System.Drawing.Point(20, 118);
             this.txtEmailReminder.Name = "txtEmailReminder";
             this.txtEmailReminder.Size = new System.Drawing.Size(287, 25);
-            this.txtEmailReminder.TabIndex = 10;
+            this.txtEmailReminder.TabIndex = 2;
             // 
             // btnBackToLoginPage
             // 
@@ -130,7 +130,7 @@ namespace UI
             this.btnBackToLoginPage.Location = new System.Drawing.Point(151, 285);
             this.btnBackToLoginPage.Name = "btnBackToLoginPage";
             this.btnBackToLoginPage.Size = new System.Drawing.Size(131, 42);
-            this.btnBackToLoginPage.TabIndex = 28;
+            this.btnBackToLoginPage.TabIndex = 4;
             this.btnBackToLoginPage.Text = "GERİ DÖN";
             this.btnBackToLoginPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBackToLoginPage.UseVisualStyleBackColor = false;

@@ -120,7 +120,7 @@ namespace UI.Forms
             this.btnAddMeal.Location = new System.Drawing.Point(191, 293);
             this.btnAddMeal.Name = "btnAddMeal";
             this.btnAddMeal.Size = new System.Drawing.Size(145, 42);
-            this.btnAddMeal.TabIndex = 11;
+            this.btnAddMeal.TabIndex = 4;
             this.btnAddMeal.Text = "ÖĞÜN EKLE";
             this.btnAddMeal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddMeal.UseVisualStyleBackColor = false;
@@ -148,7 +148,7 @@ namespace UI.Forms
             this.cmbMealSelect.Location = new System.Drawing.Point(139, 81);
             this.cmbMealSelect.Name = "cmbMealSelect";
             this.cmbMealSelect.Size = new System.Drawing.Size(213, 25);
-            this.cmbMealSelect.TabIndex = 9;
+            this.cmbMealSelect.TabIndex = 3;
             // 
             // label3
             // 
@@ -168,7 +168,7 @@ namespace UI.Forms
             this.cmbMealFoodSelect.Location = new System.Drawing.Point(139, 50);
             this.cmbMealFoodSelect.Name = "cmbMealFoodSelect";
             this.cmbMealFoodSelect.Size = new System.Drawing.Size(213, 25);
-            this.cmbMealFoodSelect.TabIndex = 7;
+            this.cmbMealFoodSelect.TabIndex = 2;
             this.cmbMealFoodSelect.SelectedIndexChanged += new System.EventHandler(this.cmbMealFoodSelect_SelectedIndexChanged);
             // 
             // label2
@@ -189,7 +189,7 @@ namespace UI.Forms
             this.cmbMealCategorySelect.Location = new System.Drawing.Point(139, 19);
             this.cmbMealCategorySelect.Name = "cmbMealCategorySelect";
             this.cmbMealCategorySelect.Size = new System.Drawing.Size(213, 25);
-            this.cmbMealCategorySelect.TabIndex = 5;
+            this.cmbMealCategorySelect.TabIndex = 1;
             this.cmbMealCategorySelect.SelectedIndexChanged += new System.EventHandler(this.cmbMealCategorySelect_SelectedIndexChanged);
             // 
             // label1
@@ -212,7 +212,7 @@ namespace UI.Forms
             this.btnMealBackToMain.Location = new System.Drawing.Point(347, 412);
             this.btnMealBackToMain.Name = "btnMealBackToMain";
             this.btnMealBackToMain.Size = new System.Drawing.Size(131, 42);
-            this.btnMealBackToMain.TabIndex = 29;
+            this.btnMealBackToMain.TabIndex = 7;
             this.btnMealBackToMain.Text = "GERİ DÖN";
             this.btnMealBackToMain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMealBackToMain.UseVisualStyleBackColor = false;
@@ -245,7 +245,7 @@ namespace UI.Forms
             this.btnDailyMealInfo.Location = new System.Drawing.Point(16, 280);
             this.btnDailyMealInfo.Name = "btnDailyMealInfo";
             this.btnDailyMealInfo.Size = new System.Drawing.Size(161, 55);
-            this.btnDailyMealInfo.TabIndex = 12;
+            this.btnDailyMealInfo.TabIndex = 5;
             this.btnDailyMealInfo.Text = "GÜNLÜK ÖĞÜNLER BİLGİSİ";
             this.btnDailyMealInfo.UseVisualStyleBackColor = false;
             this.btnDailyMealInfo.Click += new System.EventHandler(this.btnDailyMealInfo_Click);
@@ -258,7 +258,7 @@ namespace UI.Forms
             this.btnDailyCalories.Location = new System.Drawing.Point(204, 280);
             this.btnDailyCalories.Name = "btnDailyCalories";
             this.btnDailyCalories.Size = new System.Drawing.Size(161, 55);
-            this.btnDailyCalories.TabIndex = 13;
+            this.btnDailyCalories.TabIndex = 6;
             this.btnDailyCalories.Text = "GÜNLÜK TOPLAM ALDIĞINIZ KALORİ";
             this.btnDailyCalories.UseVisualStyleBackColor = false;
             this.btnDailyCalories.Click += new System.EventHandler(this.btnDailyCalories_Click);

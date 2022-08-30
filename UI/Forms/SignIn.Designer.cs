@@ -71,7 +71,7 @@ namespace UI
             this.txtLoginPassword.Location = new System.Drawing.Point(30, 132);
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.Size = new System.Drawing.Size(287, 25);
-            this.txtLoginPassword.TabIndex = 3;
+            this.txtLoginPassword.TabIndex = 2;
             // 
             // label2
             // 
@@ -172,7 +172,7 @@ namespace UI
             this.chkShowPassword.Location = new System.Drawing.Point(198, 174);
             this.chkShowPassword.Name = "chkShowPassword";
             this.chkShowPassword.Size = new System.Drawing.Size(122, 21);
-            this.chkShowPassword.TabIndex = 8;
+            this.chkShowPassword.TabIndex = 3;
             this.chkShowPassword.Text = "Şifremi Göster";
             this.chkShowPassword.UseVisualStyleBackColor = true;
             this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
@@ -192,6 +192,7 @@ namespace UI
             // 
             // Login
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

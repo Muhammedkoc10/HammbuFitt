@@ -59,7 +59,7 @@ namespace UI.Forms
             this.btnBackMainPage.Location = new System.Drawing.Point(252, 531);
             this.btnBackMainPage.Name = "btnBackMainPage";
             this.btnBackMainPage.Size = new System.Drawing.Size(131, 42);
-            this.btnBackMainPage.TabIndex = 29;
+            this.btnBackMainPage.TabIndex = 1;
             this.btnBackMainPage.Text = "GERİ DÖN";
             this.btnBackMainPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBackMainPage.UseVisualStyleBackColor = false;

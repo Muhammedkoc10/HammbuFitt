@@ -82,7 +82,7 @@ namespace UI.Forms
             this.txtUserName.Location = new System.Drawing.Point(9, 37);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(287, 25);
-            this.txtUserName.TabIndex = 5;
+            this.txtUserName.TabIndex = 1;
             // 
             // label2
             // 
@@ -110,7 +110,7 @@ namespace UI.Forms
             this.txtPassword.Location = new System.Drawing.Point(9, 180);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(287, 25);
-            this.txtPassword.TabIndex = 9;
+            this.txtPassword.TabIndex = 3;
             // 
             // label4
             // 
@@ -128,7 +128,7 @@ namespace UI.Forms
             this.txtPasswordAgain.Location = new System.Drawing.Point(11, 248);
             this.txtPasswordAgain.Name = "txtPasswordAgain";
             this.txtPasswordAgain.Size = new System.Drawing.Size(287, 25);
-            this.txtPasswordAgain.TabIndex = 11;
+            this.txtPasswordAgain.TabIndex = 4;
             // 
             // label5
             // 
@@ -177,7 +177,7 @@ namespace UI.Forms
             this.rbMan.Location = new System.Drawing.Point(396, 107);
             this.rbMan.Name = "rbMan";
             this.rbMan.Size = new System.Drawing.Size(61, 20);
-            this.rbMan.TabIndex = 20;
+            this.rbMan.TabIndex = 9;
             this.rbMan.TabStop = true;
             this.rbMan.Text = "Erkek";
             this.rbMan.UseVisualStyleBackColor = true;
@@ -189,7 +189,7 @@ namespace UI.Forms
             this.rbWoman.Location = new System.Drawing.Point(538, 107);
             this.rbWoman.Name = "rbWoman";
             this.rbWoman.Size = new System.Drawing.Size(63, 20);
-            this.rbWoman.TabIndex = 21;
+            this.rbWoman.TabIndex = 10;
             this.rbWoman.TabStop = true;
             this.rbWoman.Text = "Kadın";
             this.rbWoman.UseVisualStyleBackColor = true;
@@ -200,7 +200,7 @@ namespace UI.Forms
             this.dtBirthDate.Location = new System.Drawing.Point(372, 178);
             this.dtBirthDate.Name = "dtBirthDate";
             this.dtBirthDate.Size = new System.Drawing.Size(255, 25);
-            this.dtBirthDate.TabIndex = 22;
+            this.dtBirthDate.TabIndex = 11;
             // 
             // nmrHeight
             // 
@@ -213,7 +213,7 @@ namespace UI.Forms
             0});
             this.nmrHeight.Name = "nmrHeight";
             this.nmrHeight.Size = new System.Drawing.Size(85, 25);
-            this.nmrHeight.TabIndex = 23;
+            this.nmrHeight.TabIndex = 12;
             this.nmrHeight.Value = new decimal(new int[] {
             1,
             0,
@@ -231,7 +231,7 @@ namespace UI.Forms
             0});
             this.nmrWeight.Name = "nmrWeight";
             this.nmrWeight.Size = new System.Drawing.Size(85, 25);
-            this.nmrWeight.TabIndex = 24;
+            this.nmrWeight.TabIndex = 13;
             this.nmrWeight.Value = new decimal(new int[] {
             1,
             0,
@@ -248,7 +248,7 @@ namespace UI.Forms
             this.btnSignUp.Location = new System.Drawing.Point(552, 310);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(116, 42);
-            this.btnSignUp.TabIndex = 25;
+            this.btnSignUp.TabIndex = 15;
             this.btnSignUp.Text = "KAYIT OL";
             this.btnSignUp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSignUp.UseVisualStyleBackColor = false;
@@ -308,7 +308,7 @@ namespace UI.Forms
             this.chkSportsman.Location = new System.Drawing.Point(381, 310);
             this.chkSportsman.Name = "chkSportsman";
             this.chkSportsman.Size = new System.Drawing.Size(156, 21);
-            this.chkSportsman.TabIndex = 29;
+            this.chkSportsman.TabIndex = 14;
             this.chkSportsman.Text = "Sporcu Musunuz?";
             this.chkSportsman.UseVisualStyleBackColor = true;
             // 
@@ -319,7 +319,7 @@ namespace UI.Forms
             this.chkShowPassword.Location = new System.Drawing.Point(191, 290);
             this.chkShowPassword.Name = "chkShowPassword";
             this.chkShowPassword.Size = new System.Drawing.Size(107, 22);
-            this.chkShowPassword.TabIndex = 30;
+            this.chkShowPassword.TabIndex = 5;
             this.chkShowPassword.Text = "Şifre Göster";
             this.chkShowPassword.UseVisualStyleBackColor = true;
             this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
@@ -334,7 +334,7 @@ namespace UI.Forms
             this.btnClear.Location = new System.Drawing.Point(12, 310);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(116, 42);
-            this.btnClear.TabIndex = 29;
+            this.btnClear.TabIndex = 6;
             this.btnClear.Text = "TEMİZLE";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClear.UseVisualStyleBackColor = false;
@@ -356,7 +356,7 @@ namespace UI.Forms
             this.txtLastName.Location = new System.Drawing.Point(523, 37);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(143, 25);
-            this.txtLastName.TabIndex = 26;
+            this.txtLastName.TabIndex = 8;
             // 
             // label9
             // 
@@ -374,7 +374,7 @@ namespace UI.Forms
             this.txtFirstName.Location = new System.Drawing.Point(372, 37);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(143, 25);
-            this.txtFirstName.TabIndex = 13;
+            this.txtFirstName.TabIndex = 7;
             // 
             // txtMail
             // 
@@ -382,7 +382,7 @@ namespace UI.Forms
             this.txtMail.Location = new System.Drawing.Point(9, 107);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(287, 25);
-            this.txtMail.TabIndex = 9;
+            this.txtMail.TabIndex = 2;
             // 
             // btnBackToMainPage
             // 
@@ -394,7 +394,7 @@ namespace UI.Forms
             this.btnBackToMainPage.Location = new System.Drawing.Point(287, 423);
             this.btnBackToMainPage.Name = "btnBackToMainPage";
             this.btnBackToMainPage.Size = new System.Drawing.Size(199, 42);
-            this.btnBackToMainPage.TabIndex = 26;
+            this.btnBackToMainPage.TabIndex = 16;
             this.btnBackToMainPage.Text = "ANA SAYFAYA DÖN";
             this.btnBackToMainPage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBackToMainPage.UseVisualStyleBackColor = false;
